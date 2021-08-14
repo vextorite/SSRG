@@ -1,0 +1,145 @@
+{
+
+    "aboutPage": {
+        "section1": [
+          
+                "<h2>About</h2>",
+                "<hr></hr>",
+                "<p>I'm really passionate about improving the world around me through technology and innovation.",
+                 "I matriculated at Star College Durban in 2018 with five distinctions and I am currently in my final",
+                "year of studies towards a degree in Computer Science &amp; Business Computing at the University of ",
+                "Cape Town. In my spare time I enjoy working on hw/sw hobby projects and I often find myself reaching",
+                "for headphones or a controller.</p>",
+                "<br>"
+           
+        ],
+ 
+        "section2":[ 
+                "<br>",
+                "<p>'The power of imagination makes us infinite.'</p>",
+                "<p>- John Muir</p>"
+            ]
+        }
+   
+,
+        "skillsPage": {
+            "section1": [
+              
+                "<h2>Skills</h2>",
+                "<hr></hr>",
+                "<p>Programming languages known:",
+                "<br>- Java",
+                "<br>- Delphi",
+                "<br>- C#",
+                "<br>- Python",
+                "<br>- Arduino",
+                "<br>- MySQL",
+                "<br>- MSSQL",
+                "<br>- HTML",
+                "<br>- CSS",
+                "<br>- JavaScript",
+                "<br>- ReactJS",
+                "<br>",
+                "</p>"
+            ],
+     
+            "section2":[ 
+                "<p>I've worked extensively with hardware control and I've been fortunate enough to have worked with international experts, ",
+                "in various disicplines, on system/component design. I am a dynamic public speaker and I have strong communication skills. ",
+                "I work well with people and integrate seamlessly into teams, displaying strong leadership qualities and unwavering dedication ",
+                "to the joint objective(s).",
+                 "</p>"
+                ]
+            }
+
+
+,
+            "awardsPage": {
+                "section1": [
+                  
+                    "<h2>Awards</h2>",
+                    "<hr></hr>",
+                    "<p>I have received a few awards over the past few years - mostly in recognition of my work with hardware control.",
+                    "In addition to these awards, I have been recognized for my work in four particularly rewarding ways.",
+                    "In February 2017, I had the honour of being invited to speak at the SAICE head office in Midrand at their annual Young Movers",
+                    "&amp; Shakers event. In October 2017, I was also fortunate enough to be invited to meet Eskom's regional board of directors at",
+                    "their KwaZulu-Natal head office in New Germany. In June 2017 I was awarded a scholarship by the State University of New York to",
+                    "study at their SUNY Oswego campus. Lastly, in 2018 I was awarded a scholarship by Eskom to study Electrical Engineering.",
+                    "</p>"
+                   
+                ],
+         
+                "section2":[ 
+                    "<p>Awards received:",
+                    "<br>- 1st place: Google DSC x Yoco Hackathon - March 2021",
+                    "<br>- Certificate: Top I.T. learner (2016-2018) - Star College Durban",
+                    "<br>- Gold Medal: InfoMatrix International Informatics Competition 2017 World Finals (Bucharest, Romania)",
+                    "<br>- Bronze Medal: Science Division, Genius Olympiad 2017 (New York, USA)",
+                    "<br>- Participation Certificate: Expo Ciencias Nacional 2017 (La Paz, Mexico)",
+                    "<br>- Silver Medal: AMESA Mathematics Contest 2016",
+                    "<br>- Silver Medal: South African Institute of Civil Engineering 2016 (water engineering division)",
+                    "<br>- Silver Medal: South African Institute of Civil Engineering 2016 (environmental engineering division",
+                    "<br>- Gold Medal: Soil Society of South Africa 2016 (Best Soil related project, ISF)",
+                    "<br>- Silver Medal: International Science Fair 2016",
+                    "<br>- Bronze Medal: Computer Talent Search South Africa 2016",
+                    "<br>- Gold Medal: Eskom Expo KZN 2016",
+                    "<br>- Silver Medal: Eskom Expo KZN 2017",
+                    "<br>- Participation Certificate: World Knowledge Olympiad 2016<br>",
+                    "</p>"
+                    ]
+                }
+
+,
+                "experiencePage": {
+                    "section1": [
+                      
+                        "<h2>Experience</h2>",
+                        "<hr><p>March 2021 - Present:</p>",
+                        "<p>Subcommittee member - UCT Developer Society</p>",
+                        "<blockquote>Testimonial not available for this position yet.</blockquote>",
+                        "<hr><p>October 2019 - October 2020: </p>",
+                        "<p>Residence SFDA - Leo Marquard Hall, UCT</p>",
+                        "<blockquote>Sashen is a dedicated individual that goes over and above his duties. He displays leadership",
+                        "amongst his colleagues and often sets the standard in delivering his work. He brings a dynamic edge to the ",
+                        "team with his bubbly character.\" - Sikelela Zelanga (Supervisor: former Head SFDA, Leo Marquard Hall)  </blockquote>",
+                        "<p>Residence Mentor - Leo Marquard Hall, UCT</p>",
+                        "<blockquote>Sashen Naidoo is a wonderful, talented and innovative person to work with. ",
+                        "He is an extremely attentive and also detail-oriented individual with great communication strategies.' - Will Madikizela ",
+                        "(Colleague: former Mentor/SFDA and current Head Mentor, Leo Marquard Hall)</blockquote>"
+                       
+                    ],
+             
+                    "section2":[ 
+                        "<h2>Projects</h2><hr>",
+                        "<p>This section will contain some cool web based projects that I've completed in my spare time. ",
+                        "Going live soon! Check out my github for now at <a target='_blank'href = 'https://github.com/sashen-naidoo/'>https://github.com/sashen-naidoo/</a></p>"
+                        ]
+                    }
+
+,
+            "contactPage": {
+                "section1": [
+                  
+                    "<h2>Contact</h2>",
+                    "<hr></hr>",
+                    "<p>Feel free to contact me using one of the channels below and I will get back to you as soon as possible!</p>"
+                   
+                ],
+         
+                "section2":[ 
+                    "<div class= 'contactInfo'>",
+                    "<div class='contactIcons'>",
+                    "<a href='https://www.linkedin.com/in/sashen-naidoo' target ='_blank'>",
+                    "<img src='linkedin.png'></img></a>",
+                    "<a href='mailto:mail@sashen.co.za'><img src='mail.png'></img></a>",
+                    "</div></div><br>"
+                    ]
+                }
+
+
+
+
+    }
+
+
+

@@ -1,0 +1,19 @@
+.menuButton{
+    height:50px;
+    width:150px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-width: 0px;
+    background-color: var(--mainColor2);
+    color: var(--contrastColor);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: "Oswald";
+
+}
+
+.buttons{
+    overflow: auto;
+    max-height:95%;
+}
