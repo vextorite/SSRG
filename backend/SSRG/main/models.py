@@ -7,3 +7,6 @@ class Jobs(models.Model):
     userEmail = models.EmailField(max_length=200)
     files = models.FileField(upload_to='jobs/')
     uploadDate = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.user+": "+self.uploadDate
