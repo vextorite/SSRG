@@ -1,0 +1,72 @@
+.loginMain{
+    background-color: var(--mainColor);
+    color:var(--contrastColor);
+    height:100%;
+    width:100vw;
+    overflow: auto;
+    display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.loginInner{
+text-align: center;
+}
+
+.loginImg{
+    height: 50px;
+}
+
+.loginButton{
+    height:100px;
+    width: 227px;
+    margin: 10px 0px 5px 0px;
+    border-radius: 10px;
+    border-width: 2px;
+
+   background-color: var(--mainColor2);
+    color: var(--contrastColor);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: "Oswald";
+border-color: gray;
+
+}
+
+.loginInput{
+    height:20px;
+    width: 220px;
+    border-radius: 6px;
+    border-width: 2px;
+margin: 8px 0px 10px 0px;
+   background-color: var(--mainColor2);
+    color: var(--contrastColor);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: "Oswald";
+border-color: gray;
+border-style: solid;
+}
+
+.loginInputLabel{
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: "Oswald";
+
+}
+
+.signUpButton{
+    height:20px;
+    width: 227px;
+    background-color: var(--mainColor);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 9px;
+    font-family: "Oswald";
+    color: var(--contrastColor);
+    text-decoration: underline;
+}

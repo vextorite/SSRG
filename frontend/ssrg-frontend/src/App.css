@@ -7,11 +7,7 @@ a{
   color:var(--contrastColor)
 }
 
-img{
-  max-width:80px;
-  width:12vw;
-  min-width: 70px;
-}
+
 
 .App{
   font-family: "Oswald";
@@ -20,8 +16,9 @@ img{
 
 :root{
   --mainColor:black;
-  --mainColor2:rgb(56, 56, 56);
-  --mainColor2Transparency:rgba(56, 56, 56, 0.911);
+  --mainColor2:rgba(22, 22, 22, 1);
+  --buttonTitleContrast:rgba(53, 53, 53, 0.747);
+  --mainColor2Transparency:rgba(10, 10, 10, 0.911);
   --contrastColor:white;
 }
 

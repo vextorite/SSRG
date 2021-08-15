@@ -1,6 +1,7 @@
 .bodyStyle{
-    background-image: url("../tech.jpg");
+background-image: url("../tech1.jpg");
     background-size: cover;
+ 
     height:100%;
     position: relative;
     display: grid;

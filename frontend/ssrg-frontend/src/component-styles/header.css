@@ -7,16 +7,17 @@
   }
 
   .headShotImg{
-    min-width: 90px;
-    width:10vw;
-    padding-bottom: 2px;
+    height: 100px;
+    padding-bottom: 7px;
+
   }
 
  .title{
      padding: 1px 0px 1px 0px;
      text-transform: uppercase;
      margin-top: 10px;
-     background-color: var(--mainColor);
+     /*background-color: var(--mainColor);*/
+     background-color: rgb(46, 46, 46);
      font-size:clamp(8px, 4vw, 11px);
      letter-spacing: 2px;
  }
