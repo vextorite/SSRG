@@ -9,4 +9,4 @@ class Jobs(models.Model):
     uploadDate = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.user+": "+self.uploadDate
+        return self.user+": "+str(self.uploadDate)
