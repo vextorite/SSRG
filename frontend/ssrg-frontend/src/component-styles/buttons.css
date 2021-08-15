@@ -13,8 +13,10 @@
     font-size: 16px;
     font-family: "Oswald";
 border-color: rgb(114, 114, 114);
+}
 
-
+.menuButton:hover{
+    background-color: rgba(67, 94, 110,0.747);
 }
 
 .buttons{

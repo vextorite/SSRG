@@ -6,7 +6,7 @@ import content from '../content.json';
 import Login from './login.jsx';
 import SignUp from './signUp.jsx';
 import Start from './start.jsx';
-
+import SubmitJob from "./submitJob.jsx";
 export default function Body() {
     
     const [screen, setScreen] = useState(10);
@@ -16,7 +16,7 @@ switch(screen){
     case 0:
         return <Buttons about={()=>setScreen(1)} skills={()=>setScreen(2)} awards={()=>setScreen(3)} experience={()=>setScreen(4)} contact={()=>setScreen(5)}></Buttons>;
     case 1:
-        return <Display returnHome={()=>setScreen(0)} cont1 = {"submit a job"} cont2 = {content.aboutPage.section2.join('\n')}></Display>;
+        return <SubmitJob></SubmitJob>;
     case 2:
         return <Display returnHome={()=>setScreen(0)} cont1 = {"view job status"} cont2 = {content.skillsPage.section2.join('\n')}></Display>;
     case 3:
