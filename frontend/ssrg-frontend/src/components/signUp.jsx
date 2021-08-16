@@ -5,6 +5,9 @@ export default function signUp(props) {
   return (
 
 <div className="loginMain">
+<div>
+<div className="titleText">Sign up to continue</div>
+<br></br>
 <button onClick={props.back} className="backBtn">Return to home</button>
 <div className="loginInner">
 <div className="loginInputLabel">Username</div>
@@ -20,6 +23,7 @@ export default function signUp(props) {
     <br></br>
 Sign Up
  </button>
+ </div>
     </div>
 </div>
   

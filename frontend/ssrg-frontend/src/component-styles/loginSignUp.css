@@ -80,3 +80,20 @@ border-style: solid;
     background-color: rgba(0,0,0,0);
     border-color: rgba(0,0,0,0);
 }
+
+.backBtn{
+    background-color: var(--buttonTitleContrast);
+    color:white;
+    border-color: white;
+    position: absolute;
+    bottom: 30px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 227px;
+    text-transform: uppercase;
+    margin-left: 12px;
+  }
+  
+  .backBtn:hover{
+    background-color: rgba(67, 94, 110,0.747);
+  }
