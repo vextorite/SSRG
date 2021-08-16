@@ -1,0 +1,28 @@
+Checking files . . . 
+OK
+Checking files . . . 
+OK
+Uploading base/vectormath.py ...done.
+Uploading casper/vectormath.py ...done.
+Uploading ghost/vectormath.py ...done.
+Query submitted.  Waiting for the server's response.
+http://moss.stanford.edu/results/0/3506615723922
+Checking files . . . 
+OK
+Checking files . . . 
+OK
+Checking files . . . 
+OK
+Checking files . . . 
+OK
+Checking files . . . 
+OK
+Checking files . . . 
+OK
+Checking files . . . 
+OK
+Uploading base/vectormath.py ...done.
+Uploading casper/vectormath.py ...done.
+Uploading ghost/vectormath.py ...done.
+Query submitted.  Waiting for the server's response.
+http://moss.stanford.edu/results/7/5116083785864
