@@ -73,7 +73,6 @@ var templateLocation ="";
 <br></br>
 
 <div className ="submitSection1">
-<div className="submitSectionTitle1">1/4</div>
 <div className="submitLanguageBox">
     <div id="titleBox1" className="submitLanguageBoxTitle">What programming language would you like to submit?</div> 
 <div className="langMain" id="langMainObj">
@@ -110,7 +109,6 @@ var templateLocation ="";
 
 
 <div className ="submitSection1">
-<div className="submitSectionTitle1">2/4</div>
 <div className="submitLanguageBox">
     <div id="titleBox2" className="submitLanguageBoxTitle">Where are submission files located?</div> 
 <div className="DirectoryMain"  id="DirectoryMainObj">
@@ -124,7 +122,6 @@ var templateLocation ="";
 <div className="betweenDivsContainer"><div className="betweenDivs"></div></div>
 
 <div className ="submitSection1">
-<div className="submitSectionTitle1">3/4</div>
 <div className="submitLanguageBox">
     <div id="titleBox3" className="submitLanguageBoxTitle">What is the name your template code file?</div> 
 <div className="templateName"  id="templateNameObj">
@@ -139,7 +136,6 @@ var templateLocation ="";
 <div className="betweenDivsContainer"><div className="betweenDivs"></div></div>
 
 <div className ="submitSection1">
-<div className="submitSectionTitle1">4/4</div>
 <div className="submitLanguageBox">
     <div className="submitLanguageBoxTitle">Please upload your submission archive</div> 
 <div className="fileUpload"  id="fileUploadObj">
