@@ -12,6 +12,11 @@ justify-content: center;
 
 .loginInner{
 text-align: center;
+background-color:  rgba(36, 36, 36, 0.87);
+padding: 10px 10px 10px 10px;
+border-color: rgba(67, 94, 110,0.747);
+border-style: solid;
+border-radius: 10px;
 }
 
 .loginImg{

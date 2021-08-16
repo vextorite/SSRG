@@ -48,7 +48,23 @@ button:focus{
   letter-spacing: 2px;
   text-transform: uppercase;
   font-size:clamp(6px, 4vw, 9px);
-  background-color: var(--mainColor);
+  background-color:  rgb(46, 46, 46);
   text-align: center;
   padding: 4px 0px 5px 0px;
+}
+
+.backBtn{
+  background-color: var(--buttonTitleContrast);
+  color:white;
+  border-color: white;
+  position: absolute;
+  bottom: 30px;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 227px;
+  text-transform: uppercase;
+}
+
+.backBtn:hover{
+  background-color: rgba(67, 94, 110,0.747);
 }

@@ -5,6 +5,7 @@ export default function signUp(props) {
   return (
 
 <div className="loginMain">
+<button onClick={props.back} className="backBtn">Return to home</button>
 <div className="loginInner">
 <div className="loginInputLabel">Username</div>
     <input className ="loginInput"></input>

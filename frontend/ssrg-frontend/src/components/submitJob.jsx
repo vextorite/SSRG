@@ -3,6 +3,18 @@ import "../component-styles/submitJob.css";
 
 export default function SubmitJob(props) {
 
+function setStep1(){
+
+    document.getElementById("langMainObj").style.visibility="visible";
+document.getElementById("langMainObj").style.height="auto";
+document.getElementById("DirectoryMainObj").style.visibility="hidden";
+document.getElementById("DirectoryMainObj").style.height="0px";
+document.getElementById("templateNameObj").style.visibility="hidden";
+document.getElementById("templateNameObj").style.height="0px";
+document.getElementById("fileUploadObj").style.visibility="hidden";
+document.getElementById("fileUploadObj").style.height="0px";
+
+}
 
 function setStep2(){
 document.getElementById("langMainObj").style.visibility="hidden";
@@ -13,7 +25,6 @@ document.getElementById("templateNameObj").style.visibility="hidden";
 document.getElementById("templateNameObj").style.height="0px";
 document.getElementById("fileUploadObj").style.visibility="hidden";
 document.getElementById("fileUploadObj").style.height="0px";
-
 }
 
 function setStep3(){
@@ -66,9 +77,24 @@ var templateLocation ="";
     setStep4();
     }
 
+    
+
+   function refresh(){
+    document.getElementById("titleBox1").innerHTML="What programming language would you like to submit?";
+    document.getElementById("titleBox2").innerHTML="Where are submission files located?";
+    document.getElementById("titleBox3").innerHTML="What is the name your template code file?";
+        setStep1();
+
+    }
+
   return (
 
 <div className="mainSubmission">
+    <div className="resetBtnDiv">
+    <button onClick={()=>refresh()} className="resetBtn">Reset selections</button>
+<button onClick={props.back} className="returnBtn">Return to menu</button>
+
+</div>
     <div><div className="submitPageTitle">Create a new MOSS submission</div>
 <br></br>
 

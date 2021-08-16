@@ -197,3 +197,45 @@ border-color: gray;
 .templateNameConfirm:hover{
 background-color: rgba(67, 94, 110,0.747);
 }
+
+.resetBtnDiv{
+    position: absolute;
+    bottom: 30px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  
+  .resetBtn{
+      float:left;
+      margin: 1px 3px 1px 3px;
+      
+      background-color: var(--buttonTitleContrast);
+      color:white;
+      border-color: white;
+      border-radius: 5px;
+      font-size: 14px;
+      width: 227px;
+      text-transform: uppercase;
+  }
+
+  .returnBtn{
+    float:left;
+    margin: 1px 3px 1px 3px;
+
+    background-color: var(--buttonTitleContrast);
+    color:white;
+    border-color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 227px;
+    text-transform: uppercase;
+}
+
+  .resetBtn:hover{
+    background-color: rgba(67, 94, 110,0.747);
+  }
+
+  .returnBtn:hover{
+    background-color: rgba(67, 94, 110,0.747);
+  }
