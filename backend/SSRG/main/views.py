@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login
+from django.contrib import messages
 from .forms import NewUser
 from .models import Jobs
 
@@ -14,7 +15,9 @@ def registerRequest(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect("main:homepage")
+            #messages.success(request, "Success")
+            return redirect("homepage")
+
     form = NewUser()
-    return render(request = request, template_name="registerTemplateHere", context={'registration':form})
+    return render(request = request, template_name="main/register.html", context={'registration':form})
 
