@@ -1,12 +1,13 @@
 import React,{useState} from "react";
 import "../component-styles/body.css";
 import Buttons from './buttons';
-import Display from './genericDisplay';
-import content from '../content.json';
+import UserGuide from './userGuide.jsx';
 import Login from './login.jsx';
 import SignUp from './signUp.jsx';
 import Start from './start.jsx';
 import SubmitJob from "./submitJob.jsx";
+import JobStatus from "./jobStatus.jsx";
+
 export default function Body() {
     
     const [screen, setScreen] = useState(10);
@@ -18,9 +19,9 @@ switch(screen){
     case 1:
         return <SubmitJob back={()=>setScreen(0)}></SubmitJob>;
     case 2:
-        return <Display returnHome={()=>setScreen(0)} cont1 = {"view job status"} cont2 = {content.skillsPage.section2.join('\n')}></Display>;
+        return <JobStatus back={()=>setScreen(0)}></JobStatus>;
     case 3:
-        return <Display returnHome={()=>setScreen(0)} cont1 = {"user guide"} cont2 = {content.awardsPage.section2.join('\n')}></Display>;
+        return <UserGuide back={()=>setScreen(0)}></UserGuide>;
     case 4:
         return <SignUp back={()=>setScreen(10)} signup={()=>setScreen(1)}></SignUp>;
     case 5:
