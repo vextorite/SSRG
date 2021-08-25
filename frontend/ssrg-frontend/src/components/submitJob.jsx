@@ -1,5 +1,6 @@
 import axios from 'axios';
-import {React,Component, useState} from "react";
+import React, { useState, useRef, useEffect } from "react";
+import ReactDOM from "react-dom";
 import "../component-styles/submitJob.css";
 
 
@@ -90,8 +91,41 @@ var templateLocation ="";
 
     }
 
-
-
+    const useForceUpdate = () => useState()[1];
+    const fileInput = useRef(null);
+    const forceUpdate = useForceUpdate();
+  
+    useEffect(e => {
+      window.addEventListener("keyup", clickFileInput);
+      return () => window.removeEventListener("keyup", clickFileInput);
+    });
+  
+    function clickFileInput(e) {
+      if (fileInput.current.nextSibling.contains(document.activeElement)) {
+        // Bind space to trigger clicking of the button when focused
+        if (e.keyCode === 32) {
+          fileInput.current.click();
+        }
+      }
+    }
+  
+    function onSubmit(e) {
+      e.preventDefault();
+      const data = new FormData(fileInput.current.FormData);
+    }
+  
+    function fileNames() {
+      const { current } = fileInput;
+  
+      if (current && current.files.length > 0) {
+        let messages = [];
+        for (let file of current.files) {
+          messages = messages.concat(<p key={file.name}>{file.name}</p>);
+        }
+        return messages;
+      }
+      return null;
+    }
   return (
 
 <div className="mainSubmission">
@@ -171,11 +205,33 @@ var templateLocation ="";
     <div className="submitLanguageBoxTitle">Please upload your submission archive</div> 
 <div className="fileUpload"  id="fileUploadObj">
 
-
+<div className="App">
+      <form onSubmit={onSubmit}>
+        <input
+        
+          id="file"
+          type="file"
+          ref={fileInput}
+          // The onChange should trigger updates whenever
+          // the value changes?
+          // Try to select a file, then try selecting another one.
+          onChange={forceUpdate}
+          multiple
+        />
+        <label htmlFor="file">
+          <span tabIndex="0" role="button" aria-controls="filename">
+            Upload file{" "}
+          </span>
+        </label>
+        {fileNames()}
+        <br />
+        <button type="submit" className="templateNameConfirm">Start MOSS Submission</button>
+      </form>
+    </div>
 
 <br></br>
 
-<button className="templateNameConfirm">Start MOSS Submission</button>
+
 </div>
 </div>
 <div className="correctAlignment"></div>
