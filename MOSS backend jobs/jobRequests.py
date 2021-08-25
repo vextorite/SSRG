@@ -1,6 +1,8 @@
 import os # used to exceute commands in terminal
 import datetime 
 import random
+import glob
+
 
 class jobRequests:
 
@@ -15,9 +17,31 @@ class jobRequests:
         self.directoryFormat = directoryFormat
         self.baseFile = baseFile
 
+    
+
     #Constructing the shell command needed to contact the moss server
     # TODO: implement as a switch statement    
     def constructMossShellCommand(self):
+        #gonna use it
+        os.system("python3 folderizer.py >>folderizerOut.txt")
+        #os.chdir("/Users/suvanth/Subjects/self learning/MOSS backend jobs/Job/Job")
+        #os.system("pwd")
+        #os.listdir()
+    
+        submissionPathList = glob.glob("/Users/suvanth/Subjects/self learning/MOSS backend jobs/Job/Job/*.cpp")
+        ##for debugging purposes##
+        for x in range(len(submissionPathList)):
+            print(submissionPathList[x])
+
+        ##########################
+     
+
+        ##for debug purposes these are going to be the moss files##
+    
+        #old method
+        #stream = open("")
+        #read_file = stream.read()
+        #exec("folderizer.py")
         if(self.directoryFormat==True) and (len(self.baseFile)>0):
             osCommand = f"perl mossnet.pl -l {self.language} -d -b {self.baseFile}  casper/vectormath.py ghost/vectormath.py >> myMossRun.txt"
         if(self.directoryFormat==True) and (len(self.baseFile)==0):
@@ -54,6 +78,9 @@ class jobRequests:
 
 
 #static for now TODO: pre process vula archives allowing for full job requests
+
+
+
 job = jobRequests("SSRG_team", "python", True, "base/vectormath.py")
 job.summaryDetails()
 job.submitJob()

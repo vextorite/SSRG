@@ -1,28 +1,98 @@
 Checking files . . . 
 OK
+Uploading base/vectormath.py ...done.
+Uploading casper/vectormath.py ...done.
+Uploading ghost/vectormath.py ...done.
+Query submitted.  Waiting for the server's response.
+http://moss.stanford.edu/results/0/8469761010232
 Checking files . . . 
 OK
 Uploading base/vectormath.py ...done.
 Uploading casper/vectormath.py ...done.
 Uploading ghost/vectormath.py ...done.
 Query submitted.  Waiting for the server's response.
-http://moss.stanford.edu/results/0/3506615723922
-Checking files . . . 
-OK
-Checking files . . . 
-OK
-Checking files . . . 
-OK
-Checking files . . . 
-OK
-Checking files . . . 
-OK
-Checking files . . . 
-OK
+http://moss.stanford.edu/results/7/8928807434599
 Checking files . . . 
 OK
 Uploading base/vectormath.py ...done.
 Uploading casper/vectormath.py ...done.
 Uploading ghost/vectormath.py ...done.
 Query submitted.  Waiting for the server's response.
-http://moss.stanford.edu/results/7/5116083785864
+http://moss.stanford.edu/results/5/183572825949
+Checking files . . . 
+OK
+Uploading base/vectormath.py ...done.
+Uploading casper/vectormath.py ...done.
+Uploading ghost/vectormath.py ...done.
+Query submitted.  Waiting for the server's response.
+http://moss.stanford.edu/results/1/8107961782693
+Checking files . . . 
+OK
+Uploading base/vectormath.py ...done.
+Uploading casper/vectormath.py ...done.
+Uploading ghost/vectormath.py ...done.
+Query submitted.  Waiting for the server's response.
+http://moss.stanford.edu/results/9/8905454888913
+Checking files . . . 
+OK
+Uploading base/vectormath.py ...done.
+Uploading casper/vectormath.py ...done.
+Uploading ghost/vectormath.py ...done.
+Query submitted.  Waiting for the server's response.
+http://moss.stanford.edu/results/2/4813645604039
+Checking files . . . 
+OK
+Uploading base/vectormath.py ...done.
+Uploading casper/vectormath.py ...done.
+Uploading ghost/vectormath.py ...done.
+Query submitted.  Waiting for the server's response.
+http://moss.stanford.edu/results/0/4594024525462
+Checking files . . . 
+OK
+Uploading base/vectormath.py ...done.
+Uploading casper/vectormath.py ...done.
+Uploading ghost/vectormath.py ...done.
+Query submitted.  Waiting for the server's response.
+http://moss.stanford.edu/results/6/522019507802
+Checking files . . . 
+OK
+Uploading base/vectormath.py ...done.
+Uploading casper/vectormath.py ...done.
+Uploading ghost/vectormath.py ...done.
+Query submitted.  Waiting for the server's response.
+http://moss.stanford.edu/results/7/1420308089322
+Checking files . . . 
+OK
+Uploading base/vectormath.py ...done.
+Uploading casper/vectormath.py ...done.
+Uploading ghost/vectormath.py ...done.
+Query submitted.  Waiting for the server's response.
+http://moss.stanford.edu/results/0/1872877153541
+Checking files . . . 
+OK
+Uploading base/vectormath.py ...done.
+Uploading casper/vectormath.py ...done.
+Uploading ghost/vectormath.py ...done.
+Query submitted.  Waiting for the server's response.
+http://moss.stanford.edu/results/8/3089808149702
+Checking files . . . 
+OK
+Uploading base/vectormath.py ...done.
+Uploading casper/vectormath.py ...done.
+Uploading ghost/vectormath.py ...done.
+Query submitted.  Waiting for the server's response.
+http://moss.stanford.edu/results/9/1932289955179
+Checking files . . . 
+OK
+Uploading base/vectormath.py ...done.
+Uploading casper/vectormath.py ...done.
+Uploading ghost/vectormath.py ...done.
+Query submitted.  Waiting for the server's response.
+http://moss.stanford.edu/results/0/9197815676193
+Checking files . . . 
+OK
+Uploading base/vectormath.py ...done.
+Uploading casper/vectormath.py ...done.
+Uploading ghost/vectormath.py ...done.
+Query submitted.  Waiting for the server's response.
+http://moss.stanford.edu/results/5/8339135629098

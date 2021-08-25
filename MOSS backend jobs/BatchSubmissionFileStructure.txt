@@ -1,0 +1,33 @@
+Assignment_X (Has already been Unzipped)
+|
+|
+-> SURNAME_0, FIRST_NAME_0(STUDENT_NO_0)
+|  |
+|  -> Submission attachment(s)
+|     |
+|     -> [The actual submission]
+|
+|
+-> SURNAME_1, FIRST_NAME_1(STUDENT_NO_1)
+|  |
+|  -> Submission attachment(s)
+|     |
+|     -> [The actual submission]
+|
+|
+-> SURNAME_2, FIRST_NAME_2(STUDENT_NO_2)
+|  |
+|  -> Submission attachment(s)
+|     |
+|     -> [The actual submission]
+|
+...
+|
+|
+-> SURNAME_N, FIRST_NAME_N(STUDENT_NO_N)
+|  |
+|  -> Submission attachment(s)
+|     |
+|     -> [The actual submission]
+|
+|
