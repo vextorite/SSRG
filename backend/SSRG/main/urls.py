@@ -20,5 +20,7 @@ appName = "main"
 
 urlpatterns = [
      path('', views.homepage, name='homepage'),
-     path('register', views.registerRequest, name = 'register')
+     path('register', views.registerRequest, name = 'register'),
+     path('login', views.loginRequest, name='login'),
+     path('logout', views.logoutRequest, name='logout')
 ]
