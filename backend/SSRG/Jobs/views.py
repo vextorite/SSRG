@@ -8,7 +8,7 @@ from .models import Jobs
 
 # Create your views here.
 def homepage(request):
-    return render(request=request, template_name='main/home.html', context={'jobs': Jobs.objects.all})
+    return render(request=request, template_name='Jobs/home.html', context={'jobs': Jobs.objects.all})
 
 def registerRequest(request):
     if request.method == "POST":
@@ -20,7 +20,7 @@ def registerRequest(request):
             return redirect("homepage")
 
     form = NewUser()
-    return render(request = request, template_name="main/register.html", context={'registration':form})
+    return render(request = request, template_name="Jobs/register.html", context={'registration':form})
 
 def loginRequest(request):
     if request.method == "POST":
@@ -34,7 +34,7 @@ def loginRequest(request):
                 #messages.success(request, "Success")
                 return redirect("homepage")
     form = AuthenticationForm()
-    return render(request=request, template_name="main/login.html", context={'login':form})
+    return render(request=request, template_name="Jobs/login.html", context={'login':form})
 
 def logoutRequest(request):
     logout(request)
