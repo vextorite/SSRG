@@ -1,0 +1,16 @@
+Checking files . . . 
+OK
+Uploading jobOutput/jobOutput/TS2.java ...done.
+Uploading jobOutput/jobOutput/MP0.java ...done.
+Uploading jobOutput/jobOutput/MP1.java ...done.
+Uploading jobOutput/jobOutput/TS3.java ...done.
+Uploading jobOutput/jobOutput/S2.java ...done.
+Uploading jobOutput/jobOutput/S3.java ...done.
+Uploading jobOutput/jobOutput/S0.java ...done.
+Uploading jobOutput/jobOutput/S1.java ...done.
+Uploading jobOutput/jobOutput/TS0.java ...done.
+Uploading jobOutput/jobOutput/MP2.java ...done.
+Uploading jobOutput/jobOutput/MP3.java ...done.
+Uploading jobOutput/jobOutput/TS1.java ...done.
+Query submitted.  Waiting for the server's response.
+http://moss.stanford.edu/results/3/7686749753515

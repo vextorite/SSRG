@@ -1,5 +1,8 @@
-import {React, useState} from "react";
+import axios from 'axios';
+import {React,Component, useState} from "react";
 import "../component-styles/submitJob.css";
+
+
 
 export default function SubmitJob(props) {
 
@@ -87,6 +90,8 @@ var templateLocation ="";
 
     }
 
+
+
   return (
 
 <div className="mainSubmission">
@@ -166,7 +171,7 @@ var templateLocation ="";
     <div className="submitLanguageBoxTitle">Please upload your submission archive</div> 
 <div className="fileUpload"  id="fileUploadObj">
 
-do upload stuff here
+
 
 <br></br>
 

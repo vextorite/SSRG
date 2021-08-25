@@ -1,5 +1,5 @@
 import {React, useState} from "react";
-import "../component-styles/jobStatus.css";
+import "../component-styles/jobStatusDisplay.css";
 
 export default function UserGuide(props) {
 
