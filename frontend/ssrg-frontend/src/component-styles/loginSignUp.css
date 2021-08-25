@@ -81,6 +81,10 @@ border-style: solid;
     border-color: rgba(0,0,0,0);
 }
 
+.signUpButton:hover{
+    color:  rgb(120, 197, 241);
+}
+
 .backBtn{
     background-color: var(--buttonTitleContrast);
     color:white;
