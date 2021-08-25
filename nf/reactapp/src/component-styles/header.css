@@ -1,0 +1,24 @@
+.Header{
+    background-color: var(--mainColor2);
+    color:var(--contrastColor);
+    padding-top: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  .headShotImg{
+    height: 100px;
+    padding-bottom: 7px;
+
+  }
+
+ .title{
+     padding: 1px 0px 1px 0px;
+     text-transform: uppercase;
+     margin-top: 10px;
+     /*background-color: var(--mainColor);*/
+     background-color: rgb(46, 46, 46);
+     font-size:clamp(8px, 4vw, 11px);
+     letter-spacing: 2px;
+ }
+ 
