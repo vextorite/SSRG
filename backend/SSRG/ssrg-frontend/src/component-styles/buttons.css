@@ -1,0 +1,46 @@
+.menuButton{
+    height:90px;
+    width: 80vw;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border-width: 2px;
+
+   background-color: var(--buttonTitleContrast);
+    color: var(--contrastColor);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: "Oswald";
+border-color: rgb(114, 114, 114);
+}
+
+.menuButton:hover{
+    background-color: rgba(67, 94, 110,0.747);
+}
+
+.buttons{
+overflow: auto;
+max-height:95%;
+}
+
+.buttonImg{
+    max-height: 40px;
+    max-width: 40px;
+    padding-bottom: 5px;
+}
+
+.titleText{
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: "Oswald";
+    color: var(--contrastColor);
+    text-align: center;
+    border-radius: 6px;
+    border-width: 2px;
+height: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+}

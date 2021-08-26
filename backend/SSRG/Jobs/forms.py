@@ -18,7 +18,7 @@ class NewUser(UserCreationForm):
         return user
 
 
-class submitJob(forms.Form):
-    language = forms.CharField(widget=forms.Select(choices=LANGUAGE_CHOICES), required=True)
-    files = forms.FileField(required=True)
-    baseFile = forms.CharField(required=False)
+class SubmitJob(forms.ModelForm):
+    class Meta:
+        model = Jobs
+        fields = ['files', 'language', 'baseFile']
