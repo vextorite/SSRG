@@ -1,0 +1,8 @@
+
+<h2> Submit a Job</h2>
+<form action = "{% url 'new'%}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{submission.as_p}}
+    <button class = "button" type="submit"> Submit</button>
+</form>
+

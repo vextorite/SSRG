@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login,logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
-from .forms import NewUser
+from .forms import NewUser, SubmitJob
 from .models import Jobs
 
 # Create your views here.
@@ -39,3 +39,16 @@ def loginRequest(request):
 def logoutRequest(request):
     logout(request)
     return redirect("homepage")
+
+def newJob(request):
+    #form = SubmitJob()
+    if request.method == 'POST':
+        form = SubmitJob(request.POST, request.FILES)
+        if form.is_valid():
+            job = form.save(commit=False)
+            form.instance.user = request.user
+            job.save()
+            return redirect("homepage")
+    else:
+        form = SubmitJob()
+    return render(request=request, template_name="Jobs/newJob.html", context={'submission': form})

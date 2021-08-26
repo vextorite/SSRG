@@ -3,7 +3,7 @@ from django.forms import ModelForm
 from django.contrib.auth.models import User
 
 # Create your models here.
-LANGUAGE_CHOICES = [('java', 'Java',), ('py', 'Python'), ('cpp', 'C++')]
+LANGUAGE_CHOICES = [('java', 'Java'), ('py', 'Python'), ('cpp', 'C++')]
 
 class Jobs(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -15,8 +15,3 @@ class Jobs(models.Model):
 
     def __str__(self):
         return self.user.username+"["+str(self.uploadDate)+"]"
-
-class JobForm(ModelForm):
-    class Meta:
-        model = Jobs
-        fields = ['language', 'files', 'baseFile']
