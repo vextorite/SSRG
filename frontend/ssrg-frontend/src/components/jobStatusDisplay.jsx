@@ -1,14 +1,11 @@
 import {React, useState} from "react";
 import "../component-styles/jobStatusDisplay.css";
+import ReportViewer from "./reactReportViewer.jsx";
+
 
 export default function JobStatusDisplay(props) {
     const [mode, setMode] = useState(false);
 
-    function getRandomInt(min, max) {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-    }
 
 var card= ("Ecard"+props.id);
 var content= ("Econtent"+props.id);
@@ -28,7 +25,14 @@ var control= ("EExpandContract"+props.id);
              break;
         }
       }
-
+function reportViewer(){
+  if (!props.state.localeCompare("complete")){
+    return <ReportViewer></ReportViewer>;
+  }
+  else{
+    return "No Job Report Available";
+  }
+}
 
       if (mode){
         return (
@@ -37,10 +41,17 @@ var control= ("EExpandContract"+props.id);
         <div className="CardHeader">
       <div className="CardHeadingLeft"><div className={props.state}></div></div> 
       <div className="CardHeadingMid"><div className="headingDivInner">Job #{props.refn}</div> </div>
-      <div className="CardHeadingRight" ><button id={control} onClick={()=>setMode(!mode)}className="Expand">+</button></div> 
+      <div className="CardHeadingRight" ><button id={control} onClick={()=>setMode(!mode)}className="Expand">-</button></div> 
       </div>
       <div className="CardContent" id={content}>
 
+     <div className="reportTitle">{props.heading}</div> 
+     <div className="reportContent">{props.content}</div> 
+
+    
+     <div className="reportPDFViewer"> 
+  {reportViewer()}
+     </div> 
 
       </div>
 
