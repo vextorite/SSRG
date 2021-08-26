@@ -1,6 +1,8 @@
 =============================Extracting Student Folders=====================================================
 Unzip Failed. Reason: patool can not unpack
-patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/__pycache__/helloWorld.cpython-39.pyc: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/__pycache__/helloWorld.cpython-39.pyc' (mime-type is `application/x-python-code')
+patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/__pycache__/proccessor.cpython-39.pyc: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/__pycache__/proccessor.cpython-39.pyc' (mime-type is `application/x-python-code')
+Unzip Failed. Reason: patool can not unpack
+patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/__pycache__/reportGenerator.cpython-39.pyc: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/__pycache__/reportGenerator.cpython-39.pyc' (mime-type is `application/x-python-code')
 Unzip Failed. Reason: patool can not unpack
 patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/__pycache__/mailNotificationSender.cpython-39.pyc: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/__pycache__/mailNotificationSender.cpython-39.pyc' (mime-type is `application/x-python-code')
 Unzip Failed. Reason: patool can not unpack
@@ -21,30 +23,6 @@ Unzip Failed. Reason: patool can not unpack
 patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobArchive/__MACOSX/ATest_0/._Folder_1, Test_1(FOLDER001).zip: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobArchive/__MACOSX/ATest_0/._Folder_1, Test_1(FOLDER001).zip: File is not a zip file
 Unzip Failed. Reason: patool can not unpack
 patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobArchive/ATest_0/.DS_Store: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobArchive/ATest_0/.DS_Store'
-Unzip Failed. Reason: patool can not unpack
-patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/TS2.java: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/TS2.java'
-Unzip Failed. Reason: patool can not unpack
-patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/MP0.java: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/MP0.java'
-Unzip Failed. Reason: patool can not unpack
-patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/MP1.java: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/MP1.java'
-Unzip Failed. Reason: patool can not unpack
-patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/TS3.java: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/TS3.java'
-Unzip Failed. Reason: patool can not unpack
-patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/S2.java: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/S2.java'
-Unzip Failed. Reason: patool can not unpack
-patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/S3.java: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/S3.java'
-Unzip Failed. Reason: patool can not unpack
-patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/S0.java: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/S0.java'
-Unzip Failed. Reason: patool can not unpack
-patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/S1.java: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/S1.java'
-Unzip Failed. Reason: patool can not unpack
-patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/TS0.java: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/TS0.java'
-Unzip Failed. Reason: patool can not unpack
-patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/MP2.java: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/MP2.java'
-Unzip Failed. Reason: patool can not unpack
-patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/MP3.java: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/MP3.java'
-Unzip Failed. Reason: patool can not unpack
-patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/TS1.java: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/TS1.java'
 Unzip Failed. Reason: patool can not unpack
 patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/Folder_3, Test_3(FOLDER003)/.DS_Store: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/Folder_3, Test_3(FOLDER003)/.DS_Store'
 Unzip Failed. Reason: patool can not unpack
@@ -118,16 +96,4 @@ patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/job
 Unzip Failed. Reason: patool can not unpack
 patool error: error extracting /Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/Folder_0, Test_0(FOLDER000)/TS0.java: unknown archive format for file `/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/Folder_0, Test_0(FOLDER000)/TS0.java'
 =================================Pulling out code=========================================================
-Failed to move file> Reason: Destination path '/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/TS3.java' already exists
-Failed to move file> Reason: Destination path '/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/S3.java' already exists
-Failed to move file> Reason: Destination path '/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/MP3.java' already exists
-Failed to move file> Reason: Destination path '/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/MP1.java' already exists
-Failed to move file> Reason: Destination path '/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/S1.java' already exists
-Failed to move file> Reason: Destination path '/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/TS1.java' already exists
-Failed to move file> Reason: Destination path '/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/TS2.java' already exists
-Failed to move file> Reason: Destination path '/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/S2.java' already exists
-Failed to move file> Reason: Destination path '/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/MP2.java' already exists
-Failed to move file> Reason: Destination path '/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/MP0.java' already exists
-Failed to move file> Reason: Destination path '/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/S0.java' already exists
-Failed to move file> Reason: Destination path '/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput/jobOutput/TS0.java' already exists
 =================================Cleaning Up Folders=========================================================

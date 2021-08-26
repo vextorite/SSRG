@@ -4,6 +4,7 @@ import glob # aids in constructing submission concatenated file paths for MOSS s
 import pdfkit # module to save webpage url as pdf - pip install
 from mailNotificationSender import sendMail
 from contextlib import contextmanager
+from reportGenerator import generateReport
 
 @contextmanager
 def suppress_stdout(): # called to prevent console output
@@ -59,10 +60,11 @@ class jobRequests:
             last_line = line
         with suppress_stdout():
             exportPath = f"Exports/{self.userID}_test.pdf"
-            pdfkit.from_url(last_line, exportPath)
+            generateReport(last_line, exportPath)
+            #pdfkit.from_url(last_line, exportPath)
         sendMail(self.userEmail, True, exportPath)
        
 
 #SANELE IMPORTANT INFO HOW TO CREATE A JOB OBJ AND SEND IT OFF
-job = jobRequests("SSRG_0", "java", False, "", "ramruthen.suvanth@gmail.com")
+job = jobRequests("SSRG_0", "java", False, "", "rmrsuv002@myuct.ac.za")
 job.submitJob()
