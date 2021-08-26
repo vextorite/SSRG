@@ -60,9 +60,14 @@ var root = true;
 var templateLocation ="";
 
  function setLang(lang){
-    language=lang;
-    document.getElementById("titleBox1").innerHTML="Programming language: "+language;
-    setStep2();
+   if (!language.localeCompare("")){
+      language=lang;
+   }
+   else{
+    language=language+", "+lang;
+   }
+    
+    document.getElementById("titleBox1").innerHTML="Programming language(s): "+language;
  }
 
  function setRoot(state){
@@ -77,13 +82,14 @@ var templateLocation ="";
 
  function setTemplateLocation(location){
      templateLocation=location;
-     document.getElementById("titleBox3").innerHTML="The template file is: "+templateLocation;
+     document.getElementById("titleBox3").innerHTML="Template file: "+templateLocation;
     setStep4();
     }
 
     
 
    function refresh(){
+     language="";
     document.getElementById("titleBox1").innerHTML="What programming language would you like to submit?";
     document.getElementById("titleBox2").innerHTML="Where are submission files located?";
     document.getElementById("titleBox3").innerHTML="What is the name your template code file?";
@@ -126,6 +132,35 @@ var templateLocation ="";
       }
       return null;
     }
+
+    function submitProcessing(){
+      if (!fileInput.current.value.localeCompare("")){
+        alert("Please upload a file for submission.");
+      }
+      else{
+      alert("DEMO Version - Submission successful, but job processing is not yet integrated. You will be redirected to the menu where you may view simulated job statuses.");
+      props.back();
+      }
+    }
+
+    function confirmLanguage(){
+        if (!language.localeCompare("")){
+          alert("Please select one or more programming languages before clicking Confirm.");
+        }
+        else{
+          setStep2();
+        }
+    }
+
+    function templateProcessing(){
+      if (!document.getElementById("tempLoc").value.localeCompare("")){
+        alert("Please input the name of your template file or type 'NA' if not applicable before clicking Confirm.");
+      }
+      else{
+      setTemplateLocation(document.getElementById("tempLoc").value)
+      }
+    }
+
   return (
 
 <div className="mainSubmission">
@@ -141,30 +176,31 @@ var templateLocation ="";
 <div className="submitLanguageBox">
     <div id="titleBox1" className="submitLanguageBoxTitle">What programming language would you like to submit?</div> 
 <div className="langMain" id="langMainObj">
+<button onClick={()=>setLang("Ada")} className="pLang">Ada</button>
+<button onClick={()=>setLang("Ascii")} className="pLang">Ascii</button>
+<button onClick={()=>setLang("A8086")} className="pLang">A8086</button>
 <button onClick={()=>setLang("C")} className="pLang">C</button>
 <button onClick={()=>setLang("CC")} className="pLang">CC</button>
-<button onClick={()=>setLang("Java")} className="pLang">Java</button>
-<button onClick={()=>setLang("ML")} className="pLang">ML</button>
-<button onClick={()=>setLang("Pascal")} className="pLang">Pascal</button>
-<button onClick={()=>setLang("Ada")} className="pLang">Ada</button>
-<button onClick={()=>setLang("Lisp")} className="pLang">Lisp</button>
-<button onClick={()=>setLang("Schema")} className="pLang">Schema</button>
-<button onClick={()=>setLang("Haskell")} className="pLang">Haskell</button>
-<button onClick={()=>setLang("Fortran")} className="pLang">Fortran</button>
-<button onClick={()=>setLang("Ascii")} className="pLang">Ascii</button>
-<button onClick={()=>setLang("VHDL")} className="pLang">VHDL</button>
-<button onClick={()=>setLang("Perl")} className="pLang">Perl</button>
-<button onClick={()=>setLang("Matlab")} className="pLang">Matlab</button>
-<button onClick={()=>setLang("Python")} className="pLang">Python</button>
-<button onClick={()=>setLang("Mips")} className="pLang">Mips</button>
-<button onClick={()=>setLang("Prolog")} className="pLang">Prolog</button>
-<button onClick={()=>setLang("Spice")} className="pLang">Spice</button>
-<button onClick={()=>setLang("Visual Basic")} className="pLang">Visual Basic</button>
 <button onClick={()=>setLang("C#")} className="pLang">C#</button>
-<button onClick={()=>setLang("Modula2")} className="pLang">Modula2</button>
-<button onClick={()=>setLang("A8086")} className="pLang">A8086</button>
+<button onClick={()=>setLang("Fortran")} className="pLang">Fortran</button>
+<button onClick={()=>setLang("Haskell")} className="pLang">Haskell</button>
+<button onClick={()=>setLang("Java")} className="pLang">Java</button>
 <button onClick={()=>setLang("JavaScript")} className="pLang">JavaScript</button>
+<button onClick={()=>setLang("Lisp")} className="pLang">Lisp</button>
+<button onClick={()=>setLang("Matlab")} className="pLang">Matlab</button>
+<button onClick={()=>setLang("Mips")} className="pLang">Mips</button>
+<button onClick={()=>setLang("ML")} className="pLang">ML</button>
+<button onClick={()=>setLang("Modula2")} className="pLang">Modula2</button>
+<button onClick={()=>setLang("Pascal")} className="pLang">Pascal</button>
+<button onClick={()=>setLang("Perl")} className="pLang">Perl</button>
 <button onClick={()=>setLang("PLSQL")} className="pLang">PLSQL</button>
+<button onClick={()=>setLang("Prolog")} className="pLang">Prolog</button>
+<button onClick={()=>setLang("Python")} className="pLang">Python</button>
+<button onClick={()=>setLang("Schema")} className="pLang">Schema</button>
+<button onClick={()=>setLang("Spice")} className="pLang">Spice</button>
+<button onClick={()=>setLang("VHDL")} className="pLang">VHDL</button>
+<button onClick={()=>setLang("Visual Basic")} className="pLang">Visual Basic</button>
+<button onClick={()=>confirmLanguage()} className="pLangConfirm">Confirm</button>
 </div>
 </div>
 <div className="correctAlignment"></div>
@@ -192,7 +228,7 @@ var templateLocation ="";
 <div className="templateName"  id="templateNameObj">
 
 <input id="tempLoc" className="templateNameInput"></input>
-<button onClick={()=>setTemplateLocation(document.getElementById("tempLoc").value)} className="templateNameConfirm">Confirm</button>
+<button onClick={()=>templateProcessing()} className="templateNameConfirm">Confirm</button>
 </div>
 </div>
 <div className="correctAlignment"></div>
@@ -225,7 +261,7 @@ var templateLocation ="";
         </label>
         {fileNames()}
         <br />
-        <button type="submit" className="templateNameConfirm">Start MOSS Submission</button>
+        <button onClick={()=>submitProcessing()}type="submit" className="templateNameConfirm">Start MOSS Submission</button>
       </form>
     </div>
 
