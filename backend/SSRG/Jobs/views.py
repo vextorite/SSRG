@@ -51,10 +51,14 @@ def newJob(request):
             form.instance.user = request.user
             
             arguments = [form.instance.user.username, 
-                        form.instance.language, 
+                        form.instance.language,
+                        form.instance.baseFile, 
                         form.instance.user.email]
-            run([sys.executable,"//home//vextorite//Documents//Capstone-SSRG//ssrg-ndxsas021-hlnsan005-rmrsuv002//MossBackendJobs//test.py"])
             job.save()
+            #run([sys.executable,
+            #"//home//vextorite//Documents//Capstone-SSRG//ssrg-ndxsas021-hlnsan005-rmrsuv002//MossBackendJobs//test.py", 
+            #arguments[0], arguments[1], arguments[2], arguments[3]])
+            
             return redirect("homepage")
     else:
         form = SubmitJob()

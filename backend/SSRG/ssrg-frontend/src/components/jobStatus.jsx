@@ -7,7 +7,7 @@ export default function JobStatus(props) {
   return (
 
 <div className="mainJobs">
-<button onClick={props.back} className="backBtn">Return to home</button>
+<button onClick={props.back} className="backBtn">Return to menu</button>
 <div>
 <div className="submitPageTitle">View job statuses</div>
 <div className="displayComponentPanel"> 

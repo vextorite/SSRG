@@ -2,6 +2,11 @@ import React from "react";
 import "../component-styles/loginSignUp.css";
 import signUpImg from "../signup.png";
 export default function signUp(props) {
+
+  function signUpFunction(){
+      alert("DEMO Version - database integration not active. Sign up is not possible at present.")
+  }
+
   return (
 
 <div className="loginMain">
@@ -13,13 +18,17 @@ export default function signUp(props) {
 <div className="loginInputLabel">Username</div>
     <input className ="loginInput"></input>
     <br></br>
+    <div className="loginInputLabel">email address</div>
+    <input type="password" className ="loginInput" ></input>
+    <br></br>
+  
     <div className="loginInputLabel">Password</div>
     <input type="password" className ="loginInput" ></input>
     <br></br>
     <div className="loginInputLabel">Confirm Password</div>
     <input type="password" className ="loginInput" ></input>
     <br></br>
-    <button onClick={props.signup} className="loginButton"><img className="loginImg" src={signUpImg}></img>
+    <button onClick={()=>signUpFunction()} className="loginButton"><img className="loginImg" src={signUpImg}></img>
     <br></br>
 Sign Up
  </button>

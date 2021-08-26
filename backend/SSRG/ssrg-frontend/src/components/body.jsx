@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import "../component-styles/body.css";
 import Buttons from './buttons';
-import UserGuide from './userGuide.jsx';
+import Settings from './settings.jsx';
 import Login from './login.jsx';
 import SignUp from './signUp.jsx';
 import Start from './start.jsx';
@@ -21,7 +21,7 @@ switch(screen){
     case 2:
         return <JobStatus back={()=>setScreen(0)}></JobStatus>;
     case 3:
-        return <UserGuide back={()=>setScreen(0)}></UserGuide>;
+        return <Settings back={()=>setScreen(0)}></Settings>;
     case 4:
         return <SignUp back={()=>setScreen(10)} signup={()=>setScreen(1)}></SignUp>;
     case 5:
