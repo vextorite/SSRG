@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <div className="Header">
 
-    <img alt="UCT CS Dept Logo" className = "headShotImg" src = {logo}  ></img><br></br>
+   <a href="https://demo.ssrg.online/"><img alt="SSRG Logo" className = "headShotImg" src = {logo}  ></img></a><br></br>
 
     <b>Automated Software Similarity
 Report Generator </b>
