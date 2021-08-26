@@ -6,8 +6,8 @@ from pyunpack import Archive
 from shutil import copyfile
 
 
-rootdir = '/Users/suvanth/Subjects/final/MossBackendJobs'
-outputDir = '/Users/suvanth/Subjects/final/MossBackendJobs/jobOutput'
+rootdir = '../MossBackendJobs'
+outputDir = '../MossBackendJobs/jobOutput'
 
 
 if len(sys.argv) > 2:

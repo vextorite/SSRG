@@ -12,16 +12,15 @@ def sendMail(recipient, status, exportFilePath):
     msg['To']=recipient
     # we will have status here to decide what html to send done using ifs
     if(status==True):
-        msg.add_alternative("""<h1>This job has been completed</h1>
-         <p>please find your report attached below</p>""")
+        msg.add_alternative("""This job has been completed
+         please find your generated report attached below""")
         with open(exportFilePath, 'rb') as f:
             file_data = f.read()
             file_name = f.name
         msg.add_attachment(file_data, maintype='application', subtype= 'octet-stream', filename= file_name)
     
     else:
-        msg.add_alternative("""<h1>This job is processing</h1>
-         <p>please find your report attached below</p>""")
+        msg.add_alternative("""This job is processing""")
 
     
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
