@@ -12,7 +12,7 @@ export default function Buttons(props) {
 <br></br>
 <button onClick={props.skills} className="menuButton"><img className="buttonImg" src={report}></img><br></br>View job status</button>
 <br></br>
-<button onClick={props.awards} className="menuButton"><img className="buttonImg" src={guide}></img><br></br>User guide</button>
+<button onClick={props.awards} className="menuButton"><img className="buttonImg" src={guide}></img><br></br>User Options</button>
  </div>
   
   );
