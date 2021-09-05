@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "./static/css/main.07055f88.chunk.css",
+    "main.js": "./static/js/main.17c203e4.chunk.js",
+    "main.js.map": "./static/js/main.17c203e4.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.fe86e3e8.js",
+    "runtime-main.js.map": "./static/js/runtime-main.fe86e3e8.js.map",
+    "static/js/2.0175275f.chunk.js": "./static/js/2.0175275f.chunk.js",
+    "static/js/2.0175275f.chunk.js.map": "./static/js/2.0175275f.chunk.js.map",
+    "static/js/3.3c9a367c.chunk.js": "./static/js/3.3c9a367c.chunk.js",
+    "static/js/3.3c9a367c.chunk.js.map": "./static/js/3.3c9a367c.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.07055f88.chunk.css.map": "./static/css/main.07055f88.chunk.css.map",
+    "static/js/2.0175275f.chunk.js.LICENSE.txt": "./static/js/2.0175275f.chunk.js.LICENSE.txt",
+    "static/media/App.css": "./static/media/Oswald-Light.5b37a8f3.ttf",
+    "static/media/SSRG_logo.29fadaec.svg": "./static/media/SSRG_logo.29fadaec.svg",
+    "static/media/Sample-1.87697776.jpg": "./static/media/Sample-1.87697776.jpg",
+    "static/media/Sample-2.fa60c0e3.jpg": "./static/media/Sample-2.fa60c0e3.jpg",
+    "static/media/body.css": "./static/media/tech1.8c8aaf45.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fe86e3e8.js",
+    "static/js/2.0175275f.chunk.js",
+    "static/css/main.07055f88.chunk.css",
+    "static/js/main.17c203e4.chunk.js"
+  ]
+}
