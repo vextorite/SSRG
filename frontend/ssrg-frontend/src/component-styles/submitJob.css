@@ -185,24 +185,21 @@ width: 150px;
 
 .DirectoryMain{
     background-color: var(--mainColor2);
-    visibility: hidden;
-    height: 0px;
+   
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
 }
 
 .templateName{
     background-color: var(--mainColor2);
-    visibility: hidden;
-    height: 0px;
+    
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
 }
 
 .fileUpload{
     background-color: var(--mainColor2);
-    visibility: hidden;
-    height: 0px;
+   
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
 }

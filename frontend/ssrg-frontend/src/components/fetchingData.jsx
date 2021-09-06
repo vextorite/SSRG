@@ -9,9 +9,9 @@ export default function FetchingData(props) {
     useEffect(()=> {
         loadData();
     },[]);
-    
+
     const loadData = async () =>{
-        await fetch("http://localhost:5555")
+        await fetch("http://127.0.0.1:8000/api/")
         .then(response => response.json())
         .then(receivedData => setData(receivedData))
     }
@@ -30,7 +30,7 @@ show fetched data here
 <br></br>
 
 {data.map(user => (
-<div key={user.id}>{user.name}</div>
+<div key={user.id}>{user.language}</div>
 ))}
 
 
