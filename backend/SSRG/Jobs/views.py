@@ -57,7 +57,7 @@ def newJob(request):
             job.save()
             #run([sys.executable,
             #"//home//vextorite//Documents//Capstone-SSRG//ssrg-ndxsas021-hlnsan005-rmrsuv002//MossBackendJobs//test.py", 
-            #arguments[0], arguments[1], arguments[2], arguments[3]])
+            # arguments[0], arguments[1], arguments[2], arguments[3]])
             
             return redirect("homepage")
     else:
