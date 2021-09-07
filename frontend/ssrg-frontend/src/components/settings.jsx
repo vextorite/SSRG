@@ -1,7 +1,28 @@
 import {React, useState} from "react";
-import "../component-styles/jobStatusDisplay.css";
+import "../component-styles/settings.css";
+import SettingsMenu from "./settingsMenu.jsx";
+import SettingsChangeEmail from "./settingsChangeEmail.jsx";
+import SettingsChangePassword from "./settingsChangePassword.jsx";
 
 export default function Settings(props) {
+
+
+const [currentScreen, setScreen]= useState(0);
+
+function screenToShow(){
+switch(currentScreen){
+  case 0:
+    return <SettingsMenu mail={()=>setScreen(1)} pass={()=>setScreen(2)}></SettingsMenu>;
+    break;
+  case 1:
+    return <SettingsChangeEmail back={()=>setScreen(0)}></SettingsChangeEmail>;
+    break;
+  case 2:
+    return <SettingsChangePassword back={()=>setScreen(0)}></SettingsChangePassword>;
+    break;
+
+}
+}
 
   return (
 
@@ -10,12 +31,10 @@ export default function Settings(props) {
 <div>
 <div className="submitPageTitle">USER options</div>
 <br></br>
-<p> Demo: This functionality is not integrated yet. 
-  <br></br>It will be available in the final version and will allow 
-  users to change account settings such as their email address and upload 
-  preferences.
 
-</p>
+
+{screenToShow()}
+
 </div>
 </div>
   

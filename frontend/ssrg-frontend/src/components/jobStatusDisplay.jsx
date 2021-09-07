@@ -40,12 +40,12 @@ function reportViewer(){
       <div className="CardOutline" id={card}>
         <div className="CardHeader">
       <div className="CardHeadingLeft"><div className={props.state}></div></div> 
-      <div className="CardHeadingMid"><div className="headingDivInner">Job #{props.refn}</div> </div>
+      <div className="CardHeadingMid"><div className="headingDivInner">Job #{props.refn} </div> </div>
       <div className="CardHeadingRight" ><button id={control} onClick={()=>setMode(!mode)}className="Expand">-</button></div> 
       </div>
       <div className="CardContent" id={content}>
 
-     <div className="reportTitle">{props.heading}</div> 
+     <div className="reportTitle">{props.heading} <br></br> {props.dateTime}</div> 
      <div className="reportContent">{props.content}</div> 
 
     
@@ -66,7 +66,7 @@ function reportViewer(){
           <div className="CardOutline" id={card}>
             <div className="CardHeader">
           <div className="CardHeadingLeft"><div id="colorIdentifier" className={props.state}></div></div> 
-          <div className="CardHeadingMid"><div className="headingDivInner">Job #{props.refn}</div> </div>
+          <div className="CardHeadingMid"><div className="headingDivInner">Job #{props.refn} - {props.dateTime}</div> </div>
           <div className="CardHeadingRight" ><button id={control} onClick={()=>setMode(!mode)}className="Expand">+</button></div> 
           </div>
           <div className="CardContent" id={content}></div>

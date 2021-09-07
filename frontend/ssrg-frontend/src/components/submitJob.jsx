@@ -60,14 +60,8 @@ var root = true;
 var templateLocation ="";
 
  function setLang(lang){
-   if (!language.localeCompare("")){
       language=lang;
-   }
-   else{
-    language=language+", "+lang;
-   }
-    
-    document.getElementById("titleBox1").innerHTML="Programming language(s): "+language;
+    document.getElementById("titleBox1").innerHTML="Programming language: "+language;
  }
 
  function setRoot(state){
@@ -77,13 +71,13 @@ var templateLocation ="";
     else{
         document.getElementById("titleBox2").innerHTML="Submission files are in folders";
     }
-    setStep3();
+  //  setStep3();
  }
 
  function setTemplateLocation(location){
      templateLocation=location;
      document.getElementById("titleBox3").innerHTML="Template file: "+templateLocation;
-    setStep4();
+    //setStep4();
     }
 
     
@@ -91,9 +85,9 @@ var templateLocation ="";
    function refresh(){
      language="";
     document.getElementById("titleBox1").innerHTML="What programming language would you like to submit?";
-    document.getElementById("titleBox2").innerHTML="Where are submission files located?";
+    document.getElementById("tempLoc").value="";
     document.getElementById("titleBox3").innerHTML="What is the name your template code file?";
-        setStep1();
+       // setStep1();
 
     }
 
@@ -200,41 +194,25 @@ var templateLocation ="";
 <button onClick={()=>setLang("Spice")} className="pLang">Spice</button>
 <button onClick={()=>setLang("VHDL")} className="pLang">VHDL</button>
 <button onClick={()=>setLang("Visual Basic")} className="pLang">Visual Basic</button>
-<button onClick={()=>confirmLanguage()} className="pLangConfirm">Confirm</button>
+
 </div>
 </div>
 <div className="correctAlignment"></div>
 </div>
 
-<div className="betweenDivsContainer"><div className="betweenDivs"></div></div>
 
 
-<div className ="submitSection1">
-<div className="submitLanguageBox">
-    <div id="titleBox2" className="submitLanguageBoxTitle">Where are submission files located?</div> 
-<div className="DirectoryMain"  id="DirectoryMainObj">
-<button onClick={()=>setRoot(false)} className="locationButton1">Individual folders</button>
-<button onClick={()=>setRoot(true)} className="locationButton2">Root Directory</button>
-</div>
-</div>
-<div className="correctAlignment"></div>
-</div>
-
-<div className="betweenDivsContainer"><div className="betweenDivs"></div></div>
 
 <div className ="submitSection1">
 <div className="submitLanguageBox">
-    <div id="titleBox3" className="submitLanguageBoxTitle">What is the name your template code file?</div> 
+    <div id="titleBox3" className="submitLanguageBoxTitle">What is the name of your template code file?</div> 
 <div className="templateName"  id="templateNameObj">
 
 <input id="tempLoc" className="templateNameInput"></input>
-<button onClick={()=>templateProcessing()} className="templateNameConfirm">Confirm</button>
 </div>
 </div>
 <div className="correctAlignment"></div>
 </div>
-
-<div className="betweenDivsContainer"><div className="betweenDivs"></div></div>
 
 <div className ="submitSection1">
 <div className="submitLanguageBox">

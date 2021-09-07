@@ -4,7 +4,7 @@ import loginImg from '../login.png';
 export default function login(props) {
 
   function loginInFunction(){
-    alert("DEMO Version - database integration not active. Login authentication is not enabled but generic user passthrough is allowed.");
+
     props.login();
 }
 

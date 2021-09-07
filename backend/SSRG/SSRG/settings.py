@@ -41,8 +41,11 @@ INSTALLED_APPS = [
     'Jobs.apps.MainConfig',
     'crispy_forms',
     'rest_framework',
-    'Jobs_api'
+    'Jobs_api',
+    'corsheaders'
 ]
+
+CORS_ORIGIN_ALLOW_ALL=True
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -55,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'SSRG.urls'
