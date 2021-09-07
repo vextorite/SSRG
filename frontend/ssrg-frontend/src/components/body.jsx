@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import "../component-styles/body.css";
 import Buttons from './buttons';
-import Settings from './fetchingData.jsx';
+import Settings from './settings.jsx';
 import Login from './login.jsx';
 import SignUp from './signUp.jsx';
 import Start from './start.jsx';
