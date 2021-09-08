@@ -1,5 +1,6 @@
 import {React, useState, useEffect} from "react";
 import "../component-styles/jobStatusDisplay.css";
+import JobComponent from './jobStatusDisplay.jsx';
 
 export default function FetchingData(props) {
 
@@ -11,12 +12,11 @@ export default function FetchingData(props) {
     },[]);
 
     const loadData = async () =>{
-        await fetch("http://127.0.0.1:8000/api/")
+        await fetch("http://127.0.0.1:8000/api/jobstatus/done")
         .then(response => response.json())
         .then(receivedData => setData(receivedData))
     }
 
-    console.log(data);
   return (
 
 
@@ -30,7 +30,7 @@ show fetched data here
 <br></br>
 
 {data.map(user => (
-<div key={user.id}>{user.language}</div>
+<JobComponent key={user.id} Uid={user.id} dateTime={user.uploadDate} state="complete" refn={user.id}></JobComponent>
 ))}
 
 

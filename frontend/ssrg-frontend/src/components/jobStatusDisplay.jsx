@@ -46,7 +46,11 @@ function reportViewer(){
       <div className="CardContent" id={content}>
 
      <div className="reportTitle">{props.heading} <br></br> {props.dateTime}</div> 
-     <div className="reportContent">{props.content}</div> 
+     <div className="reportContent">{props.content}
+     <br></br>
+     <br></br>
+     {props.attachments}
+     </div> 
 
     
      <div className="reportPDFViewer"> 
