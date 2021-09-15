@@ -1,4 +1,5 @@
 import os
+import sys
 import glob
 from mailNotificationSender import sendMail
 
@@ -73,5 +74,12 @@ class jobRequest:
 job = jobRequest("CSC3002F", "java", False, "", "rsuvanth@gmail.com", True)
 job.jobSender()
 print("go to your text file")
+
+print(str(sys.argv[1]))#user
+print(str(sys.argv[2]))#lang
+print(eval(sys.argv[3]))#bool dir
+print(str(sys.argv[4]))#Bfile
+print(str(sys.argv[5]))#email
+print(eval(sys.argv[6]))#bool toggle
 
 
