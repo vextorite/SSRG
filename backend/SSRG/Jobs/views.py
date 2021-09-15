@@ -1,5 +1,4 @@
-from typing_extensions import ParamSpecKwargs
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth import login,logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
@@ -63,3 +62,8 @@ def newJob(request):
     else:
         form = SubmitJob()
     return render(request=request, template_name="Jobs/newJob.html", context={'submission': form})
+
+def singleJobDetail(request, jobs):
+
+    jobs = get_object_or_404(Jobs, slug=jobs)
+    return render(request=request, template_name="Jobs/jobDetails.html", context={'jobs':jobs})

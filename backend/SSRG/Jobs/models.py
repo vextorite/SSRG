@@ -1,6 +1,7 @@
+from backend.SSRG.Jobs.views import singleJobDetail
 from django.db import models
 from django.contrib.auth.models import User
-import uuid
+from django.urls import reverse
 
 # Create your models here.
 LANGUAGE_CHOICES = [('java', 'Java'), ('py', 'Python'), ('cpp', 'C++')] #other options later
@@ -27,8 +28,8 @@ class Jobs(models.Model):
     language = models.CharField(max_length=50, choices=LANGUAGE_CHOICES)
     baseFile = models.CharField(max_length=200)
     emailNow = models.CharField(max_length=10, choices=EMAIL_OPTIONS)
-    jobState = models.CharField(max_length=100, choices=STATE_OPTIONS)
-    jobRef = str(uploadDate)
+    jobState = models.CharField(max_length=100, choices=STATE_OPTIONS, default='processing')
+    slug = models.SlugField(max_length=200, unique_for_date='uploadDate')
     objects = models.Manager()
     failedJobObjects = FailedJobObjects()
     pendingJobObjects = PendingJobObjects()
@@ -36,3 +37,9 @@ class Jobs(models.Model):
 
     def __str__(self):
         return self.user.username+"["+str(self.uploadDate)+"]"
+
+    def get_absolute_url(self):
+        return reverse(singleJobDetail, args=[self.slug])
+
+    class Meta:
+        ordering = ('-uploadDate',)

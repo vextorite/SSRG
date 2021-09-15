@@ -9,5 +9,6 @@ urlpatterns = [
      path('register', views.registerRequest, name = 'register'),
      path('login', views.loginRequest, name='login'),
      path('logout', views.logoutRequest, name='logout'),
-     path('newJob', views.newJob, name='new')
+     path('newJob', views.newJob, name='new'),
+     path('<slug:jobs>', views.singleJobDetail, name='jobDetail')
 ]

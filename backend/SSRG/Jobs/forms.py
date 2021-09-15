@@ -21,4 +21,5 @@ class NewUser(UserCreationForm):
 class SubmitJob(forms.ModelForm):
     class Meta:
         model = Jobs
-        fields = ['files', 'language', 'baseFile']
+        fields = ['slug', 'language', 'files', 'baseFile', 'emailNow']
+        labels = {'slug':'Job Name'}
