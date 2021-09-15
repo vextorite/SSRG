@@ -1,10 +1,15 @@
-from backend.SSRG.Jobs.views import singleJobDetail
+#from Jobs.views import singleJobDetail
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 
 # Create your models here.
-LANGUAGE_CHOICES = [('java', 'Java'), ('py', 'Python'), ('cpp', 'C++')] #other options later
+LANGUAGE_CHOICES = [('.java', 'Java'), ('.py', 'Python'), ('.cpp', 'C++'),
+                    ('.c', 'C'), ('.cs', 'C#'), ('.vb', 'Visual Basic'), ('.js', 'Javascript'),
+                    ('.f90', 'FORTRAN'), ('.ml', 'ML'), ('.hs', 'Haskell'), ('.lsp','Lisp'), ('.scm', 'Scheme'), 
+                    ('.pas', 'Pascal'), ('.m2', 'Modula2'), ('.ada', 'Ada'), ('.pl', 'Perl'), ('.tcl', 'TCL'), ('.m', 'Matlab'), 
+                    ('.vhd', 'VHDL'), ('.v', 'Verilog'), ('.asc', 'Spice'), ('.asm', 'MIPS assembly'), ('.asm', 'a8086 assembly'), 
+                    ('.hcl', 'HCL2')]
 STATE_OPTIONS = [('done', 'Done'), ('processing', 'Processing'), ('error', 'Error')]
 EMAIL_OPTIONS = [('True', 'True'), ('False', 'False')]
 
@@ -38,8 +43,8 @@ class Jobs(models.Model):
     def __str__(self):
         return self.user.username+"["+str(self.uploadDate)+"]"
 
-    def get_absolute_url(self):
-        return reverse(singleJobDetail, args=[self.slug])
+#    def get_absolute_url(self):
+ #       return reverse(singleJobDetail, args=[self.slug])
 
     class Meta:
         ordering = ('-uploadDate',)
