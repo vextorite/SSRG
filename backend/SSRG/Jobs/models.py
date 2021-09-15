@@ -1,4 +1,4 @@
-from backend.SSRG.Jobs.views import singleJobDetail
+#from backend.SSRG.Jobs.views import singleJobDetail
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
@@ -38,8 +38,8 @@ class Jobs(models.Model):
     def __str__(self):
         return self.user.username+"["+str(self.uploadDate)+"]"
 
-    def get_absolute_url(self):
-        return reverse(singleJobDetail, args=[self.slug])
+ #   def get_absolute_url(self):
+    #    return reverse(singleJobDetail, args=[self.slug])
 
     class Meta:
         ordering = ('-uploadDate',)

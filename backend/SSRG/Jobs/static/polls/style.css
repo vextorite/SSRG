@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+@font-face{
+    font-family: "Oswald";
+    src: url("fonts/Oswald-Light.ttf");
+  }
+  
+  a{
+    color:var(--contrastColor)
+  }
+  
+  
+  
+  .App{
+    font-family: "Oswald";
+    
+  }
+  
+  :root{
+    --mainColor:black;
+    --mainColor2:rgba(22, 22, 22, 1);
+    --buttonTitleContrast:rgba(53, 53, 53, 0.747);
+    --mainColor2Transparency:rgba(10, 10, 10, 0.911);
+    --contrastColor:white;
+  }
+  
+  button{
+    margin-top: 1px;
+    font-size:clamp(9px, 4vw, 12px);
+    background-color:var(--contrastColor);
+    color:var(--mainColor);
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: var(--mainColor);
+    font-family: "Oswald";
+  
+  }
+  
+  button:focus{
+    outline: none;
+    box-shadow: none;
+    -webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+  }
+  
+  .switchDisplayMode{
+    color:var(--contrastColor);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 10px;
+    background-color:  rgb(46, 46, 46);
+    text-align: center;
+    padding: 4px 0px 5px 0px;
+    height: 15px;
+  }
+
+  .Header{
+    background-color: var(--mainColor2);
+    color:var(--contrastColor);
+    padding-top: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+  
+  }
+
+  .headShotImg{
+    height: 100px;
+    padding-bottom: 7px;
+
+  }
+
+ .title{
+     padding: 1px 0px 1px 0px;
+     text-transform: uppercase;
+     margin-top: 10px;
+     /*background-color: var(--mainColor);*/
+     background-color: rgb(46, 46, 46);
+     letter-spacing: 2px;
+     font-size: 12px;
+     height: auto;
+ }
+
+ .mainArea{
+   height:  100%;
+   background-image: url("images/tech1.jpg");
+   background-size: cover;
+ }
+ 
