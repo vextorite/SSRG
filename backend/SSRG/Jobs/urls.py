@@ -10,5 +10,6 @@ urlpatterns = [
      path('login', views.loginRequest, name='login'),
      path('logout', views.logoutRequest, name='logout'),
      path('newJob', views.newJob, name='new'),
+     path('viewJobs', views.viewJobs, name='viewJobs'),
      path('<slug:jobs>', views.singleJobDetail, name='jobDetail')
 ]

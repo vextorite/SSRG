@@ -43,8 +43,8 @@ class Jobs(models.Model):
     def __str__(self):
         return self.user.username+"["+str(self.uploadDate)+"]"
 
-#    def get_absolute_url(self):
- #       return reverse(singleJobDetail, args=[self.slug])
+    def get_absolute_url(self):
+        return reverse('singleJobDetail', args=[self.slug])
 
     class Meta:
         ordering = ('-uploadDate',)
