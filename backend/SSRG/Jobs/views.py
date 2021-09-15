@@ -9,7 +9,7 @@ import os, sys
 
 # Create your views here.
 def homepage(request):
-    return render(request=request, template_name='Jobs/home.html', context={'jobs': Jobs.objects.all()})
+    return render(request=request, template_name='Jobs/home.html')
 
 def registerRequest(request):
     if request.method == "POST":
