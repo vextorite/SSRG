@@ -4,7 +4,7 @@ from fpdf import FPDF
 class PDF(FPDF):
     def header(self):
         #logo 
-        self.image("logo.png", 10, 8, 25)
+        self.image("/home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/Jobs/MossBackendJobs/logo.png", 10, 8, 25)
         #just setting width allows for auto height that wont distort
         # path, x coord, y coord, width
         self.set_font('helvetica', 'B', 20)

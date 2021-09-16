@@ -57,10 +57,13 @@ def newJob(request):
                         form.instance.language,
                         form.instance.baseFile, 
                         form.instance.user.email,
-                        form.instance.emailNow]
+                        form.instance.emailNow,
+                        form.instance.id]
             job.save()
             os.system(
-            f"python3 {filename} {arguments[0]} {arguments[1]} 'False' {arguments[2]} {arguments[3]} {arguments[4]}")
+            f"python3 {filename} {arguments[0]} {arguments[5]} {arguments[1]} 'False' {arguments[2]} {arguments[3]} {arguments[4]} '/home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/'{arguments[0]}")
+            form.instance.jobState = 'done'
+            job.save()
             
             return redirect("homepage")
     else:

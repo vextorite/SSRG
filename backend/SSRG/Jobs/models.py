@@ -32,7 +32,7 @@ class Jobs(models.Model):
     files = models.FileField(upload_to=get_upload_path)
     uploadDate = models.DateTimeField(auto_now_add=True)
     language = models.CharField(max_length=50, choices=LANGUAGE_CHOICES)
-    baseFile = models.CharField(max_length=200)
+    baseFile = models.CharField(max_length=200, blank=True)
     emailNow = models.CharField(max_length=10, choices=EMAIL_OPTIONS)
     jobState = models.CharField(max_length=100, choices=STATE_OPTIONS, default='processing')
     slug = models.SlugField(max_length=200, unique_for_date='uploadDate')

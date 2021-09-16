@@ -22,18 +22,18 @@ class jobRequest:
     
     def constructMossShellCommand(self):
         print('unzipping')
-        os.system(f"python3 folderizer.py '{self.zipPath}' > folder_out.txt")
+        os.system(f"python3 /home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/Jobs/MossBackendJobs/folderizer.py '{self.zipPath}' > folder_out.txt")
         print("unzipping done")
         #change this glob
         #
         index = self.zipPath[self.zipPath.rfind('/'):]
         subPathList = " ".join(glob.glob(f"{self.zipPath}{index}/*.{self.submissionLanguage}"))
         if(self.directoryFormat==True) and (len(self.baseFile)>1):
-            osCommand = f"perl mossnet.pl -l {self.submissionLanguage} -d -b {self.baseFile} {subPathList} > myMossRun.txt"
+            osCommand = f"perl /home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/Jobs/MossBackendJobs/mossnet.pl -l {self.submissionLanguage} -d -b {self.baseFile} {subPathList} > myMossRun.txt"
         if(self.directoryFormat==True) and (len(self.baseFile)==0):
-            osCommand = f"perl mossnet.pl -l {self.submissionLanguage} -d {subPathList} > myMossRun.txt"
+            osCommand = f"perl /home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/Jobs/MossBackendJobs/mossnet.pl -l {self.submissionLanguage} -d {subPathList} > myMossRun.txt"
         if(self.directoryFormat==False) and (len(self.baseFile)==0):
-            osCommand = f"perl mossnet.pl -l {self.submissionLanguage} {subPathList} > myMossRun.txt"
+            osCommand = f"perl /home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/Jobs/MossBackendJobs/mossnet.pl -l {self.submissionLanguage} {subPathList} > myMossRun.txt"
         print(osCommand)
         return osCommand
         
@@ -83,7 +83,7 @@ class jobRequest:
 
 
 #job = jobRequest("CSC3002F", "c", False, "", "rmrsuv002@myuct.ac.za", True)
-job = jobRequest("CSC3002F", "J123", "java", False, "", "rsuvanth@gmail.com", True, "/Users/suvanth/Desktop/DjangoRoot/Suvanth")
+job = jobRequest("CSC3002F", "J123", "java", False, "", "rsuvanth@gmail.com", True, "/home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root")
 job.jobSender()
 
 # def __init__(self, courseID, jobID,submissionLanguage, directoryFormat, baseFile, userEmail, toggleEmail, zipPath):
