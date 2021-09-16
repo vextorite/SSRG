@@ -32,16 +32,20 @@
         if (pending){
         document.getElementById("pending").style.height="0px";
         document.getElementById("pending").style.visibility="hidden";
+     
         document.getElementById("pendingOC").innerHTML="+";
+        if ((!failed) && (!success)){
         document.getElementById("mainJobContainer").style.maxHeight="350px";
         document.getElementById("mainJobContainer").style.overflow="hidden";
-         pending=false;
+        }
+        pending=false;
     }
         else{
             document.getElementById("pending").style.height="auto";
             document.getElementById("pending").style.visibility="visible";
         document.getElementById("pendingOC").innerHTML="-";
         document.getElementById("mainJobContainer").style.maxHeight="70%";
+        document.getElementById("mainJobContainer").style.height="auto";
         document.getElementById("mainJobContainer").style.overflow="auto";
         pending=true;
         }
@@ -51,9 +55,13 @@
         if (success){
         document.getElementById("success").style.height="0px";
         document.getElementById("success").style.visibility="hidden";
+       
         document.getElementById("successOC").innerHTML="+";
+        if ((!failed) && (!pending)){
+           
         document.getElementById("mainJobContainer").style.maxHeight="350px";
         document.getElementById("mainJobContainer").style.overflow="hidden";
+        }
         success=false;
     }
         else{
@@ -61,6 +69,7 @@
             document.getElementById("success").style.visibility="visible";
         document.getElementById("successOC").innerHTML="-";
         document.getElementById("mainJobContainer").style.maxHeight="70%";
+        document.getElementById("mainJobContainer").style.height="auto";
         document.getElementById("mainJobContainer").style.overflow="auto";
         success=true;
         }
@@ -70,9 +79,12 @@
         if (failed){
         document.getElementById("failed").style.height="0px";
         document.getElementById("failed").style.visibility="hidden";
+
         document.getElementById("failedOC").innerHTML="+";
+        if ((!pending) && (!success)){
         document.getElementById("mainJobContainer").style.maxHeight="350px";
         document.getElementById("mainJobContainer").style.overflow="hidden";
+        }
         failed=false;
     }
         else{
@@ -80,6 +92,7 @@
             document.getElementById("failed").style.visibility="visible";
         document.getElementById("failedOC").innerHTML="-";
         document.getElementById("mainJobContainer").style.maxHeight="70%";
+        document.getElementById("mainJobContainer").style.height="auto";
         document.getElementById("mainJobContainer").style.overflow="auto";
         failed=true;
         }
@@ -127,10 +140,12 @@
         <div class="JobSectionTitle"><button id="successOC" onclick="successStateChange()" class="expand">+</button>Successful Jobs</div>
         <div id="success" class="pendingContainer">
         {%for jobs in successJobs%}
+        <div class="jobCard">
         <h2>{{jobs.slug}}</h2> <br>
         {{jobs.files}} <br>
         {{jobs.baseFile}} <br>
         {%endfor%}
+        </div>
         </div>
     </div>
 
@@ -138,10 +153,12 @@
         <div class="JobSectionTitle"><button id="failedOC" onclick="failedStateChange()" class="expand">+</button>Failed Jobs</div>
         <div id="failed" class="pendingContainer">
         {%for jobs in failedJobs%}
+        <div class="jobCard">
         <h2>{{jobs.slug}}</h2> <br>
         {{jobs.files}} <br>
         {{jobs.baseFile}} <br>
         {%endfor%}
+        </div>
         </div>
     </div>
 
