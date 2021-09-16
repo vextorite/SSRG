@@ -41,7 +41,12 @@
     
   
     <div id="main" class="mainArea" >
-    
+      <div class = "start">
+        <div class="titleText">Login or Sign Up to continue</div>
+  <button onClick={props.login} class="menuButton"><img class="buttonImg" src="{% static 'polls/login.png' %}"></img><br></br>Login</button>
+  <br></br>
+  <button onClick={props.signup} class="menuButton"><img class="buttonImg" src="{% static 'polls/signup.png' %}"></img><br></br>Sign Up</button>
+   </div>
     </div>
     
   
