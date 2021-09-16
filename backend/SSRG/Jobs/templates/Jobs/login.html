@@ -1,18 +1,90 @@
-{% extends "Jobs/header.html" %}
 
-{% block content %}      
 
-{% load crispy_forms_tags %}
 
+<!DOCTYPE html>
+<html lang="en">
+
+    {% load static %}
+
+<link rel="stylesheet" type="text/css" href="/static/polls/style.css?{% now 'U' %}">
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+
+
+
+
+    <title>SSRG FrontEnd</title>
+ 
+
+  <div class="App">
+
+    <div id="header">
+      <div class="Header">
+
+        <a href="https://demo.ssrg.online/"><img alt="SSRG Logo" class = "headShotImg" src = "https://demo.ssrg.online/Assets/logo.svg" ></img></a><br></br>
+     
+         <b>Automated Software Similarity
+     Report Generator </b>
+        
+         <div class = "title">
+         Sashen Naidoo - Sanele Hlongwane - Suvanth Ramruthen
+         </div>
+       
+         </div>
+    </div>
+    
+
+    <div id="main" class="mainArea" >
 <!--Login--> 
-<div class="container py-5">
-  <h1>Login</h1>
+<div class="loginContainer">
+<div>
   <form method="POST">
     {% csrf_token %}
-    {{ login|crispy }}
-    <button class="btn btn-primary" type="submit">Login</button>
+    
+
+    <div class="loginInner">
+  
+      <div class="loginInputLabel">Username</div>
+          <input name="username" class ="loginInput"></input>
+          <br>
+          <div class="loginInputLabel">Password</div>
+          <input name="password" type="password" class ="loginInput" ></input>
+          <br>
+          <button type="submit" class="loginButton"><img class="loginImg" src="{% static 'polls/login.png' %}"></img>
+          <br>
+       Login
+       </button>
+       <br>
+       <a href="/register"><button class="signUpButton"> New user? Sign up</button></a>
+      </div>
+
   </form>
-  <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
+
+</div>
 </div>
 
-{% endblock %}
+</div>
+
+<div id="footer">
+  
+  <div class="switchDisplayMode">
+ Built with Django, Python & Celery
+    </div>
+
+  </div>
+
+
+       </div>
+     
+       <script>window.onload = window.onresize = function (){document.getElementById("main").style.height=(window.innerHeight-(document.getElementById("header").clientHeight+document.getElementById("footer").clientHeight))+"px";}   </script>
+   </html>
+
+
