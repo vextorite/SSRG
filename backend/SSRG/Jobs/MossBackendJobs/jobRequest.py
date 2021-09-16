@@ -1,4 +1,4 @@
-import os
+import os,sys
 import glob
 from mailNotificationSender import sendMail
 from heatmap import completeReport
@@ -83,13 +83,16 @@ class jobRequest:
 
 
 #job = jobRequest("CSC3002F", "c", False, "", "rmrsuv002@myuct.ac.za", True)
-job = jobRequest("CSC3002F", "J123", "java", False, "", "rsuvanth@gmail.com", True, "/home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root")
+#job = jobRequest("CSC3002F", "J123", "java", False, "", "rsuvanth@gmail.com", True, "/home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root")
+job = jobRequest(str(sys.argv[1]), "Job", str(sys.argv[3]), eval(str(sys.argv[4])), str(sys.argv[5]), str(sys.argv[6]), eval(str(sys.argv[7])), str(sys.argv[8]))
+
 job.jobSender()
 
 # def __init__(self, courseID, jobID,submissionLanguage, directoryFormat, baseFile, userEmail, toggleEmail, zipPath):
 #print(job.constructMossShellCommand())
 #print("go to your text file")
-
+#for arg in sys.argv:
+#    print(arg)
 # print(str(sys.argv[1]))#user
 # print(str(sys.argv[2]))#lang
 # print(eval(sys.argv[3]))#bool dir
