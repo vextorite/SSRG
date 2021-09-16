@@ -413,3 +413,23 @@ text-align: center;
 padding-left: 14px;
 padding-top: 10px;
   }
+
+  .menuContainer{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 100vw;
+    height: 100%;
+  }
+
+  .menuMain{
+    color:white;
+  }
+
+
+
+.buttons{
+overflow: auto;
+max-height:95%;
+}
+

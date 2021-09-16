@@ -120,8 +120,9 @@
     <div id="main" class="mainArea" >
         <div class="jobViewContainer">
         <div class="jobView" id = "mainJobContainer">
-
             <div>
+
+                
             <div class="jobWrapperCard">
         <div class="JobSectionTitle"><button id="pendingOC" onclick="pendingStateChange()" class="expand">+</button>Pending Jobs </div>
         
@@ -144,10 +145,12 @@
         <h2>{{jobs.slug}}</h2> <br>
         {{jobs.files}} <br>
         {{jobs.baseFile}} <br>
+    </div>
         {%endfor%}
-        </div>
+        
         </div>
     </div>
+
 
     <div class="jobWrapperCard">
         <div class="JobSectionTitle"><button id="failedOC" onclick="failedStateChange()" class="expand">+</button>Failed Jobs</div>
@@ -157,9 +160,10 @@
         <h2>{{jobs.slug}}</h2> <br>
         {{jobs.files}} <br>
         {{jobs.baseFile}} <br>
+    </div>
         {%endfor%}
         </div>
-        </div>
+       
     </div>
 
 
