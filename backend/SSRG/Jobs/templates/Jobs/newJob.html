@@ -45,8 +45,10 @@
     <div id="main" class="mainArea" >
 
 <div class="SubmitJobContainer">
+    <div>
+    <div class="titleText">Submit a job</div>
+    <br>
     <div class="SubmitJob">
-<h2> Submit a Job</h2>
 <form action = "{% url 'new'%}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <label>Job Name: </label><br>
@@ -67,6 +69,7 @@
     <br>
     <button class = "SubmitButton" type="submit"> Submit</button>
 </form>
+</div>
 </div>
 </div>
 </div>

@@ -48,7 +48,8 @@
 <div>
   <form method="POST">
     {% csrf_token %}
-    
+    <div class="titleText">Login to continue</div>
+		<br>
 
     <div class="loginInner">
   
@@ -63,7 +64,7 @@
        Login
        </button>
        <br>
-       <a href="register" ><button class="signUpButton"> New user? Sign up</button></a>
+       New user?  <a href="/register" >Sign up</a>
       </div>
 
   </form>
