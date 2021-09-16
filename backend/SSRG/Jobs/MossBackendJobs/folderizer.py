@@ -32,7 +32,7 @@ excl_path = ['Eigen', 'eigen-master']
 rootcounter = 0
 counter = 0
 
-print('=============================Extracting Student Folders=====================================================')
+#print('=============================Extracting Student Folders=====================================================')
 
 for item in os.listdir(rootdir): # Get a list of all items in the root directory
     studentDir = os.path.join(rootdir,item)
@@ -40,7 +40,7 @@ for item in os.listdir(rootdir): # Get a list of all items in the root directory
         
         dir_path = os.path.join(outputDir, item)
         if not os.path.exists(dir_path): # If the student's folder doesnt exist in outputDir, create it.
-            if verbose: print('Creating %s' % dir_path)
+            #if verbose: print('Creating %s' % dir_path)
             os.makedirs(dir_path)
 
         # Extract all archive files
@@ -49,14 +49,15 @@ for item in os.listdir(rootdir): # Get a list of all items in the root directory
             for filename in files:
                 file_path = os.path.join(root, filename)
                 if not os.path.splitext(file_path)[1] == '.txt': # Assumes that the only files submitted are archives or
-                    if verbose: print("Extracting file %s to %s" % (file_path, dir_path))
+                    #if verbose: print("Extracting file %s to %s" % (file_path, dir_path))
                     try:
                         Archive(file_path).extractall(dir_path)
                     except Exception as e:
-                        print("Unzip Failed. Reason: " + str(e))
+                        #print("Unzip Failed. Reason: " + str(e))
+                        print()
 
 
-print('=================================Pulling out code=========================================================')
+#print('=================================Pulling out code=========================================================')
 
 for item in os.listdir(outputDir): # Get a list of all items in the root directory
     studentDir = os.path.join(outputDir,item)
@@ -76,10 +77,11 @@ for item in os.listdir(outputDir): # Get a list of all items in the root directo
                         try:
                             shutil.move(file_path, studentDir)
                         except Exception as e:
-                            print("Failed to move file> Reason: " + str(e))
+                            #print("Failed to move file> Reason: " + str(e))
+                            print()
 
 
-print('=================================Cleaning Up Folders=========================================================')
+#print('=================================Cleaning Up Folders=========================================================')
 
 # Cleans up the submission folders to only include student code.
 for item in os.listdir(outputDir): # Get a list of all items in the root directory
@@ -91,23 +93,24 @@ for item in os.listdir(outputDir): # Get a list of all items in the root directo
             item_path = os.path.join(studentDir, studentItem)
 
             if os.path.isdir(item_path): # We don't need to check file extensions if item is a directory
-                if verbose: print('Removing directory %s' % item_path)
+                #if verbose: print('Removing directory %s' % item_path)
                 try:
                     shutil.rmtree(item_path) # We need to use this to get rid of git files and other binary that the students submit.
                 except Exception as e:
-                    print("Failed to delete subdir> Reason: " + str(e))
+                    #print("Failed to delete subdir> Reason: " + str(e))
+                    print()
             # If the item is a file, we must make sure it is not one of the files we want to examine
             else:
                 ext = os.path.splitext(item_path)[1]
                 if not ext in ext_list or studentItem.startswith('.'):
-                    if verbose: print('Removing file %s' % item_path)
+                    #if verbose: print('Removing file %s' % item_path)
                     try:
                         os.remove(item_path)
                     except Exception as e:
                         print("Failed to delete file Reason: " + str(e))
 
 if stitch:
-    print('=================================Stitching Student files=========================================================')
+    #print('=================================Stitching Student files=========================================================')
     for directory in os.listdir(outputDir):
         studentDir = os.path.join(outputDir, directory)
 
