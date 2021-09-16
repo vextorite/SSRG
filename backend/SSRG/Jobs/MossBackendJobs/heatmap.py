@@ -74,8 +74,9 @@ def studentList(exportPathHeat, exportPathHist,url):
 
 
 
-def completeReport(jobId,url):
-    studentList(f'/Users/suvanth/Desktop/test/Suvanth/{jobId}heatmap.png', f'/Users/suvanth/Desktop/test/Suvanth/{jobId}histogram.png', url )
+def completeReport(zipPath, courseID,jobId,url):
+    studentList(f"{zipPath}/{jobId}_{courseID}_heatmap.png", f"{zipPath}/{jobId}_{courseID}_histogram.png", url)
+    #studentList(f'/Users/suvanth/Desktop/test/Suvanth/{jobId}heatmap.png', f'/Users/suvanth/Desktop/test/Suvanth/{jobId}histogram.png', url )
     print('check test for your pics')
-    generateReport(url, f'/Users/suvanth/Desktop/test/Suvanth/{jobId}report.pdf', f'/Users/suvanth/Desktop/test/Suvanth/{jobId}heatmap.png', f'/Users/suvanth/Desktop/test/Suvanth/{jobId}histogram.png')
+    generateReport(url, f"{zipPath}/{jobId}_{courseID}_report.pdf", f"{zipPath}/{jobId}_{courseID}_heatmap.png", f"{zipPath}/{jobId}_{courseID}_histogram.png")
     print('check test for your pdfs')

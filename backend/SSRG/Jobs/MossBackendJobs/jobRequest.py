@@ -1,28 +1,33 @@
 import os
 import glob
 from mailNotificationSender import sendMail
-from heatV2 import completeReport
+from heatmap import completeReport
 
 #my issue is that if the text file is only a line it gets stuck
 
 class jobRequest:
-    count = 0
     emailSent = False
     jobSuccess = False
 
-    def __init__(self, courseID, submissionLanguage, directoryFormat, baseFile, userEmail, toggleEmail):
+#add job id param
+    def __init__(self, courseID, jobID,submissionLanguage, directoryFormat, baseFile, userEmail, toggleEmail, zipPath):
         self.courseID = courseID
+        self.jobID = jobID
         self.submissionLanguage = submissionLanguage
         self.directoryFormat = directoryFormat
         self.baseFile = baseFile
         self.userEmail = userEmail
         self.toggleEmail = toggleEmail
+        self.zipPath = zipPath
     
     def constructMossShellCommand(self):
         print('unzipping')
-        os.system("python3 folderizer.py > folder_out.txt")
+        os.system(f"python3 folderizer.py '{self.zipPath}' > folder_out.txt")
         print("unzipping done")
-        subPathList = " ".join(glob.glob(f"jobOutput/jobOutput/*.{self.submissionLanguage}"))
+        #change this glob
+        #
+        index = self.zipPath[self.zipPath.rfind('/'):]
+        subPathList = " ".join(glob.glob(f"{self.zipPath}{index}/*.{self.submissionLanguage}"))
         if(self.directoryFormat==True) and (len(self.baseFile)>1):
             osCommand = f"perl mossnet.pl -l {self.submissionLanguage} -d -b {self.baseFile} {subPathList} > myMossRun.txt"
         if(self.directoryFormat==True) and (len(self.baseFile)==0):
@@ -31,6 +36,7 @@ class jobRequest:
             osCommand = f"perl mossnet.pl -l {self.submissionLanguage} {subPathList} > myMossRun.txt"
         print(osCommand)
         return osCommand
+        
     
     def jobSender(self):
         #email
@@ -42,6 +48,7 @@ class jobRequest:
         ##important
         os.system(self.constructMossShellCommand())
         #code to check for success
+        #SANELE QUERY
         self.persistenceCheck('myMossRun.txt')
        
 
@@ -50,13 +57,15 @@ class jobRequest:
         url = self.retrieveUrl(fileName)
         if ('http://moss.stanford.edu/results/' in url):
             print('results are present')
-            completeReport(self.courseID, url )
+            #completeReport(self.courseID, url )
+            completeReport(self.zipPath, self.courseID, self.jobID, url)
             print('report done')
 
             
             if(self.toggleEmail == True):
                 print('email sent with reports')
-                sendMail(self.userEmail, True, f"/Users/suvanth/Desktop/test/Suvanth/{self.courseID}report.pdf")
+                #NEED TO CHANGE
+                sendMail(self.userEmail, True, f"{self.zipPath}/{self.jobID}_{self.courseID}_report.pdf")
         else:
             print('lastline wasnt a url we will resend')
             self.jobSender()
@@ -74,10 +83,10 @@ class jobRequest:
 
 
 #job = jobRequest("CSC3002F", "c", False, "", "rmrsuv002@myuct.ac.za", True)
-job = jobRequest("CSC3002F", "java", False, "", "rsuvanth@gmail.com", True)
+job = jobRequest("CSC3002F", "J123", "java", False, "", "rsuvanth@gmail.com", True, "/Users/suvanth/Desktop/DjangoRoot/Suvanth")
 job.jobSender()
 
-
+# def __init__(self, courseID, jobID,submissionLanguage, directoryFormat, baseFile, userEmail, toggleEmail, zipPath):
 #print(job.constructMossShellCommand())
 #print("go to your text file")
 

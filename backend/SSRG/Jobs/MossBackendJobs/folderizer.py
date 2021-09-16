@@ -6,13 +6,10 @@ from pyunpack import Archive
 from shutil import copyfile
 
 
-rootdir = '../MossBackendJobs'
-outputDir = '../MossBackendJobs/jobOutput'
+rootdir = '/Users/suvanth/Desktop/DjangoRoot'
+if len(sys.argv) == 2:
+    outputDir = str(sys.argv[1])
 
-
-if len(sys.argv) > 2:
-    rootdir = str(sys.argv[1])
-    outputDir = str(sys.argv[2])
 
 verbose = False  # For debugging purposes, set verbose to True
 # MOSS can be a pain to deal with if you need to upload a lot of files. Set this to true if you want the folderizer
