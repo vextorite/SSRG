@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Jobs.apps.MainConfig',
-    'crispy_forms'
+    'crispy_forms',
+    'widget_tweaks'
 ]
 
 CORS_ORIGIN_ALLOW_ALL=True

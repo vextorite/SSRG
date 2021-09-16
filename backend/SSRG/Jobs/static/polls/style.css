@@ -318,3 +318,98 @@ align-items: center;
   .signUpButton:hover{
       color:  rgb(120, 197, 241);
   }
+
+  .SubmitJobContainer{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .SubmitJob{
+    background-color: rgba(36, 36, 36, 0.87);
+    color: white;
+    border-radius: 10px;
+    border-width: 2px;
+    padding: 25px 25px 25px 25px;
+    text-align: center;
+    border-color: rgb(114, 114, 114);
+    border-width: 2px;
+    border-style: solid;
+  }
+
+  .SubmitButton{
+    height:30px;
+    width: 120px;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border-width: 2px;
+  
+   background-color: var(--buttonTitleContrast);
+    color: var(--contrastColor);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Oswald";
+  border-color: rgb(114, 114, 114);
+  }
+
+  
+  .SubmitButton:hover{
+    background-color: rgba(67, 94, 110,0.747);
+
+  }
+
+  .newJobTextIn{
+    height:20px;
+    width: 210px;
+    border-radius: 6px;
+    border-width: 2px;
+margin: 8px 0px 10px 0px;
+background-color: var(--buttonTitleContrast);
+    color: var(--contrastColor);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: "Oswald";
+border-color: gray;
+border-style: solid;
+padding: 2px 5px 2px 5px;
+  }
+
+.newJobDropDown{
+  height:30px;
+  width: 225px;
+  border-radius: 6px;
+  border-width: 2px;
+margin: 8px 0px 10px 0px;
+background-color: var(--buttonTitleContrast);
+  color: var(--contrastColor);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: "Oswald";
+border-color: gray;
+border-style: solid;
+  }
+
+  .newJobFileIn{
+    height:38px;
+    width: 220px;
+    border-radius: 6px;
+    border-width: 2px;
+margin: 8px 0px 10px 0px;
+background-color: var(--buttonTitleContrast);
+    color: var(--contrastColor);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: "Oswald";
+border-color: gray;
+border-style: solid;
+text-align: center;
+padding-left: 14px;
+padding-top: 10px;
+  }
