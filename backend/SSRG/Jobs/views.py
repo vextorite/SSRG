@@ -37,7 +37,7 @@ def loginRequest(request):
             if user is not None:
                 login(request, user)
                 #messages.success(request, "Success")
-                return redirect("homepage")
+                return redirect("menu")
     form = AuthenticationForm()
     return render(request=request, template_name="Jobs/login.html", context={'login':form})
 

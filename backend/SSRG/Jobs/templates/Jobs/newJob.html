@@ -2,7 +2,11 @@
 <h2> Submit a Job</h2>
 <form action = "{% url 'new'%}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{submission.as_p}}
+    <label>Job Name: </label>{{submission.slug}}<br>
+    <label>Language: </label>{{submission.language}}<br>
+    <label>Upload File Archive: </label>{{submission.files}}<br>
+    <label>Basefile Title: </label>{{submission.baseFile}}<br>
+    <label>Send Email: </label>{{submission.emailNow}}<br>
     <button class = "button" type="submit"> Submit</button>
 </form>
 
