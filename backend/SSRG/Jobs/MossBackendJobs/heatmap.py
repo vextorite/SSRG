@@ -64,7 +64,7 @@ def studentList(exportPathHeat, exportPathHist,url):
     histlist.sort()
     for i in histlist:
         print(i)
-    sns.histplot(histlist, color= 'Blue', bins=[20,40,60,80,100,120,180,190] )
+    sns.histplot(histlist, color= 'Blue', bins=[10,20,30,40,50,60,70,80] )
     plt.title='Distribution of Average Matched Lines'
     plt.xlabel("Average lines matched categories", fontsize =12)
     plt.ylabel("Observations", fontsize =12)

@@ -15,6 +15,9 @@ filename = os.path.join(dirname, 'MossBackendJobs/jobRequest.py')
 def homepage(request):
     return render(request=request, template_name='Jobs/home.html')
 
+def menu(request):
+    return render(request=request, template_name='Jobs/menu.html')
+
 def registerRequest(request):
     if request.method == "POST":
         form = NewUser(request.POST)
@@ -61,7 +64,7 @@ def newJob(request):
                         form.instance.id]
             job.save()
             os.system(
-            f"python3 {filename} {arguments[0]} {arguments[5]} {arguments[1]} 'False' {arguments[2]} {arguments[3]} {arguments[4]} '/home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/'{arguments[0]}")
+            f"python3 {filename} {arguments[0]} {arguments[5]} {arguments[1]} 'False' '' {arguments[3]} {arguments[4]} '/home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/'{arguments[0]}")
             form.instance.jobState = 'done'
             job.save()
             

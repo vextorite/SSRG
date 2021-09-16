@@ -11,5 +11,6 @@ urlpatterns = [
      path('logout', views.logoutRequest, name='logout'),
      path('newJob', views.newJob, name='new'),
      path('viewJobs', views.viewJobs, name='viewJobs'),
+     path('menu', views.menu,name='menu'),
      path('<slug:jobs>', views.singleJobDetail, name='jobDetail')
 ]
