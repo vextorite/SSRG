@@ -1,7 +1,7 @@
 import os
-import sys
 import glob
 from mailNotificationSender import sendMail
+from heatV2 import completeReport
 
 #my issue is that if the text file is only a line it gets stuck
 
@@ -20,7 +20,7 @@ class jobRequest:
     
     def constructMossShellCommand(self):
         print('unzipping')
-        os.system("python3 /home/Vextorite/Documents/Capstone/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/Jobs/MossBackendJobs/folderizer.py > folder_out.txt")
+        os.system("python3 folderizer.py > folder_out.txt")
         print("unzipping done")
         subPathList = " ".join(glob.glob(f"jobOutput/jobOutput/*.{self.submissionLanguage}"))
         if(self.directoryFormat==True) and (len(self.baseFile)>1):
@@ -29,6 +29,7 @@ class jobRequest:
             osCommand = f"perl mossnet.pl -l {self.submissionLanguage} -d {subPathList} > myMossRun.txt"
         if(self.directoryFormat==False) and (len(self.baseFile)==0):
             osCommand = f"perl mossnet.pl -l {self.submissionLanguage} {subPathList} > myMossRun.txt"
+        print(osCommand)
         return osCommand
     
     def jobSender(self):
@@ -46,14 +47,16 @@ class jobRequest:
 
        
     def persistenceCheck(self,fileName):
-        #self.count=self.count+1
-        #print(self.count)
-        #if ('http://moss.stanford.edu/results/' in self.retrieveUrl(fileName)) or self.count==7 :
-        if ('http://moss.stanford.edu/results/' in self.retrieveUrl(fileName)):
+        url = self.retrieveUrl(fileName)
+        if ('http://moss.stanford.edu/results/' in url):
             print('results are present')
+            completeReport(self.courseID, url )
+            print('report done')
+
+            
             if(self.toggleEmail == True):
                 print('email sent with reports')
-                sendMail(self.userEmail, True, "/Users/suvanth/Subjects/Midway meeting work/MossBackendJobs/Exports/SSRG_0_test.pdf")
+                sendMail(self.userEmail, True, f"/Users/suvanth/Desktop/test/Suvanth/{self.courseID}report.pdf")
         else:
             print('lastline wasnt a url we will resend')
             self.jobSender()
@@ -73,13 +76,17 @@ class jobRequest:
 #job = jobRequest("CSC3002F", "c", False, "", "rmrsuv002@myuct.ac.za", True)
 job = jobRequest("CSC3002F", "java", False, "", "rsuvanth@gmail.com", True)
 job.jobSender()
-print("go to your text file")
-
-print(str(sys.argv[1]))#user
-print(str(sys.argv[2]))#lang
-print(eval(sys.argv[3]))#bool dir
-print(str(sys.argv[4]))#Bfile
-print(str(sys.argv[5]))#email
-print(eval(sys.argv[6]))#bool toggle
 
 
+#print(job.constructMossShellCommand())
+#print("go to your text file")
+
+# print(str(sys.argv[1]))#user
+# print(str(sys.argv[2]))#lang
+# print(eval(sys.argv[3]))#bool dir
+# print(str(sys.argv[4]))#Bfile
+# print(str(sys.argv[5]))#email
+# print(eval(sys.argv[6]))#bool toggle
+
+
+# python3 jobRequest.py "CSC3002F" "java" "False" "" "rmrsuv002@gmail.com" "False"

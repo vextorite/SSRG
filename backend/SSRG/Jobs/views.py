@@ -7,6 +7,10 @@ from .models import Jobs
 from subprocess import run, PIPE
 import os, sys
 
+import os
+dirname = os.path.dirname(__file__)
+filename = os.path.join(dirname, 'MossBackendJobs/jobRequest.py')
+
 # Create your views here.
 def homepage(request):
     return render(request=request, template_name='Jobs/home.html')
@@ -56,7 +60,7 @@ def newJob(request):
                         form.instance.emailNow]
             job.save()
             os.system(
-            f"python3 /home/Vextorite/Documents/Capstone/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/Jobs/MossBackendJobs/jobRequest.py {arguments[0]} {arguments[1]} 'False' {arguments[2]} {arguments[3]} {arguments[4]}")
+            f"python3 {filename} {arguments[0]} {arguments[1]} 'False' {arguments[2]} {arguments[3]} {arguments[4]}")
             
             return redirect("homepage")
     else:
