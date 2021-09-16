@@ -107,11 +107,11 @@ height: 30px;
 display: flex;
 align-items: center;
 justify-content: center;
-background-color: rebeccapurple;
+
 }
 
 .menuButton{
-  height:90px;
+  height:130px;
   width: 80vw;
   max-width: 600px;
   margin-top: 20px;
@@ -132,7 +132,103 @@ border-color: rgb(114, 114, 114);
 }
 
 .start{
-  background-color: rebeccapurple;
+
   width: 100vw;
   height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.buttonImg{
+  height: 70px;
+}
+
+.jobViewContainer{
+width:100vw;
+height:100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.jobView{
+  color:white;
+  max-height: 350px;
+  overflow: hidden;
+  width: 50%;
+}
+
+.jobView::-webkit-scrollbar-track {
+  border: 1px solid #000;
+  padding: 2px 0;
+  background-color: #404040;
+  border-radius: 10px;
+  
+}
+
+.jobView::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+.jobView::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #737272;
+  border: 1px solid #000;
+
+}
+
+.JobSectionTitle{
+  font-size: 25px;
+  padding-bottom: 25px;
+}
+
+.JobSeparator{
+  background-color: rgb(53, 53, 53);
+  width: 95%;
+  height: 3px;
+  margin-bottom: 15px;
+}
+
+.jobCard{
+  background-color: rgb(7, 7, 7,0.777);
+  width: calc(95% - 20px);
+  border-radius: 12px;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 15px;
+  border-color: white;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.expand{
+  background-color: rgba(28, 29, 29, 0.877);
+  margin-right: 15px;
+  width:40px;
+  height: 40px;
+  color:white;
+  font-size: 30px;
+  line-height: 0px;
+}
+
+.expand:hover{
+  background-color: rgba(67, 94, 110,0.747);
+}
+
+.pendingContainer{
+  visibility: hidden;
+  height: 0px;
+}
+
+.jobWrapperCard{
+  background-color: rgba(28, 29, 29, 0.705);
+  padding: 20px 15px 0px 15px;
+
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border-color: white;
+  border-style: solid;
+  border-width: 1px;
 }

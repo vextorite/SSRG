@@ -1,24 +1,168 @@
-{% extends 'Jobs/header.html' %}
 
-{% block content %}
-<h1>Pending Jobs</h1>
-{%for jobs in pendingJobs%}
-<h2>Job name: {{jobs.slug}}</h2> <br>
-{{jobs.files}} <br>
-{{jobs.baseFile}} <br><br>
-{%endfor%}
 
-<h1>Successful Jobs</h1>
-{%for jobs in successJobs%}
-<h2>{{jobs.slug}}</h2> <br>
-{{jobs.files}} <br>
-{{jobs.baseFile}} <br>
-{%endfor%}
+<!DOCTYPE html>
+<html lang="en">
 
-<h1>Failed Jobs</h1>
-{%for jobs in failedJobs%}
-<h2>{{jobs.slug}}</h2> <br>
-{{jobs.files}} <br>
-{{jobs.baseFile}} <br>
-{%endfor%}
-{% endblock %}
+    {% load static %}
+
+<link rel="stylesheet" type="text/css" href="/static/polls/style.css?{% now 'U' %}">
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+
+
+
+
+    <title>SSRG FrontEnd</title>
+ 
+<script>
+    var pending=false;
+    var success=false;
+    var failed=false;
+
+    
+    function pendingStateChange (){
+        if (pending){
+        document.getElementById("pending").style.height="0px";
+        document.getElementById("pending").style.visibility="hidden";
+        document.getElementById("pendingOC").innerHTML="+";
+        document.getElementById("mainJobContainer").style.maxHeight="350px";
+        document.getElementById("mainJobContainer").style.overflow="hidden";
+         pending=false;
+    }
+        else{
+            document.getElementById("pending").style.height="auto";
+            document.getElementById("pending").style.visibility="visible";
+        document.getElementById("pendingOC").innerHTML="-";
+        document.getElementById("mainJobContainer").style.maxHeight="70%";
+        document.getElementById("mainJobContainer").style.overflow="auto";
+        pending=true;
+        }
+    }
+
+    function successStateChange (){
+        if (success){
+        document.getElementById("success").style.height="0px";
+        document.getElementById("success").style.visibility="hidden";
+        document.getElementById("successOC").innerHTML="+";
+        document.getElementById("mainJobContainer").style.maxHeight="350px";
+        document.getElementById("mainJobContainer").style.overflow="hidden";
+        success=false;
+    }
+        else{
+            document.getElementById("success").style.height="auto";
+            document.getElementById("success").style.visibility="visible";
+        document.getElementById("successOC").innerHTML="-";
+        document.getElementById("mainJobContainer").style.maxHeight="70%";
+        document.getElementById("mainJobContainer").style.overflow="auto";
+        success=true;
+        }
+    }
+
+    function failedStateChange (){
+        if (failed){
+        document.getElementById("failed").style.height="0px";
+        document.getElementById("failed").style.visibility="hidden";
+        document.getElementById("failedOC").innerHTML="+";
+        document.getElementById("mainJobContainer").style.maxHeight="350px";
+        document.getElementById("mainJobContainer").style.overflow="hidden";
+        failed=false;
+    }
+        else{
+            document.getElementById("failed").style.height="auto";
+            document.getElementById("failed").style.visibility="visible";
+        document.getElementById("failedOC").innerHTML="-";
+        document.getElementById("mainJobContainer").style.maxHeight="70%";
+        document.getElementById("mainJobContainer").style.overflow="auto";
+        failed=true;
+        }
+    }
+    
+</script>
+  <div class="App">
+
+    <div id="header">
+      <div class="Header">
+
+        <a href="https://demo.ssrg.online/"><img alt="SSRG Logo" class = "headShotImg" src = "https://demo.ssrg.online/Assets/logo.svg" ></img></a><br></br>
+     
+         <b>Automated Software Similarity
+     Report Generator </b>
+        
+         <div class = "title">
+         Sashen Naidoo - Sanele Hlongwane - Suvanth Ramruthen
+         </div>
+       
+         </div>
+    </div>
+    
+
+    <div id="main" class="mainArea" >
+        <div class="jobViewContainer">
+        <div class="jobView" id = "mainJobContainer">
+
+            <div>
+            <div class="jobWrapperCard">
+        <div class="JobSectionTitle"><button id="pendingOC" onclick="pendingStateChange()" class="expand">+</button>Pending Jobs </div>
+        
+        <div id="pending" class="pendingContainer">
+        {%for jobs in pendingJobs%}
+        <div class="jobCard">
+        <h2>Job name: {{jobs.slug}}</h2> <br>
+        {{jobs.files}} <br>
+        {{jobs.baseFile}} <br><br>
+        </div>
+        {%endfor%}
+        </div>
+    </div>
+       
+    <div class="jobWrapperCard">
+        <div class="JobSectionTitle"><button id="successOC" onclick="successStateChange()" class="expand">+</button>Successful Jobs</div>
+        <div id="success" class="pendingContainer">
+        {%for jobs in successJobs%}
+        <h2>{{jobs.slug}}</h2> <br>
+        {{jobs.files}} <br>
+        {{jobs.baseFile}} <br>
+        {%endfor%}
+        </div>
+    </div>
+
+    <div class="jobWrapperCard">
+        <div class="JobSectionTitle"><button id="failedOC" onclick="failedStateChange()" class="expand">+</button>Failed Jobs</div>
+        <div id="failed" class="pendingContainer">
+        {%for jobs in failedJobs%}
+        <h2>{{jobs.slug}}</h2> <br>
+        {{jobs.files}} <br>
+        {{jobs.baseFile}} <br>
+        {%endfor%}
+        </div>
+    </div>
+
+
+    </div>
+</div>
+    </div>
+    </div>
+    
+  
+  
+     <div id="footer">
+  
+     <div class="switchDisplayMode">
+    Built with Django, Python & Celery
+       </div>
+  
+     </div>
+  
+  
+          </div>
+        
+          <script>window.onload = window.onresize = function (){document.getElementById("main").style.height=(window.innerHeight-(document.getElementById("header").clientHeight+document.getElementById("footer").clientHeight))+"px";}   </script>
+      </html>

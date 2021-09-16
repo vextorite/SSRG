@@ -4,7 +4,7 @@
 
     {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+<link rel="stylesheet" type="text/css" href="/static/polls/style.css?{% now 'U' %}">
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -39,14 +39,16 @@
          </div>
     </div>
     
-  
+
     <div id="main" class="mainArea" >
       <div class = "start">
+        <div>
         <div class="titleText">Login or Sign Up to continue</div>
-  <button onClick={props.login} class="menuButton"><img class="buttonImg" src="{% static 'polls/login.png' %}"></img><br></br>Login</button>
+  <a href="login"><button  class="menuButton"><img class="buttonImg" src="{% static 'polls/login.png' %}"></img><br>Login</button></a>
   <br></br>
-  <button onClick={props.signup} class="menuButton"><img class="buttonImg" src="{% static 'polls/signup.png' %}"></img><br></br>Sign Up</button>
-   </div>
+  <a href="register"><button class="menuButton"><img class="buttonImg" src="{% static 'polls/signup.png' %}"></img><br>Register</button></a>
+</div>
+</div>
     </div>
     
   
