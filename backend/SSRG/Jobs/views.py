@@ -5,11 +5,11 @@ from django.contrib.auth.forms import AuthenticationForm
 from .forms import NewUser, SubmitJob
 from .models import Jobs
 from subprocess import run, PIPE
-import sys
+import os, sys
 
 # Create your views here.
 def homepage(request):
-    return render(request=request, template_name='Jobs/home.html', context={'jobs': Jobs.objects.all})
+    return render(request=request, template_name='Jobs/home.html')
 
 def registerRequest(request):
     if request.method == "POST":
@@ -52,16 +52,19 @@ def newJob(request):
             arguments = [form.instance.user.username, 
                         form.instance.language,
                         form.instance.baseFile, 
-                        form.instance.user.email]
+                        form.instance.user.email,
+                        form.instance.emailNow]
             job.save()
-            #run([sys.executable,
-            #"//home//vextorite//Documents//Capstone-SSRG//ssrg-ndxsas021-hlnsan005-rmrsuv002//MossBackendJobs//test.py", 
-            # arguments[0], arguments[1], arguments[2], arguments[3]])
+            os.system(
+            f"python3 /home/Vextorite/Documents/Capstone/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/Jobs/MossBackendJobs/jobRequest.py {arguments[0]} {arguments[1]} 'False' {arguments[2]} {arguments[3]} {arguments[4]}")
             
             return redirect("homepage")
     else:
         form = SubmitJob()
     return render(request=request, template_name="Jobs/newJob.html", context={'submission': form})
+
+def viewJobs(request):
+    return render(request=request, template_name="Jobs/jobsSubmitted.html", context={'pendingJobs':Jobs.pendingJobObjects.all(), 'successJobs':Jobs.successJobObjects.all(), 'failedJobs':Jobs.failedJobObjects.all()})
 
 def singleJobDetail(request, jobs):
 
