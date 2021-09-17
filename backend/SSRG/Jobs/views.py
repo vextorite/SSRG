@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth import login,logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
+from django.http import HttpResponseRedirect, Http404, FileResponse
 from .forms import NewUser, SubmitJob
 from .models import Jobs
 from subprocess import run, PIPE
@@ -68,7 +69,7 @@ def newJob(request):
             form.instance.jobState = 'done'
             job.save()
             
-            return redirect("homepage")
+            return redirect("menu")
     else:
         form = SubmitJob()
     return render(request=request, template_name="Jobs/newJob.html", context={'submission': form})
@@ -80,3 +81,8 @@ def singleJobDetail(request, jobs):
 
     jobs = get_object_or_404(Jobs, slug=jobs)
     return render(request=request, template_name="Jobs/jobDetails.html", context={'jobs':jobs})
+
+def reportView(request):
+   
+    reportPath = "/home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/Job_root_report.pdf"
+    return FileResponse(open(reportPath, 'rb'), content_type='application/pdf')
