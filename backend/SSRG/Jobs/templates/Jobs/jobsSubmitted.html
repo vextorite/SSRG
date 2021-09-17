@@ -44,7 +44,7 @@
             document.getElementById("pending").style.height="auto";
             document.getElementById("pending").style.visibility="visible";
         document.getElementById("pendingOC").innerHTML="-";
-        document.getElementById("mainJobContainer").style.maxHeight="70%";
+        document.getElementById("mainJobContainer").style.maxHeight="50vh";
         document.getElementById("mainJobContainer").style.height="auto";
         document.getElementById("mainJobContainer").style.overflow="auto";
         pending=true;
@@ -68,7 +68,7 @@
             document.getElementById("success").style.height="auto";
             document.getElementById("success").style.visibility="visible";
         document.getElementById("successOC").innerHTML="-";
-        document.getElementById("mainJobContainer").style.maxHeight="70%";
+        document.getElementById("mainJobContainer").style.maxHeight="50vh";
         document.getElementById("mainJobContainer").style.height="auto";
         document.getElementById("mainJobContainer").style.overflow="auto";
         success=true;
@@ -91,7 +91,7 @@
             document.getElementById("failed").style.height="auto";
             document.getElementById("failed").style.visibility="visible";
         document.getElementById("failedOC").innerHTML="-";
-        document.getElementById("mainJobContainer").style.maxHeight="70%";
+        document.getElementById("mainJobContainer").style.maxHeight="50vh";
         document.getElementById("mainJobContainer").style.height="auto";
         document.getElementById("mainJobContainer").style.overflow="auto";
         failed=true;
@@ -118,10 +118,17 @@
     
 
     <div id="main" class="mainArea" >
-        <div class="jobViewContainer">
-        <div class="jobView" id = "mainJobContainer">
+        
+       
 
+        <div class="jobViewContainer">
             <div>
+            <div class="titleText">Submit a job</div>
+            <br>
+        <div class="jobView" id = "mainJobContainer">
+            <div class="DivMask">
+
+                
             <div class="jobWrapperCard">
         <div class="JobSectionTitle"><button id="pendingOC" onclick="pendingStateChange()" class="expand">+</button>Pending Jobs </div>
         
@@ -144,10 +151,12 @@
         <h2>{{jobs.slug}}</h2> <br>
         {{jobs.files}} <br>
         {{jobs.baseFile}} <br>
+    </div>
         {%endfor%}
-        </div>
+        
         </div>
     </div>
+
 
     <div class="jobWrapperCard">
         <div class="JobSectionTitle"><button id="failedOC" onclick="failedStateChange()" class="expand">+</button>Failed Jobs</div>
@@ -157,15 +166,18 @@
         <h2>{{jobs.slug}}</h2> <br>
         {{jobs.files}} <br>
         {{jobs.baseFile}} <br>
+    </div>
         {%endfor%}
         </div>
-        </div>
+       
     </div>
 
 
     </div>
 </div>
+</div>
     </div>
+    
     </div>
     
   
