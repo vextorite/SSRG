@@ -123,7 +123,7 @@
 
         <div class="jobViewContainer">
             <div>
-            <div class="titleText">Submit a job</div>
+            <div class="titleText">View submitted jobs</div>
             <br>
         <div class="jobView" id = "mainJobContainer">
             <div class="DivMask">
@@ -133,9 +133,10 @@
         <div id="pending" class="pendingContainer">
         {%for jobs in pendingJobs%}
         <div class="jobCard">
-        <h2>Job name: {{jobs.slug}}</h2> <br>
-        {{jobs.files}} <br>
-        {{jobs.baseFile}} <br><br>
+            <div class="jobTitleVJ">Job name: {{jobs.slug}}</div>
+            Job Date: {{jobs.uploadDate}}<br>
+        Submitted Files: {{jobs.files}} <br>
+        Job Report: None (Pending)
         </div>
         {%endfor%}
         </div>
@@ -146,9 +147,10 @@
         <div id="success" class="pendingContainer">
         {%for jobs in successJobs%}
         <div class="jobCard">
-        <h2>{{jobs.slug}}</h2> <br>
-        {{jobs.files}} <br>
-        {{jobs.baseFile}} <br>
+        <div class="jobTitleVJS">Job name: {{jobs.slug}}</div> 
+        Job Date: {{jobs.uploadDate}}<br>
+        Submitted Files:  {{jobs.files}} <br>
+        Job Report: <a href="report">SSRG Report {{jobs.slug}}</a>
     </div>
         {%endfor%}
         
@@ -161,9 +163,10 @@
         <div id="failed" class="pendingContainer">
         {%for jobs in failedJobs%}
         <div class="jobCard">
-        <h2>{{jobs.slug}}</h2> <br>
-        {{jobs.files}} <br>
-        {{jobs.baseFile}} <br>
+            <div class="jobTitleVJE">Job name: {{jobs.slug}}</div> 
+            Job Date: {{jobs.uploadDate}}<br>
+        Submitted Files: {{jobs.files}} <br>
+        Job Report: None (Error)
     </div>
         {%endfor%}
         </div>
