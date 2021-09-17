@@ -74,7 +74,7 @@ def newJob(request):
     return render(request=request, template_name="Jobs/newJob.html", context={'submission': form})
 
 def viewJobs(request):
-    return render(request=request, template_name="Jobs/jobsSubmitted.html", context={'pendingJobs':Jobs.pendingJobObjects.all(), 'successJobs':Jobs.successJobObjects.all(), 'failedJobs':Jobs.failedJobObjects.all()})
+    return render(request=request, template_name="Jobs/jobsSubmitted.html", context={'pendingJobs':Jobs.pendingJobObjects.filter(user=request.user), 'successJobs':Jobs.successJobObjects.filter(user=request.user), 'failedJobs':Jobs.failedJobObjects.filter(user=request.user)})
 
 def singleJobDetail(request, jobs):
 
