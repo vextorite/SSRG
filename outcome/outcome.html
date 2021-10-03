@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<link rel="stylesheet" type="text/css" href="https://demo.ssrg.online/outcome/outcome.css">
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+
+
+
+
+    <title>SSRG FrontEnd</title>
+ 
+
+  <div class="App">
+
+    <div id="header">
+      <div class="Header">
+
+        <a href="https://localhost:8000/"><img alt="SSRG Logo" class = "headShotImg" src = "https://demo.ssrg.online/Assets/logo.svg" ></img></a><br></br>
+     
+         <b>Automated Software Similarity
+     Report Generator </b>
+        
+         <div class = "title">
+         Sashen Naidoo - Sanele Hlongwane - Suvanth Ramruthen
+         </div>
+       
+         </div>
+    </div>
+    
+
+    <div id="main" class="mainArea" >
+<div class="notifBackground">
+
+<div class="notifDiv">
+
+  <div class="StatusIconSpace">
+
+    <div class="done"></div> <! can be "done", "error", "pending" ––> 
+  </div>
+
+
+
+  <div class="notifTitle">Hello, #KEYWORDUSERNAME </div>
+
+  Thank you for submitting a job with us!
+  <br>
+  Your job is currently #KEYWORDSTATUS
+  <br>
+  <div class="notifDate">[Latest update for #KEYWORDJOBID]</div>
+
+  <div class="RedirectDiv">
+  View your job status at SSRG Online
+  <br>
+  <a href="http://localhost:8000" target="_blank"><button class="RedirectButton">SSRG Online</button></a>
+</div>
+
+
+</div>
+
+</div>
+    </div>
+    
+  
+  
+     <div id="footer">
+  
+     <div class="switchDisplayMode">
+      Powered by SSRG Email notification system
+  
+       </div>
+  
+     </div>
+  
+  
+          </div>
+        
+          <script>window.onload = window.onresize = function (){document.getElementById("main").style.height=(window.innerHeight-(document.getElementById("header").clientHeight+document.getElementById("footer").clientHeight))+"px";}   </script>
+      </html>
