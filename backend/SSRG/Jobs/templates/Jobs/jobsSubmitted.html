@@ -150,7 +150,7 @@
         <div class="jobTitleVJS">Job name: {{jobs.slug}}</div> 
         Job Date: {{jobs.uploadDate}}<br>
         Submitted Files:  {{jobs.files}} <br>
-        Job Report: <a href="report">SSRG Report {{jobs.slug}}</a>
+        Job Report: <a target="_blank" href="reports/{{jobs.slug}}">SSRG Report {{jobs.slug}}</a>
     </div>
         {%endfor%}
         
@@ -194,5 +194,24 @@
   
           </div>
         
+
+          <a href="#popup1" class="help"></a>
+          <div id="popup1" class="overlay">
+           <div class="popup">
+             <h2>Help: View Job Status</h2>
+             <a class="close" href="#">&times;</a>
+             <br>
+             <div class="content">
+               You are currently viewing the job status page. 
+               
+               <ul>
+                   <li> Job lists are separated into 3 types: Pending, Successful and Failed.</li>
+                   <li>Each job list contains information about the current states and/or results of your submitted jobs.</li>
+                   <li>For Successful jobs, click on the report link to view your detailed job report.</li>
+               </ul>
+             </div>
+           </div>
+         </div>
+
           <script>window.onload = window.onresize = function (){document.getElementById("main").style.height=(window.innerHeight-(document.getElementById("header").clientHeight+document.getElementById("footer").clientHeight))+"px";}   </script>
       </html>
