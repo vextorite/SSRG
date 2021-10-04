@@ -7,10 +7,14 @@ from .forms import NewUser, SubmitJob
 from .models import Jobs
 from subprocess import run, PIPE
 import os, sys
+from SSRG.celery import testTask
 
 import os
 dirname = os.path.dirname(__file__)
 filename = os.path.join(dirname, 'MossBackendJobs/jobRequest.py')
+
+filename2 = os.path.split(dirname)
+filename2 = os.path.join(filename2[0], 'jobs')
 
 # Create your views here.
 def homepage(request):
@@ -62,12 +66,13 @@ def newJob(request):
                         form.instance.baseFile, 
                         form.instance.user.email,
                         form.instance.emailNow,
-                        form.instance.id]
+                        form.instance.slug,
+                        f"{filename2}/{form.instance.user.username}/{form.instance.slug}"]
             job.save()
-            os.system(
-            f"python3 {filename} {arguments[0]} {arguments[5]} {arguments[1]} 'False' '' {arguments[3]} {arguments[4]} '/home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/'{arguments[0]}")
-            form.instance.jobState = 'done'
-            job.save()
+            testTask.delay(filename, arguments[0], arguments[5], arguments[1], arguments[2], arguments[3], arguments[4], arguments[6])
+
+            #form.instance.jobState = 'done'
+            #job.save()
             
             return redirect("menu")
     else:
@@ -82,7 +87,9 @@ def singleJobDetail(request, jobs):
     jobs = get_object_or_404(Jobs, slug=jobs)
     return render(request=request, template_name="Jobs/jobDetails.html", context={'jobs':jobs})
 
-def reportView(request):
+def reportView(request, jobs):
+    path = os.path.split(dirname)
+    path = os.path.join(path[0], 'jobs')
    
-    reportPath = "/home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/Job_root_report.pdf"
+    reportPath = f"{path}/{request.user}/{jobs}/JobReport.pdf"
     return FileResponse(open(reportPath, 'rb'), content_type='application/pdf')
