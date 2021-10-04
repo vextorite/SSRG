@@ -12,7 +12,7 @@ STATE_OPTIONS = [('done', 'Done'), ('processing', 'Processing'), ('error', 'Erro
 EMAIL_OPTIONS = [('True', 'True'), ('False', 'False')]
 
 def get_upload_path(instance, filename):
-    return 'jobs/{0}/{1}'.format(instance.user.username, filename)
+    return 'jobs/{0}/{1}/{2}'.format(instance.user.username, instance.slug, filename)
 
 class Jobs(models.Model):
 

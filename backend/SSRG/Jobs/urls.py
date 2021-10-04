@@ -12,6 +12,6 @@ urlpatterns = [
      path('newJob', views.newJob, name='new'),
      path('viewJobs', views.viewJobs, name='viewJobs'),
      path('menu', views.menu,name='menu'),
-     path('report', views.reportView, name='report'),
-     path('<slug:jobs>', views.singleJobDetail, name='jobDetail')
+     path('report/<slug:jobs>', views.reportView, name='report'),
+     #path('<slug:jobs>', views.singleJobDetail, name='jobDetail')
 ]
