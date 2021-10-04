@@ -47,11 +47,12 @@
 <div class="menuMain">
     <div class="titleText">Select an option to continue</div>
     <a href="newJob"><button class="menuButton"><img class="buttonImg" src="{% static 'polls/submit.png' %}"></img><br>Submit a job</button></a>
-    <br></br>
+    <br>
     <a href="viewJobs"><button  class="menuButton"><img class="buttonImg" src="{% static 'polls/report.png' %}"></img><br>View job status</button></a>
-    <br></br>
-    <button onclick="UGAlert()" class="menuButton"><img class="buttonImg" src="{% static 'polls/guide.png' %}"></img><br>User Options</button>
-
+    <br>
+    <button class="menuButton"><img class="buttonImg" src="{% static 'polls/guide.png' %}"></img><br>User Options</button>
+    <br>
+    <a href="#popup1" class="help"></a>
 </div>
 
 </div>
@@ -71,6 +72,17 @@
  
  
          </div>
+
+         <div id="popup1" class="overlay">
+          <div class="popup">
+            <h2>Help: menu screen</h2>
+            <a class="close" href="#">&times;</a>
+            <br>
+            <div class="content">
+              Suvi is ultra simp 3000
+            </div>
+          </div>
+        </div>
        
          <script>window.onload = window.onresize = function (){document.getElementById("main").style.height=(window.innerHeight-(document.getElementById("header").clientHeight+document.getElementById("footer").clientHeight))+"px";}   </script>
      </html>
