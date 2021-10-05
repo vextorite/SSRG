@@ -115,9 +115,9 @@ def singleJobDetail(request, jobs):
     #template = loader.get_template(viewPath)
     return FileResponse(open(viewPath, 'rb'))
 
-def JobDetail(filename):
-    path = os.path.split(dirname)
-    path = os.path.join(path[0], 'jobs')
+def JobDetail(request, filename):
+    # path = os.path.split(dirname)
+    # path = os.path.join(path[0], 'jobs')
     viewPath = filename
     viewPath = viewPath.replace('~', '/')
     #viewPath = f"{path}/{request.user}/{jobs}/final_landing.html"
