@@ -33,7 +33,7 @@ def registerRequest(request):
             #login(request, user)
             #messages.success(request, "Success")
             return redirect("menu")
-        messages.error(request, "Error! Invalid information")
+        #messages.error(request, "Error! Invalid information")
     else:
         form = NewUser()
         return render(request = request, template_name="Jobs/register.html", context={'registration':form})
