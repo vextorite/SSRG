@@ -149,7 +149,7 @@
         <div class="jobCard">
         <div class="jobTitleVJS">Job name: {{jobs.slug}}</div> 
         Job Date: {{jobs.uploadDate}}<br>
-        Submitted Files:  {{jobs.files}} <br>
+        Submitted Files:  <a target="_blank" href="details/{{jobs.slug}}">SSRG Source {{jobs.slug}}</a> <br>
         Job Report: <a target="_blank" href="report/{{jobs.slug}}">SSRG Report {{jobs.slug}}</a>
     </div>
         {%endfor%}
