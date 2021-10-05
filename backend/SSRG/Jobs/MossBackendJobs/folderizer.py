@@ -6,7 +6,7 @@ from pyunpack import Archive
 from shutil import copyfile
 
 
-rootdir = '/home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs'
+rootdir = '/home/Vextorite/Documents/Capstone/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs'
 if len(sys.argv) == 2:
     outputDir = str(sys.argv[1])
 

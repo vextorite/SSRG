@@ -57,11 +57,11 @@
     <label>Language: </label><br>
     {% render_field submission.language class+="newJobDropDown" %}
     <br>
-    <label>Upload File Archive: </label><br>
-    {% render_field submission.files class+="newJobFileIn" %}
+    <label>Upload File Archive/Individual Jobs: </label><br>
+    {% render_field singles.files class+="newJobFileIn" %}
     <br>
     <label>Basefile Title: </label><br>
-    {% render_field submission.baseFile class+="newJobTextIn" %}
+    {% render_field singles.baseFile class+="newJobFileIn" %}
     <br>
     <label>Send Email: </label><br>
     {% render_field submission.emailNow class+="newJobDropDown" %}

@@ -1,16 +1,1 @@
 Checking files . . . 
-OK
-Uploading /home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/root/MP1.java ...done.
-Uploading /home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/root/S1.java ...done.
-Uploading /home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/root/TS1.java ...done.
-Uploading /home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/root/MP0.java ...done.
-Uploading /home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/root/S0.java ...done.
-Uploading /home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/root/TS0.java ...done.
-Uploading /home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/root/TS2.java ...done.
-Uploading /home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/root/S2.java ...done.
-Uploading /home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/root/MP2.java ...done.
-Uploading /home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/root/TS3.java ...done.
-Uploading /home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/root/S3.java ...done.
-Uploading /home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/root/MP3.java ...done.
-Query submitted.  Waiting for the server's response.
-http://moss.stanford.edu/results/3/9114073923296
