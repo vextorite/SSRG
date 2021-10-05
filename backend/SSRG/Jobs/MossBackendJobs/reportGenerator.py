@@ -1,10 +1,18 @@
 from processor import scrapeUrl
 from fpdf import FPDF
 
+
 class PDF(FPDF):
+    '''
+    The PDF class inherits from the FPDF library. The appropriate methods were overrided in order to generate a report pdf
+    that summarizes the MOSS job and offers additional insights.
+    '''
     def header(self):
+        '''
+        Header portion of pdf contains logo
+        '''
         #logo 
-        self.image("/home/Vextorite/Documents/SSRG/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/Jobs/MossBackendJobs/logo.png", 10, 8, 25)
+        self.image("logo.png", 10, 8, 25)
         #just setting width allows for auto height that wont distort
         # path, x coord, y coord, width
         self.set_font('helvetica', 'B', 20)
@@ -16,6 +24,9 @@ class PDF(FPDF):
         return super().header()
 
     def footer(self):
+        '''
+        Footer portion of pdf contains page numbers
+        '''
         self.set_y(-15) # 15 mm from the bottom
         self.set_font('helvetica', 'I', 10)
         #page number
@@ -23,6 +34,9 @@ class PDF(FPDF):
         return super().footer()
     
     def report_title(self, re_num, re_title):
+        '''
+        Pdf page titles used to seperate PDF into logical sections
+        '''
         # set font
         self.set_font('helvetica', '', 12)
         # background color
@@ -35,10 +49,17 @@ class PDF(FPDF):
 
 
 def generateReport(url, pathName, heatPngPath, histPngPath):
+    '''
+    This function makes use of the extended PDF class, it adds in all scraped data into tables and adds graphs generated from matPlotlib
+    Parameters
+    url - MOSS url returned from script execution
+    pathName - Specified location used to save generated pdf
+    heatPngPath - Path of generated heatmap png
+    histPngPath - Path of generated histogram png
+    '''
     myList = scrapeUrl(url)
     pdf = PDF()
     # metadata
-    print('hello')
     pdf.set_title("MOSS REPORT")
     pdf.set_author('SSRG Team')
     pdf.add_page()
@@ -51,6 +72,7 @@ def generateReport(url, pathName, heatPngPath, histPngPath):
     pdf.set_font('Times', '', 8)
     #table code
     line_height = pdf.font_size * 2.5
+
     col_width = pdf.epw / 3  # distribute content evenly
     for row in myList:
         for x in row:

@@ -9,6 +9,12 @@ from reportGenerator import generateReport
 
 
 def populateDataList(urlLink):
+    '''
+    Function scrapes the MOSS url and puts it into an appropriate form so that it 
+    can be utilised in a Pandas Dataframe.
+    Parameters
+    urlLink - MOSS url returned from script execution
+    '''
     dataList=[]
     histList=[]
     finalList=[]
@@ -34,6 +40,13 @@ def populateDataList(urlLink):
     return finalList
 
 def studentList(exportPathHeat, exportPathHist,url):
+    '''
+    Function that populates a pandas dataframe in order to generate Heatmaps and Histograms from the MOSS output
+    Parameters
+    exportPathHeat - Path of generated heatmap png
+    exportPathHist - Path of generated histogram png
+    url - MOSS url returned from script execution
+    '''
     total=0
     studentList ={}
     studentList = set()
@@ -49,34 +62,32 @@ def studentList(exportPathHeat, exportPathHist,url):
     init_arr=numpy.zeros((len(studentList),len(studentList)))
     df3 = pd.DataFrame(init_arr, index= studentList, columns=studentList)
     for i in myFilteredList:
-        print(f'{i[0]}  and {i[1]} and {i[2]} and {i[3]}')
         df3[i[0]][i[2]] = i[1]
         df3[i[2]][i[0]] = i[3]
-    #print(df3)
     sns.heatmap(df3, cmap='rocket_r', annot=True, fmt='.0f',  ).set_title("MOSS High Average Lines Matched Heatmap")
     plt.title='Moss'
     plt.tight_layout()
     plt.savefig(exportPathHeat)
     plt.close()
-    print('heat done')
 
     histlist = mylst[1]
     histlist.sort()
-    for i in histlist:
-        print(i)
-    sns.histplot(histlist, color= 'Blue', bins=[10,20,30,40,50,60,70,80] )
+    sns.histplot(histlist, color= 'Blue', bins=[20,40,60,80,100,120,180,190] )
     plt.title='Distribution of Average Matched Lines'
     plt.xlabel("Average lines matched categories", fontsize =12)
     plt.ylabel("Observations", fontsize =12)
     plt.tight_layout()
     plt.savefig(exportPathHist)
-    print('hist done')
 
 
 
-def completeReport(zipPath, courseID,jobId,url):
-    studentList(f"{zipPath}/{jobId}_{courseID}_heatmap.png", f"{zipPath}/{jobId}_{courseID}_histogram.png", url)
-    #studentList(f'/Users/suvanth/Desktop/test/Suvanth/{jobId}heatmap.png', f'/Users/suvanth/Desktop/test/Suvanth/{jobId}histogram.png', url )
-    print('check test for your pics')
-    generateReport(url, f"{zipPath}/{jobId}_{courseID}_report.pdf", f"{zipPath}/{jobId}_{courseID}_heatmap.png", f"{zipPath}/{jobId}_{courseID}_histogram.png")
-    print('check test for your pdfs')
+def completeReport(fRoot, courseID,jobId,url):
+    '''
+    Utility driver function called to generate Graphs and Report
+    fRoot - Save path
+    courseID - courseID associated with user job appended on to files
+    jobID -  Unique identifier of submitted job appended on to files
+    url - MOSS url returned from script execution
+    '''
+    studentList(f"{fRoot}/{jobId}_{courseID}_heatmap.png", f"{fRoot}/{jobId}_{courseID}_histogram.png", url)
+    generateReport(url, f"{fRoot}/JobReport.pdf", f"{fRoot}/{jobId}_{courseID}_heatmap.png", f"{fRoot}/{jobId}_{courseID}_histogram.png")
