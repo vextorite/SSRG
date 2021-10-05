@@ -6,6 +6,7 @@ appName = "Jobs"
 
 urlpatterns = [
      path('', views.homepage, name='homepage'),
+     path('viewReport/<filename>',views.JobDetail, name='misc'),
      path('register', views.registerRequest, name = 'register'),
      path('login', views.loginRequest, name='login'),
      path('logout', views.logoutRequest, name='logout'),
@@ -13,5 +14,6 @@ urlpatterns = [
      path('viewJobs', views.viewJobs, name='viewJobs'),
      path('menu', views.menu,name='menu'),
      path('report/<slug:jobs>', views.reportView, name='report'),
-     #path('<slug:jobs>', views.singleJobDetail, name='jobDetail')
+     path('details/<slug:jobs>', views.singleJobDetail, name='jobDetail'),
+     path('profile', views.editUserDetails, name='profile')
 ]
