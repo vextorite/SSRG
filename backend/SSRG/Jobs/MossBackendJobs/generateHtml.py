@@ -6,7 +6,7 @@ def emailHtmlBody(jobUsername, jobID, jobStatus):
   jobID - Unique identifier for submitted MOSS job
   '''
   message = f"""
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 
@@ -140,6 +140,9 @@ justify-content: center;
    width: 100%;
    height: 100%;
 
+   display: grid;
+align-items: center;
+
  }}
 
  .notifDiv{{
@@ -154,10 +157,7 @@ justify-content: center;
    border-color: rgba(0, 117, 185, 0.233);
    border-width: 2px;
    border-style: solid;
-   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+margin:auto;
  }}
 
  .StatusIconSpace{{
@@ -166,6 +166,9 @@ justify-content: center;
    height: 150px;
    margin-bottom: 10px;
 
+display: grid;
+align-items: center;
+
  }}
 
  .done{{
@@ -173,10 +176,7 @@ justify-content: center;
    width:100px;
   background-image:url("https://demo.ssrg.online/outcome/done.png");
   background-size: contain;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin:auto;
  }}
 
  .pending{{
@@ -185,20 +185,14 @@ justify-content: center;
  background-image:url("https://demo.ssrg.online/outcome/load.gif");
  background-size: contain;
  border-radius: 50%;
- position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+ margin:auto;
 }}
 .error{{
   height:100px;
   width:100px;
  background-image:url("https://demo.ssrg.online/outcome/err.png");
  background-size: contain;
- position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+ margin:auto;
 }}
 
 .RedirectButton{{
