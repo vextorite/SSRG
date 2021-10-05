@@ -266,7 +266,7 @@ color:white;
 
   <div class="StatusIconSpace">
 
-    <div class="done"></div> <! can be "done", "error", "pending" ––> 
+    <div class="{jobStatus}"></div> <! can be "done", "error", "pending" ––> 
   </div>
 
 
