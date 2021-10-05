@@ -21,7 +21,7 @@ class NewUser(UserCreationForm):
 class EditProfile(UserChangeForm):
     class Meta:
         model = User
-        fields = {'email', 'username'}
+        fields = ('email', 'username')
 
 class SubmitJob(forms.ModelForm):
     class Meta:

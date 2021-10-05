@@ -29,13 +29,14 @@ def registerRequest(request):
     if request.method == "POST":
         form = NewUser(request.POST)
         if form.is_valid():
-            user = form.save()
-            login(request, user)
-            messages.success(request, "Success")
+            form.save()
+            #login(request, user)
+            #messages.success(request, "Success")
             return redirect("menu")
         messages.error(request, "Error! Invalid information")
-    form = NewUser()
-    return render(request = request, template_name="Jobs/register.html", context={'registration':form})
+    else:
+        form = NewUser()
+        return render(request = request, template_name="Jobs/register.html", context={'registration':form})
 
 def loginRequest(request):
     if request.method == "POST":
@@ -133,7 +134,7 @@ def reportView(request, jobs):
 
 def editUserDetails(request):
     if request.method == 'POST':
-        form = EditProfile(instance=request.user)
+        form = EditProfile(request.POST, instance=request.user)
         if form.is_valid():
             form.save()
             return redirect('profile')
