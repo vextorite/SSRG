@@ -1,13 +1,90 @@
-{% block head %}
-<title>Profile</title>
-{% endblock %}
 
-{% block body %}
-<div class='container'>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    {% load static %}
+
+<link rel="stylesheet" type="text/css" href="/static/polls/style.css?{% now 'U' %}">
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+
+
+
+
+    <title>SSRG FrontEnd</title>
+ 
+
+  <div class="App">
+
+    <div id="header">
+      <div class="Header">
+
+        <a href="https://demo.ssrg.online/"><img alt="SSRG Logo" class = "headShotImg" src = "https://demo.ssrg.online/Assets/logo.svg" ></img></a><br></br>
+     
+         <b>Automated Software Similarity
+     Report Generator </b>
+        
+         <div class = "title">
+         Sashen Naidoo - Sanele Hlongwane - Suvanth Ramruthen
+         </div>
+       
+         </div>
+    </div>
+    
+
+    <div id="main" class="mainArea" >
+
+
+<div class='UOcontainer'>
     <form method='post'>
         {% csrf_token %}
         {{form.as_p}}
         <button type='submit'>Submit</button>
     </form>
 </div>
-{% endblock %}
+
+
+</div>
+
+<div id="footer">
+  
+  <div class="switchDisplayMode">
+ Built with Django, Python & Celery
+    </div>
+
+  </div>
+
+
+       </div>
+     
+       <a href="#popup1" class="help"></a>
+       <div id="popup1" class="overlay">
+        <div class="popup">
+          <h2>Help: User Options</h2>
+          <a class="close" href="#">&times;</a>
+          <br>
+          <div class="content">
+            You are currently viewing the user options page.
+            
+            <ul>
+                <li>Enter your pre-existing username and password and click on "Login" to continue. </li>
+                <li>If you do not have an account already, click on the "Sign Up" link to be redirected to our registration page.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+       <script>window.onload = window.onresize = function (){document.getElementById("main").style.height=(window.innerHeight-(document.getElementById("header").clientHeight+document.getElementById("footer").clientHeight))+"px";}   </script>
+   </html>
+
+
