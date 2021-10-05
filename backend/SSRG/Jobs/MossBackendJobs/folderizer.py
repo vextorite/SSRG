@@ -5,11 +5,13 @@ import sys
 from pyunpack import Archive
 from shutil import copyfile
 
-rootdir = '/Users/suvanth/Desktop/SSRG_SYS/Suvanth/JobID001'
-outputDir ='/Users/suvanth/Desktop/SSRG_SYS/Suvanth/JobID001/Zip'
+# rootdir = '/Users/suvanth/Desktop/SSRG_SYS/Suvanth/JobID001'
+# outputDir ='/Users/suvanth/Desktop/SSRG_SYS/Suvanth/JobID001/Zip'
 # rootdir = '/Users/suvanth/Desktop/DjangoRoot'
-# if len(sys.argv) == 2:
-#     outputDir = str(sys.argv[1])
+if len(sys.argv) == 3:
+    rootdir = str(sys.argv[1])
+    outputDir = str(sys.argv[2])
+    print(sys.argv[1]+"\n"+sys.argv[2])
 
 
 verbose = False  # For debugging purposes, set verbose to True

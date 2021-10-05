@@ -15,8 +15,9 @@ app.autodiscover_tasks()
 
 @app.task(bind=True)
 def testTask(self, filename, username, slug, language, basefile, email, emailNow, path):
-    #os.system(
-    #f"python3 {filename} {username} {slug} {language} 'False' '' {email} {emailNow} {path}")
+    path2 = os.path.join(path, 'Zip')
+    os.system(
+    f"python3 {filename} {username} {slug} {language} 'False' {basefile} {email} {emailNow} {path} {path2}")
     instance = Jobs.objects.get(slug = slug)
     instance.jobState = 'done'
     instance.save()

@@ -1,6 +1,8 @@
 from processor import scrapeUrl
 from fpdf import FPDF
+import os
 
+dirname = os.path.dirname(__file__)
 
 class PDF(FPDF):
     '''
@@ -11,8 +13,9 @@ class PDF(FPDF):
         '''
         Header portion of pdf contains logo
         '''
+        path = os.path.join(dirname, 'logo.png')
         #logo 
-        self.image("logo.png", 10, 8, 25)
+        self.image(path, 10, 8, 25)
         #just setting width allows for auto height that wont distort
         # path, x coord, y coord, width
         self.set_font('helvetica', 'B', 20)

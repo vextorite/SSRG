@@ -19,3 +19,4 @@ Celery: `pip install celery`
 fpdf: `pip install fpdf`
 fpdf2: `pip install fpdf2`
 punpack: `pip install pyunpack`
+Dominate: `pip install dominate`

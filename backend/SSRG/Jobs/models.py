@@ -43,7 +43,7 @@ class Jobs(models.Model):
     successJobObjects = SuccessJobObjects()
 
     def __str__(self):
-        return self.user.username+"["+str(self.uploadDate)+"]"
+        return self.user.username+": "+str(self.slug)
 
     def get_absolute_url(self):
         return reverse('singleJobDetail', args=[self.slug])
@@ -58,3 +58,6 @@ class SingleFiles(models.Model):
     files = models.FileField(upload_to=get_upload_path, blank=True, null=True)
     baseFile = models.FileField(upload_to=get_base_path, blank=True, null=True)
     jobInstance = models.ForeignKey(Jobs, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.username+": "+str(self.slug)+": "+str(self.files)

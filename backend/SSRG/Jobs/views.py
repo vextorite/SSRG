@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login,logout, authenticate
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserChangeForm
 from django.contrib import messages
+from django.template import loader
 from django.http import HttpResponseRedirect, Http404, FileResponse
-from .forms import NewUser, SubmitJob, Files
+from .forms import NewUser, SubmitJob, Files, EditProfile
 from .models import Jobs, SingleFiles
 from subprocess import run, PIPE
 import os, sys
@@ -107,9 +108,21 @@ def viewJobs(request):
     return render(request=request, template_name="Jobs/jobsSubmitted.html", context={'pendingJobs':Jobs.pendingJobObjects.filter(user=request.user), 'successJobs':Jobs.successJobObjects.filter(user=request.user), 'failedJobs':Jobs.failedJobObjects.filter(user=request.user)})
 
 def singleJobDetail(request, jobs):
+    path = os.path.split(dirname)
+    path = os.path.join(path[0], 'jobs')
+   
+    viewPath = f"{path}/{request.user}/{jobs}/final_landing.html"
+    #template = loader.get_template(viewPath)
+    return FileResponse(open(viewPath, 'rb'))
 
-    jobs = get_object_or_404(Jobs, slug=jobs)
-    return render(request=request, template_name="Jobs/jobDetails.html", context={'jobs':jobs})
+def JobDetail(filename):
+    path = os.path.split(dirname)
+    path = os.path.join(path[0], 'jobs')
+    viewPath = filename
+    viewPath = viewPath.replace('~', '/')
+    #viewPath = f"{path}/{request.user}/{jobs}/final_landing.html"
+    #template = loader.get_template(viewPath)
+    return FileResponse(open(viewPath, 'rb'))
 
 def reportView(request, jobs):
     path = os.path.split(dirname)
@@ -117,3 +130,13 @@ def reportView(request, jobs):
    
     reportPath = f"{path}/{request.user}/{jobs}/JobReport.pdf"
     return FileResponse(open(reportPath, 'rb'), content_type='application/pdf')
+
+def editUserDetails(request):
+    if request.method == 'POST':
+        form = EditProfile(instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = EditProfile(instance=request.user)
+        return render(request=request, template_name='Jobs/profile.html', context={'form':form})

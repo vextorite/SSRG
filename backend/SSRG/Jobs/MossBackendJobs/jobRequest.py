@@ -1,4 +1,5 @@
 import os
+import sys
 import glob
 from mailer import sendNotification
 from heatmap import completeReport
@@ -8,9 +9,11 @@ from processor import saveCodeFiles
 #folderizer path
 #mossnet.pl path
 #REPLACES THESE WITH ARGS
-folderizerRoot = '/Users/suvanth/Desktop/SSRG_SYS/Suvanth/JobID001' #args
-folderizerOut ='/Users/suvanth/Desktop/SSRG_SYS/Suvanth/JobID001/Zip' #args
+# folderizerRoot = '/Users/suvanth/Desktop/SSRG_SYS/Suvanth/JobID001' #args
+# folderizerOut ='/Users/suvanth/Desktop/SSRG_SYS/Suvanth/JobID001/Zip' #args
 
+dirname = os.path.dirname(__file__)
+#dirname = os.path.split(dirname)[0]
 
 
 class jobRequest:
@@ -48,29 +51,31 @@ class jobRequest:
 
 
     def folderizerCall(self):
+        path = os.path.join(dirname, 'folderizer.py')
         '''
         The function executes the folderizer.py script with the specified arguments received from django webApp
         '''
         print('start unzip')
-        os.system(f'python3 folderizer.py {folderizerRoot} {folderizerOut} > folderout.txt')
+        os.system(f'python3 {path} {self.fRoot} {self.fOut} > folderout.txt')
         print('end unzip')
 
     def constructMossShellCommand(self):
         '''
         Constructs Moss Shell command adhering to strict structure
         '''
+        path = os.path.join(dirname, 'mossnet.pl')
         index = self.fOut[self.fOut.rfind('/'):]
         subPathList = " ".join(glob.glob(f"{self.fOut}{index}/*.{self.submissionLanguage}"))
         if(self.directoryFormat==True) and (self.baseFile==True):
             basePathList = " -b ".join(glob.glob(f"{self.fRoot}/Basefile/*.{self.submissionLanguage}"))
-            osCommand = f"perl mossnet.pl -l {self.submissionLanguage} -d -b {basePathList} {subPathList} > myMossRun_{self.jobID}.txt"
+            osCommand = f"perl {path} -l {self.submissionLanguage} -d -b {basePathList} {subPathList} > myMossRun_{self.jobID}.txt"
         if(self.directoryFormat==False) and (self.baseFile==True):
             basePathList = " -b ".join(glob.glob(f"{self.fRoot}/Basefile/*.{self.submissionLanguage}"))
-            osCommand = f"perl mossnet.pl -l {self.submissionLanguage} -b {basePathList} {subPathList} > myMossRun_{self.jobID}.txt"
+            osCommand = f"perl {path} -l {self.submissionLanguage} -b {basePathList} {subPathList} > myMossRun_{self.jobID}.txt"
         if(self.directoryFormat==True) and (self.baseFile==False):
-            osCommand = f"perl mossnet.pl -l {self.submissionLanguage} -d {subPathList} > myMossRun_{self.jobID}.txt"
+            osCommand = f"perl {path} -l {self.submissionLanguage} -d {subPathList} > myMossRun_{self.jobID}.txt"
         if(self.directoryFormat==False) and (self.baseFile==False):
-            osCommand = f"perl mossnet.pl -l {self.submissionLanguage} {subPathList} > myMossRun_{self.jobID}.txt"
+            osCommand = f"perl {path} -l {self.submissionLanguage} {subPathList} > myMossRun_{self.jobID}.txt"
 
         print(osCommand)
         return osCommand
@@ -127,7 +132,8 @@ class jobRequest:
             return file.readline().decode()
         
 
-job = jobRequest('CSC3002F','j100','java',False, False,'rmrsuv002@myuct.ac.za', True, folderizerRoot, folderizerOut)
+#job = jobRequest('CSC3002F','j100','java',False, False,'rmrsuv002@myuct.ac.za', True, folderizerRoot, folderizerOut)
+job = jobRequest(str(sys.argv[1]),str(sys.argv[2]),str(sys.argv[3]),eval(sys.argv[4]), eval(sys.argv[5]),str(sys.argv[6]),eval(sys.argv[7]), str(sys.argv[8]), str(sys.argv[9]))
 job.folderizerCall()
 job.jobSender()
 

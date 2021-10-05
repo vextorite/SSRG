@@ -64,7 +64,7 @@ def saveCodeFiles(url,fRoot,jobID):
       except:
         print('retrying saving moss connection lost')
 
-    create_page(fRoot, bounds, f'{fRoot}/{jobID}_landing.html')
+    create_page(fRoot, bounds, f'{fRoot}/final_landing.html')
 
 def saveLinks(url, fRoot, bounds):
   '''
