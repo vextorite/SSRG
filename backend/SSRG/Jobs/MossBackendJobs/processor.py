@@ -82,7 +82,7 @@ def saveLinks(url, fRoot, bounds):
     exportPath0=f'{fRoot}/record{i}-0.html'
     file = open(exportPath0, 'wb')
     file.write(webContent)
-    file.close
+    file.close()
 
     urlMatch1 = f'{url}/match{i}-1.html'
     response = urllib.request.urlopen(urlMatch1)
@@ -90,15 +90,17 @@ def saveLinks(url, fRoot, bounds):
     exportPath1= f'{fRoot}/record{i}-1.html'
     file = open(exportPath1, 'wb')
     file.write(webContent)
-    file.close
+    file.close()
 
-    file1 = codecs.open(exportPath0, "r", "utf-8")
+    file1 = codecs.open(exportPath1, "r", "utf-8")
     html1String = file1.read()
     file1.close()
 
     file2 = codecs.open(exportPath1, "r", "utf-8")
     html2String = file2.read()
     file2.close()
+    print(exportPath1)
+    #print('len1:'+len(html1String)+'\n'+'len2: '+len(html2String))
 
   
 

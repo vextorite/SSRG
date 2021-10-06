@@ -5,6 +5,21 @@ from django.forms import ClearableFileInput
 from .models import LANGUAGE_CHOICES, Jobs, SingleFiles
 
 class NewUser(UserCreationForm):
+    """
+    A class used to create a new user form utilizing the the UserCreationForm module
+    from django.contrib.auth.forms
+
+    ...
+
+    Attributes
+    ----------
+    none
+
+    Methods
+    ----------
+    save: User
+        new user creation
+    """
     email = forms.EmailField(required=True)
 
     class Meta:
@@ -19,17 +34,59 @@ class NewUser(UserCreationForm):
         return user
 
 class EditProfile(UserChangeForm):
+    """
+    A class used to create a user details edit form utilizing the the UserCreationForm module
+    from django.contrib.auth.forms
+
+    ...
+
+    Attributes
+    ----------
+    none
+
+    Methods
+    ----------
+    none
+    """
     class Meta:
         model = User
         fields = ('email', 'username')
 
 class SubmitJob(forms.ModelForm):
+    """
+    A class used to create a new job form utilizing the the UserCreationForm module
+    from django.contrib.auth.forms
+
+    ...
+
+    Attributes
+    ----------
+    none
+
+    Methods
+    ----------
+    none
+    """
     class Meta:
         model = Jobs
         fields = ['slug', 'language','emailNow']
         labels = {'slug':'Job Name'}
 
 class Files(forms.ModelForm):
+    """
+    A class used to create add new files to a job utilizing the the UserCreationForm module
+    from django.contrib.auth.forms
+
+    ...
+
+    Attributes
+    ----------
+    none
+
+    Methods
+    ----------
+    none
+    """
     class Meta:
         model = SingleFiles
         fields = ['files', 'baseFile']

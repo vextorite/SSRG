@@ -47,7 +47,7 @@ def create_page(individualPath, bound, savePath):
                         for table_head in table_headers:
                             th(table_head)
                 with tbody():
-                    for i in range(0,bound+1):
+                    for i in range(0,bound):
                         with tr():
                 
                             # td(a(f'Code file {i}-0'.title(), href=f'{individualPath}/record{i}-0.html', target='blank_', style='color: aliceblue'))

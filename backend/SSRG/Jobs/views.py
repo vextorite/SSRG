@@ -7,8 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, Http404, FileResponse
 from .forms import NewUser, SubmitJob, Files, EditProfile
 from .models import Jobs, SingleFiles
-from subprocess import run, PIPE
-import os, sys
+import os
 from SSRG.celery import testTask
 
 import os
@@ -20,13 +19,31 @@ filename2 = os.path.join(filename2[0], 'jobs')
 
 # Create your views here.
 def homepage(request):
+    """
+    Routes to homepage
+    Parameters
+    ----------
+    request: request
+    """
     return render(request=request, template_name='Jobs/home.html')
 
 @login_required(login_url='/login')
 def menu(request):
+    """
+    Routes to menu
+    Parameters
+    ----------
+    request: request
+    """
     return render(request=request, template_name='Jobs/menu.html')
 
 def registerRequest(request):
+    """
+    Routes to register
+    Parameters
+    ----------
+    request: request
+    """
     if request.method == "POST":
         form = NewUser(request.POST)
         if form.is_valid():
@@ -40,6 +57,12 @@ def registerRequest(request):
     return render(request = request, template_name="Jobs/register.html", context={'registration':form})
 
 def loginRequest(request):
+    """
+    Routes to login
+    Parameters
+    ----------
+    request: request
+    """
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
@@ -59,13 +82,24 @@ def loginRequest(request):
     return render(request=request, template_name="Jobs/login.html", context={'login':form})
 
 def logoutRequest(request):
+    """
+    Routes to logout
+    Parameters
+    ----------
+    request: request
+    """
     logout(request)
     messages.info(request, "You have been logged out.")
     return redirect("homepage")
 
 @login_required(login_url='/login')
 def newJob(request):
-    #form = SubmitJob()
+    """
+    Routes to submit a new job
+    Parameters
+    ----------
+    request: request
+    """
     basefileState = 'False'
     if request.method == 'POST':
         form = SubmitJob(request.POST)
@@ -87,7 +121,6 @@ def newJob(request):
                 fileInstance = SingleFiles(baseFile = f, jobInstance = job, user=request.user, slug = form.instance.slug)
                 fileInstance.save()
 
-
             arguments = [form.instance.user.username, 
                         form.instance.language,
                         basefileState, 
@@ -95,12 +128,7 @@ def newJob(request):
                         form.instance.emailNow,
                         form.instance.slug,
                         f"{filename2}/{form.instance.user.username}/{form.instance.slug}"]
-            #job.save()
-            testTask.delay(filename, arguments[0], arguments[5], arguments[1], arguments[2], arguments[3], arguments[4], arguments[6])
-
-            #form.instance.jobState = 'done'
-            #job.save()
-            
+            testTask.delay(filename, arguments[0], arguments[5], arguments[1], arguments[2], arguments[3], arguments[4], arguments[6])            
             return redirect("menu")
     else:
         form = SubmitJob()
@@ -109,29 +137,51 @@ def newJob(request):
 
 @login_required(login_url='/login')
 def viewJobs(request):
+    """
+    Routes to view jobs
+    Parameters
+    ----------
+    request: request
+    """
     return render(request=request, template_name="Jobs/jobsSubmitted.html", context={'pendingJobs':Jobs.pendingJobObjects.filter(user=request.user), 'successJobs':Jobs.successJobObjects.filter(user=request.user), 'failedJobs':Jobs.failedJobObjects.filter(user=request.user)})
 
 @login_required(login_url='/login')
 def singleJobDetail(request, jobs):
+    """
+    Routes to job detail
+    Parameters
+    ----------
+    request: request
+    jobs: str
+    """
     path = os.path.split(dirname)
     path = os.path.join(path[0], 'jobs')
    
     viewPath = f"{path}/{request.user}/{jobs}/final_landing.html"
-    #template = loader.get_template(viewPath)
     return FileResponse(open(viewPath, 'rb'))
 
 @login_required(login_url='/login')
 def JobDetail(request, filename):
-    # path = os.path.split(dirname)
-    # path = os.path.join(path[0], 'jobs')
+    """
+    Routes to MOSS generated files
+    Parameters
+    ----------
+    request: request
+    filename: str
+    """
     viewPath = filename
     viewPath = viewPath.replace('~', '/')
-    #viewPath = f"{path}/{request.user}/{jobs}/final_landing.html"
-    #template = loader.get_template(viewPath)
     return FileResponse(open(viewPath, 'rb'))
 
 @login_required(login_url='/login')
 def reportView(request, jobs):
+    """
+    Routes to generated report
+    Parameters
+    ----------
+    request: request
+    jobs: str
+    """
     path = os.path.split(dirname)
     path = os.path.join(path[0], 'jobs')
    
@@ -140,6 +190,12 @@ def reportView(request, jobs):
 
 @login_required(login_url='/login')
 def editUserDetails(request):
+    """
+    Routes to user options
+    Parameters
+    ----------
+    request: request
+    """
     if request.method == 'POST':
         form = EditProfile(request.POST, instance=request.user)
         if form.is_valid():
