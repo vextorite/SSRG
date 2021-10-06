@@ -7,11 +7,16 @@ Initialize the RabbitMQ Server using the command: `sudo systemctl enable rabbitm
 
 Start the RabbitMQ Server using the command: `sudo systemctl start rabbitmq-server`
 
-start a Celery worker using the command: `celery -A SSRG.celery worker --loglevel=info`
+Navigate to /Backend/SSRG/ and open 2 terminal windows.
+run `python3 manage.py runserver` to run Django
+
+Start a Celery worker using the command: `celery -A SSRG.celery worker --loglevel=info`
+
 
 Admin Credentials:
 `username: root`
 `password: superuser1@`
+
 
 Packages required:
 Django: `pip install django`
