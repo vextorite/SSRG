@@ -5,7 +5,7 @@ import urllib.parse
 from itertools import dropwhile
 from persistenceGenerator import create_page
 from generateHtml import comparissonFrameConstructor
-
+import codecs
 
 
 def scrapeUrl(url):
@@ -92,4 +92,12 @@ def saveLinks(url, fRoot, bounds):
     file.write(webContent)
     file.close
 
-    comparissonFrameConstructor(exportPath0, exportPath1, i, fRoot)
+    file1 = codecs.open(exportPath0, "r", "utf-8")
+    htmlString1 = file1.read()
+    file1.close()
+
+    file2 = codecs.open(exportPath1, "r", "utf-8")
+    htmlString2 = file2.read()
+    file2.close()
+
+    comparissonFrameConstructor(htmlString1, htmlString2, i, fRoot)
