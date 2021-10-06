@@ -393,14 +393,15 @@ transition: all 300ms;
 }
 
 .jobWrapperCard{
-  background-color: rgba(28, 29, 29, 0.705);
+  background-color: rgba(28, 29, 29, 0.795);
   padding: 20px 15px 0px 15px;
   transition: all 300ms;
   border-radius: 12px;
   margin-bottom: 15px;
-  border-color: white;
+  border-color: rgba(67, 94, 110,0.747);
+  color:white;
   border-style: solid;
-  border-width: 1px;
+  border-width: 3px;
   
 }
 
@@ -422,6 +423,7 @@ transition: all 300ms;
   border-style: solid;
   border-radius: 10px;
   border-width: 2px;
+  padding: 10px 25px 10px 25px;
   }
   
   .loginImg{
@@ -503,10 +505,10 @@ transition: all 300ms;
     color: white;
     border-radius: 10px;
     border-width: 2px;
-    padding: 25px 25px 25px 25px;
+    padding: 25px 35px 25px 35px;
     text-align: center;
-    border-color: rgb(114, 114, 114);
-    border-width: 2px;
+    border-color: rgba(67, 94, 110,0.747);
+    border-width: 3px;
     border-style: solid;
   }
 
@@ -527,15 +529,58 @@ transition: all 300ms;
   border-color: rgb(114, 114, 114);
   }
 
+
+  .SubmitButtonPass{
+    height:30px;
+    width: 180px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border-width: 2px;
+  
+   background-color: var(--buttonTitleContrast);
+    color: var(--contrastColor);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Oswald";
+  border-color: rgb(114, 114, 114);
+  }
+
+  .SubmitButtonUpdate{
+    height:30px;
+    width: 180px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    border-width: 2px;
+  
+   background-color: var(--buttonTitleContrast);
+    color: var(--contrastColor);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Oswald";
+  border-color: rgb(114, 114, 114);
+  }
   
   .SubmitButton:hover{
     background-color: rgba(67, 94, 110,0.747);
 
   }
 
+  .SubmitButtonPass:hover{
+    background-color: rgba(67, 94, 110,0.747);
+
+  }
+
+  .SubmitButtonUpdate:hover{
+    background-color: rgba(67, 94, 110,0.747);
+
+  }
+
   .newJobTextIn{
     height:20px;
-    width: 210px;
+    width: 230px;
     border-radius: 6px;
     border-width: 2px;
 margin: 8px 0px 10px 0px;
@@ -552,7 +597,7 @@ padding: 2px 5px 2px 5px;
 
 .newJobDropDown{
   height:30px;
-  width: 225px;
+  width: 245px;
   border-radius: 6px;
   border-width: 2px;
 margin: 8px 0px 10px 0px;
@@ -564,11 +609,12 @@ background-color: var(--buttonTitleContrast);
   font-family: "Oswald";
 border-color: gray;
 border-style: solid;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   }
 
   .newJobFileIn{
     transition: all 300ms;
-    height:38px;
+    height:21px;
     width: 220px;
     border-radius: 6px;
     border-width: 2px;
@@ -583,7 +629,30 @@ border-color: gray;
 border-style: solid;
 text-align: center;
 padding-left: 14px;
-padding-top: 10px;
+padding-top: 1px;
+padding-bottom: 8px;
+  }
+
+  .newJobFileIn input{
+    height:30px;
+    width: 120px;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border-width: 2px;
+  
+   background-color: var(--buttonTitleContrast);
+    color: var(--contrastColor);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Oswald";
+  border-color: rgb(114, 114, 114);
+  }
+
+  .newJobFileIn input:after {
+    content:"\a";
+    white-space: pre;
   }
 
   .menuContainer{
@@ -642,7 +711,11 @@ color:white;
   border-radius: 12px;
   border-color: rgba(67, 94, 110,0.747);
   border-style: solid;
-  border-width: 2px;
+  border-width: 3px;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .UOWrapper{
@@ -651,4 +724,103 @@ color:white;
   align-items: center;
   width: 100%;
   height:100%;
+}
+
+.PassChangeContainer{
+  background-color: #161616e5;
+  color:white;
+  padding: 20px 20px 20px 20px;
+  border-radius: 12px;
+  border-color: rgba(67, 94, 110,0.747);
+  border-style: solid;
+  border-width: 3px;
+  width: 50%;
+  max-width: 400px;
+  text-align: center;
+
+}
+
+.PassChangeWrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formPass input{
+  border-color: rgb(114, 114, 114);
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 6px;
+  padding: 2px 5px 2px 5px;
+  margin: 8px 0px 8px 0px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+ color: white;
+ background-color: var(--buttonTitleContrast);
+
+}
+
+input{
+  border-color: rgb(114, 114, 114);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 6px;
+  padding: 2px 5px 2px 5px;
+  margin: 2px 0px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+}
+
+.formPass li{
+  background-color: rgba(34, 34, 34, 0.664);
+ padding:10px 0px 10px 0px;
+ list-style: none;
+}
+
+.formPass label{
+margin-bottom: 5px;
+}
+
+.formPass label:after {
+  content:"\a";
+  white-space: pre;
+}
+
+
+
+.PWchange{
+  margin-top: 5px;
+}
+
+.passReq{
+  background-color: rgba(36, 36, 36, 0.767);
+  width: 80%;
+  margin:auto;
+  border-radius: 5px;
+  padding: 1px 0px 2px 0px;
+}
+
+.passInner{
+  background-color: rgba(39, 39, 39, 0.61);
+  border-radius: 8px;
+  border-color: rgba(67, 94, 110,0.747);
+  border-style: solid;
+  border-width: 1px;
+  padding: 5px 10px 5px 10px;
+  margin: 4px 0px 4px 0px;
+}
+
+.newJobLabel{
+  text-transform: uppercase;
+  font-size: 15px;
+  color:rgb(255, 255, 255);
+}
+
+button{
+  
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  
+  
+
 }
