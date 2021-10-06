@@ -5,6 +5,17 @@ from django.forms import ClearableFileInput
 from .models import LANGUAGE_CHOICES, Jobs, SingleFiles
 
 class NewUser(UserCreationForm):
+    """
+    A class used to create a new user form utilizing the the UserCreationForm module
+    from django.contrib.auth.forms
+
+    ...
+
+    Attributes
+    ----------
+    save: User
+        new user creation
+    """
     email = forms.EmailField(required=True)
 
     class Meta:
