@@ -1,3 +1,9 @@
+
+/* CSS is used to style all visible elements on the frontend. 
+It is used to deliver styles and, in certain places, animations.
+We decided against the use of component libraries/frameworks for style because we wanted a bespoke look and feel. */
+
+
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +12,8 @@
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
-  
 }
+
 
 @font-face{
     font-family: "Oswald";
@@ -818,11 +824,7 @@ margin-bottom: 5px;
 }
 
 button{
-  
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  
-  
-
 }
 
 .notifDivRegister{

@@ -213,5 +213,7 @@
            </div>
          </div>
 
+<!-- 
+      This function was used to automatically resize the mid-section of the page. This was done to achieve maximum viewheight on any client without overflowing onto the header or footer. On some clients, Window.innerHeight is NOT equal to the CSS viewheight "equivalent". -->
           <script>window.onload = window.onresize = function (){document.getElementById("main").style.height=(window.innerHeight-(document.getElementById("header").clientHeight+document.getElementById("footer").clientHeight))+"px";}   </script>
       </html>
