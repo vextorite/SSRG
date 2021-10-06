@@ -51,10 +51,11 @@ class jobRequest:
 
 
     def folderizerCall(self):
-        path = os.path.join(dirname, 'folderizer.py')
         '''
         The function executes the folderizer.py script with the specified arguments received from django webApp
         '''
+        path = os.path.join(dirname, 'folderizer.py')
+
         print('start unzip')
         os.system(f'python3 {path} {self.fRoot} {self.fOut} > folderout.txt')
         print('end unzip')

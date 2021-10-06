@@ -6,7 +6,11 @@ class URLTests(TestCase):
     """
     A class containing unit tests for url routing, used by Django tests
 
-    
+    ...
+
+    Attributes
+    ----------
+    none
     """
     def testHomePage(self):
         response = self.client.get('/')

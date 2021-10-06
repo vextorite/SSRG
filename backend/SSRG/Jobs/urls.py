@@ -4,6 +4,10 @@ from django.contrib.auth import views as auth_views
 from . import views
 
 appName = "Jobs"
+'''
+URL routing
+'''
+
 
 urlpatterns = [
      path('', views.homepage, name='homepage'),
