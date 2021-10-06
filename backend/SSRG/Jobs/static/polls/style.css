@@ -136,7 +136,7 @@ width: 40px;
   border-radius: 50%;
 
 background-color: rgba(255, 0, 0, 0);
- background-image: url("images/help.png");
+ background-image: url("images/help1.png");
  background-size: contain;
   color: var(--contrastColor);
   letter-spacing: 1px;
@@ -147,6 +147,33 @@ border-style: none;
 position: absolute;
 bottom: 30px;
 right: 6px;
+
+font-size: 1em;
+
+text-decoration: none;
+cursor: pointer;
+transition: all 0.3s ease-out;
+
+}
+
+.logoutPopup{
+  height:40px;
+width: 40px;
+  margin-top: 20px;
+  border-radius: 50%;
+
+background-color: rgba(255, 0, 0, 0);
+ background-image: url("images/logout.png");
+ background-size: contain;
+  color: var(--contrastColor);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: "Oswald";
+border-style: none;
+position: absolute;
+bottom: 30px;
+left: 6px;
 
 font-size: 1em;
 
@@ -395,6 +422,7 @@ transition: all 300ms;
   border-style: solid;
   border-radius: 10px;
   border-width: 2px;
+  padding: 10px 25px 10px 25px;
   }
   
   .loginImg{
@@ -500,8 +528,51 @@ transition: all 300ms;
   border-color: rgb(114, 114, 114);
   }
 
+
+  .SubmitButtonPass{
+    height:30px;
+    width: 180px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border-width: 2px;
+  
+   background-color: var(--buttonTitleContrast);
+    color: var(--contrastColor);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Oswald";
+  border-color: rgb(114, 114, 114);
+  }
+
+  .SubmitButtonUpdate{
+    height:30px;
+    width: 180px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    border-width: 2px;
+  
+   background-color: var(--buttonTitleContrast);
+    color: var(--contrastColor);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Oswald";
+  border-color: rgb(114, 114, 114);
+  }
   
   .SubmitButton:hover{
+    background-color: rgba(67, 94, 110,0.747);
+
+  }
+
+  .SubmitButtonPass:hover{
+    background-color: rgba(67, 94, 110,0.747);
+
+  }
+
+  .SubmitButtonUpdate:hover{
     background-color: rgba(67, 94, 110,0.747);
 
   }
@@ -616,6 +687,10 @@ color:white;
   border-color: rgba(67, 94, 110,0.747);
   border-style: solid;
   border-width: 2px;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .UOWrapper{
@@ -624,4 +699,81 @@ color:white;
   align-items: center;
   width: 100%;
   height:100%;
+}
+
+.PassChangeContainer{
+  background-color: #161616e5;
+  color:white;
+  padding: 20px 20px 20px 20px;
+  border-radius: 12px;
+  border-color: rgba(67, 94, 110,0.747);
+  border-style: solid;
+  border-width: 2px;
+  width: 50%;
+  max-width: 400px;
+  text-align: center;
+
+}
+
+.PassChangeWrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formPass input{
+  border-color: rgb(114, 114, 114);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 6px;
+  padding: 2px 5px 2px 5px;
+  margin: 2px 0px 2px 0px;
+}
+
+input{
+  border-color: rgb(114, 114, 114);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 6px;
+  padding: 2px 5px 2px 5px;
+  margin: 2px 0px 2px 0px;
+}
+
+.formPass li{
+  background-color: rgba(34, 34, 34, 0.664);
+ padding:10px 0px 10px 0px;
+ list-style: none;
+}
+
+.formPass label{
+
+}
+
+.formPass label:after {
+  content:"\a";
+  white-space: pre;
+}
+
+.PWchange{
+  margin-top: 5px;
+}
+
+.passReq{
+  background-color: rgba(36, 36, 36, 0.767);
+  width: 80%;
+  margin:auto;
+  border-radius: 5px;
+  padding: 1px 0px 2px 0px;
+}
+
+.passInner{
+  background-color: rgba(39, 39, 39, 0.61);
+  border-radius: 8px;
+  border-color: rgba(67, 94, 110,0.747);
+  border-style: solid;
+  border-width: 1px;
+  padding: 5px 10px 5px 10px;
+  margin: 4px 0px 4px 0px;
 }

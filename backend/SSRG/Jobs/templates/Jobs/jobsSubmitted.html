@@ -104,7 +104,7 @@
     <div id="header">
       <div class="Header">
 
-        <a href="https://demo.ssrg.online/"><img alt="SSRG Logo" class = "headShotImg" src = "https://demo.ssrg.online/Assets/logo.svg" ></img></a><br></br>
+        <a href="menu"><img alt="SSRG Logo" class = "headShotImg" src = "https://demo.ssrg.online/Assets/logo.svg" ></img></a><br></br>
      
          <b>Automated Software Similarity
      Report Generator </b>
@@ -149,7 +149,7 @@
         <div class="jobCard">
         <div class="jobTitleVJS">Job name: {{jobs.slug}}</div> 
         Job Date: {{jobs.uploadDate}}<br>
-        Submitted Files:  {{jobs.files}} <br>
+        Submitted Files:  <a target="_blank" href="details/{{jobs.slug}}">SSRG Source {{jobs.slug}}</a> <br>
         Job Report: <a target="_blank" href="report/{{jobs.slug}}">SSRG Report {{jobs.slug}}</a>
     </div>
         {%endfor%}
@@ -194,7 +194,7 @@
   
           </div>
         
-
+          <a href="logout" class="logoutPopup"></a>
           <a href="#popup1" class="help"></a>
           <div id="popup1" class="overlay">
            <div class="popup">

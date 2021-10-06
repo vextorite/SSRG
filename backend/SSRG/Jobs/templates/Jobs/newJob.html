@@ -29,7 +29,7 @@
     <div id="header">
       <div class="Header">
 
-        <a href="https://demo.ssrg.online/"><img alt="SSRG Logo" class = "headShotImg" src = "https://demo.ssrg.online/Assets/logo.svg" ></img></a><br></br>
+        <a href="menu"><img alt="SSRG Logo" class = "headShotImg" src = "https://demo.ssrg.online/Assets/logo.svg" ></img></a><br></br>
      
          <b>Automated Software Similarity
      Report Generator </b>
@@ -60,7 +60,7 @@
     <label>Upload File Archive/Individual Jobs: </label><br>
     {% render_field singles.files class+="newJobFileIn" %}
     <br>
-    <label>Basefile Title: </label><br>
+    <label>Upload Basefile(s):</label><br>
     {% render_field singles.baseFile class+="newJobFileIn" %}
     <br>
     <label>Send Email: </label><br>
@@ -87,7 +87,7 @@ Built with Django, Python & Celery
 
      </div>
    
-
+     <a href="logout" class="logoutPopup"></a>
      <a href="#popup1" class="help"></a>
      <div id="popup1" class="overlay">
       <div class="popup">
