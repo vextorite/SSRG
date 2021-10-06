@@ -643,6 +643,9 @@ color:white;
   border-color: rgba(67, 94, 110,0.747);
   border-style: solid;
   border-width: 2px;
+  width: 50%;
+  max-width: 300px;
+  text-align: center;
 }
 
 .UOWrapper{
