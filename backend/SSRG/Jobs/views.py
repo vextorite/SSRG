@@ -30,12 +30,12 @@ def registerRequest(request):
     if request.method == "POST":
         form = NewUser(request.POST)
         if form.is_valid():
-            form.save()
+            user=form.save()
             login(request, user)
-            #messages.success(request, "Success")
+            messages.success(request, "Success")
             return redirect("menu")
 
-        #messages.error(request, "Error! Invalid information")
+        messages.error(request, "Error! Invalid information")
     form = NewUser()
     return render(request = request, template_name="Jobs/register.html", context={'registration':form})
 
