@@ -35,7 +35,7 @@ def registerRequest(request):
             messages.success(request, "Success")
             return redirect("menu")
 
-        messages.error(request, "Error! Invalid information")
+        messages.error(request, "Error! Invalid information or unsecure password.")
     form = NewUser()
     return render(request = request, template_name="Jobs/register.html", context={'registration':form})
 
