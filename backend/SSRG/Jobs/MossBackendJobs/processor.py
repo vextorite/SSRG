@@ -92,12 +92,15 @@ def saveLinks(url, fRoot, bounds):
     file.write(webContent)
     file.close
 
-    file1 = codecs.open(exportPath0, "r", "utf-8")
-    htmlString1 = file1.read()
-    file1.close()
+    #file1 = codecs.open(exportPath0, "r", "utf-8")
+    #htmlString1 = file1.read()
+    #file1.close()
 
-    file2 = codecs.open(exportPath1, "r", "utf-8")
-    htmlString2 = file2.read()
-    file2.close()
+    #file2 = codecs.open(exportPath1, "r", "utf-8")
+    #htmlString2 = file2.read()
+    #file2.close()
+
+    html1String="1"
+    html2String="2"
 
     comparissonFrameConstructor(htmlString1, htmlString2, i, fRoot)
