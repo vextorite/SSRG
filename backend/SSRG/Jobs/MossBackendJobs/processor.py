@@ -100,7 +100,7 @@ def saveLinks(url, fRoot, bounds):
     #htmlString2 = file2.read()
     #file2.close()
 
-    html1String="1"
-    html2String="2"
+   # html1String="1"
+   # html2String="2"
 
-    comparissonFrameConstructor(htmlString1, htmlString2, i, fRoot)
+    comparissonFrameConstructor(exportPath0, exportPath1, i, fRoot)
