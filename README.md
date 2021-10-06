@@ -13,10 +13,17 @@ Admin Credentials:
 
 Packages required:
 Django: `pip install django`
+
 Django Crispy Forms: `pip install django-crispy-forms`
+
 Django Widget Tweaks: `pip install django-widget-tweaks`
+
 Celery: `pip install celery`
+
 fpdf: `pip install fpdf`
+
 fpdf2: `pip install fpdf2`
+
 punpack: `pip install pyunpack`
+
 Dominate: `pip install dominate`
