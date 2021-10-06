@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth import login,logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm, UserChangeForm
 from django.contrib import messages
-from django.template import loader
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, Http404, FileResponse
 from .forms import NewUser, SubmitJob, Files, EditProfile
 from .models import Jobs, SingleFiles
@@ -22,6 +22,7 @@ filename2 = os.path.join(filename2[0], 'jobs')
 def homepage(request):
     return render(request=request, template_name='Jobs/home.html')
 
+@login_required(login_url='/login')
 def menu(request):
     return render(request=request, template_name='Jobs/menu.html')
 
@@ -30,13 +31,13 @@ def registerRequest(request):
         form = NewUser(request.POST)
         if form.is_valid():
             form.save()
-            #login(request, user)
+            login(request, user)
             #messages.success(request, "Success")
             return redirect("menu")
+
         #messages.error(request, "Error! Invalid information")
-    else:
-        form = NewUser()
-        return render(request = request, template_name="Jobs/register.html", context={'registration':form})
+    form = NewUser()
+    return render(request = request, template_name="Jobs/register.html", context={'registration':form})
 
 def loginRequest(request):
     if request.method == "POST":
@@ -62,6 +63,7 @@ def logoutRequest(request):
     messages.info(request, "You have been logged out.")
     return redirect("homepage")
 
+@login_required(login_url='/login')
 def newJob(request):
     #form = SubmitJob()
     basefileState = 'False'
@@ -105,9 +107,11 @@ def newJob(request):
         singleFilesForm = Files()
     return render(request=request, template_name="Jobs/newJob.html", context={'submission': form, 'singles':singleFilesForm})
 
+@login_required(login_url='/login')
 def viewJobs(request):
     return render(request=request, template_name="Jobs/jobsSubmitted.html", context={'pendingJobs':Jobs.pendingJobObjects.filter(user=request.user), 'successJobs':Jobs.successJobObjects.filter(user=request.user), 'failedJobs':Jobs.failedJobObjects.filter(user=request.user)})
 
+@login_required(login_url='/login')
 def singleJobDetail(request, jobs):
     path = os.path.split(dirname)
     path = os.path.join(path[0], 'jobs')
@@ -116,6 +120,7 @@ def singleJobDetail(request, jobs):
     #template = loader.get_template(viewPath)
     return FileResponse(open(viewPath, 'rb'))
 
+@login_required(login_url='/login')
 def JobDetail(request, filename):
     # path = os.path.split(dirname)
     # path = os.path.join(path[0], 'jobs')
@@ -125,6 +130,7 @@ def JobDetail(request, filename):
     #template = loader.get_template(viewPath)
     return FileResponse(open(viewPath, 'rb'))
 
+@login_required(login_url='/login')
 def reportView(request, jobs):
     path = os.path.split(dirname)
     path = os.path.join(path[0], 'jobs')
@@ -132,6 +138,7 @@ def reportView(request, jobs):
     reportPath = f"{path}/{request.user}/{jobs}/JobReport.pdf"
     return FileResponse(open(reportPath, 'rb'), content_type='application/pdf')
 
+@login_required(login_url='/login')
 def editUserDetails(request):
     if request.method == 'POST':
         form = EditProfile(request.POST, instance=request.user)

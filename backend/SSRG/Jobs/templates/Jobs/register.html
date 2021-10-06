@@ -1,115 +1,16 @@
-      
+{% block content %} 
 
-<!DOCTYPE html>
-<html lang="en">
+{% load crispy_forms_tags %}         
 
-    {% load static %}
-
-<link rel="stylesheet" type="text/css" href="/static/polls/style.css?{% now 'U' %}">
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
-
-
-
-
-    <title>SSRG FrontEnd</title>
- 
-
-  <div class="App">
-
-    <div id="header">
-      <div class="Header">
-
-        <a href="https://demo.ssrg.online/"><img alt="SSRG Logo" class = "headShotImg" src = "https://demo.ssrg.online/Assets/logo.svg" ></img></a><br></br>
-     
-         <b>Automated Software Similarity
-     Report Generator </b>
-        
-         <div class = "title">
-         Sashen Naidoo - Sanele Hlongwane - Suvanth Ramruthen
-         </div>
-       
-         </div>
-    </div>
-    
-
-    <div id="main" class="mainArea" >
 <!--Register--> 
-
-	<div class="signUpContainer">
-		<div class="signUpInternal">
+<div class="container py-5">
+	<h1>Register</h1>
 	<form method="POST">
 		{% csrf_token %}
-		<div class="titleText">Sign up to continue</div>
-		<br>
-		<div class="loginInner">
-		<div  class ="loginInputLabel">Username</div>
-			<input  class  ="loginInput"></input>
-			<br>
-			<div  class ="loginInputLabel">email address</div>
-			<input  class  ="loginInput" ></input>
-			<br>
-		  
-			<div  class ="loginInputLabel">Password</div>
-			<input type="password"  class  ="loginInput" ></input>
-			<br>
-			<div  class ="loginInputLabel">Confirm Password</div>
-			<input type="password"  class  ="loginInput" ></input>
-			<br>
-			<button type="submit"  class ="loginButton"><img  class ="loginImg" src="{% static 'polls/signup.png' %}"></img>
-			<br>
-		Sign Up
-		 </button>
-
-		 <p class="text-center">Already have an account? <a href="/login">Login</a></p>
-		 </div>
-
-		
-	
+		{{ registration.as_p }}                    
+		<button class="btn btn-primary" type="submit">Register</button>
 	</form>
-</div>
-</div>
-</div>
-
-
-    
-  
-  
-<div id="footer">
-
-<div class="switchDisplayMode">
-Built with Django, Python & Celery
-  </div>
-
+	<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
 </div>
 
-
-	 </div>
-   
-	 <a href="#popup1" class="help"></a>
-	 <div id="popup1" class="overlay">
-	  <div class="popup">
-		<h2>Help: Registration</h2>
-		<a class="close" href="#">&times;</a>
-		<br>
-		<div class="content">
-		  You are currently viewing the registration page.
-		  
-		  <ul>
-			  <li>Enter a username, email and password and click on "Sign Up" to continue. </li>
-			  <li>If you have an account already, click on the "Login" link to be redirected to our login page.</li>
-		  </ul>
-		</div>
-	  </div>
-	</div>
-
-	 <script>window.onload = window.onresize = function (){document.getElementById("main").style.height=(window.innerHeight-(document.getElementById("header").clientHeight+document.getElementById("footer").clientHeight))+"px";}   </script>
- </html>
+{% endblock %}
