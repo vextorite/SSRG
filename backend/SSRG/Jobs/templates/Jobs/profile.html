@@ -45,8 +45,12 @@
     <div id="main" class="mainArea" >
 
 <div class="UOWrapper">
+  <div>
+  <div class="titleText">Update user details</div>
 <div class='UOcontainer'>
+
     <form method='post'>
+      
         {% csrf_token %}
 
         <div  class ="loginInputLabel">email address</div>
@@ -55,11 +59,15 @@
 
       <div class ="loginInputLabel">Username</div>
 			<input name="username" value= {{user.username}} class  ="loginInput"> </input>
-			<br>
-Passwords are not stored, change your password <a href="password">here</a>
-
-        <button class="SubmitButton"type='submit'>Submit</button>
+      <button class="SubmitButtonUpdate"type='submit'>Update Details</button>
+      <br>
+      <div class="PWchange">
+        
+Change your password <a href="password">here</a>
+</div>
+      
     </form>
+</div>
 </div>
 </div>
 
@@ -80,15 +88,15 @@ Passwords are not stored, change your password <a href="password">here</a>
        <a href="#popup1" class="help"></a>
        <div id="popup1" class="overlay">
         <div class="popup">
-          <h2>Help: User Options</h2>
+          <h2>Help: Update user details</h2>
           <a class="close" href="#">&times;</a>
           <br>
           <div class="content">
-            You are currently viewing the user options page.
+            You are currently viewing the user details update page.
             
             <ul>
-                <li>Enter your pre-existing username and password and click on "Login" to continue. </li>
-                <li>If you do not have an account already, click on the "Sign Up" link to be redirected to our registration page.</li>
+                <li>To change your username or email, change the pre-populated email/username values and click on the "Update Details" button to make changes to your account details.</li>
+                <li>To change your password, click on the "Change your password here" link to be redirected to the password change page.</li>
             </ul>
           </div>
         </div>

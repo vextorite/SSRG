@@ -57,19 +57,23 @@
 			<div  class ="loginInputLabel">email address</div>
 			<input name="email"  class  ="loginInput" ></input>
 			<br>
-		  
+		  <div class="passInner">
+			
 			<div  class ="loginInputLabel">Password</div>
 			<input name="password1" type="password"  class  ="loginInput" ></input>
 			<br>
 			<div  class ="loginInputLabel">Confirm Password</div>
 			<input name="password2" type="password"  class  ="loginInput" ></input>
 			<br>
+			<p class="passReq"> <a href="#popup2">Password Requirements</a></p>
+		  </div>
 			<button type="submit"  class ="loginButton"><img  class ="loginImg" src="{% static 'polls/signup.png' %}"></img>
 			<br>
 		Sign Up
 		 </button>
 
 		 <p class="text-center">Already have an account? <a href="/login">Login</a></p>
+
 		 </div>
 
 		
@@ -110,6 +114,24 @@ Built with Django, Python & Celery
 		</div>
 	  </div>
 	</div>
+
+	<div id="popup2" class="overlay">
+	 <div class="popup">
+	   <h2>Password Requirements</h2>
+	   <a class="close" href="#">&times;</a>
+	   <br>
+	   <div class="content">
+		 User passwords must reach strict strength requirements to uphold the safety of our systems and your data. Please see our password requirements listed below: 
+		 
+		 <ul>
+			 <li>Your password can't be too similar to your other personal information.</li>
+			 <li>Your password must contain at least 8 characters.</li>
+			 <li>Your password can't be a commonly used password.</li>
+			 <li>Your password can't be entirely numeric.</li>
+		 </ul>
+	   </div>
+	 </div>
+   </div>
 
 	 <script>window.onload = window.onresize = function (){document.getElementById("main").style.height=(window.innerHeight-(document.getElementById("header").clientHeight+document.getElementById("footer").clientHeight))+"px";}   </script>
  </html>
