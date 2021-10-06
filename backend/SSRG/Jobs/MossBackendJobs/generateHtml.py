@@ -323,7 +323,6 @@ def comparissonFrameConstructor(path0, path1,i, fRoot):
 
     .containerMain{{
         height: 90%;
-        background-color: purple;
         display: flexbox;
     }}
 
@@ -524,7 +523,7 @@ justify-content: center;
 </iframe>
 </div>
 <div class="box">
-<iframe frameborder="0" style="overflow:hidden;height:100%;width:100%" srcdoc='{path1}' name="iframe_b" frameborder="1" scrolling="yes" width="100%" height="100%">
+<iframe frameborder="0" style="overflow:hidden;height:100%;width:100%" srcdoc='{path0}' name="iframe_b" frameborder="1" scrolling="yes" width="100%" height="100%">
 </iframe>
 </div>
 
