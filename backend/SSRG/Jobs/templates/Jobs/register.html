@@ -46,6 +46,7 @@
 
 	<div class="signUpContainer">
 		<div class="signUpInternal">
+			<div class="notifDivRegister">
 			{% if messages %}
 				<ul class="messages">
     			{% for message in messages %}
@@ -53,6 +54,7 @@
     			{% endfor %}
 				</ul>
 			{% endif %}
+		</div>
 	<form method="POST">
 		{% csrf_token %}
 		<div class="titleText">Sign up to continue</div>
