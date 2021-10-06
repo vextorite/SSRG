@@ -1,0 +1,16 @@
+Checking files . . . 
+OK
+Uploading /home/Vextorite/Documents/Capstone/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/qazsw/Zip/Zip/MP1.java ...done.
+Uploading /home/Vextorite/Documents/Capstone/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/qazsw/Zip/Zip/S1.java ...done.
+Uploading /home/Vextorite/Documents/Capstone/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/qazsw/Zip/Zip/TS1.java ...done.
+Uploading /home/Vextorite/Documents/Capstone/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/qazsw/Zip/Zip/MP0.java ...done.
+Uploading /home/Vextorite/Documents/Capstone/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/qazsw/Zip/Zip/S0.java ...done.
+Uploading /home/Vextorite/Documents/Capstone/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/qazsw/Zip/Zip/TS0.java ...done.
+Uploading /home/Vextorite/Documents/Capstone/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/qazsw/Zip/Zip/TS2.java ...done.
+Uploading /home/Vextorite/Documents/Capstone/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/qazsw/Zip/Zip/S2.java ...done.
+Uploading /home/Vextorite/Documents/Capstone/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/qazsw/Zip/Zip/MP2.java ...done.
+Uploading /home/Vextorite/Documents/Capstone/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/qazsw/Zip/Zip/TS3.java ...done.
+Uploading /home/Vextorite/Documents/Capstone/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/qazsw/Zip/Zip/S3.java ...done.
+Uploading /home/Vextorite/Documents/Capstone/ssrg-ndxsas021-hlnsan005-rmrsuv002/backend/SSRG/jobs/root/qazsw/Zip/Zip/MP3.java ...done.
+Query submitted.  Waiting for the server's response.
+http://moss.stanford.edu/results/7/5323183982140
