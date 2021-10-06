@@ -51,19 +51,19 @@
     <div class="SubmitJob">
 <form action = "{% url 'new'%}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <label>Job Name: </label><br>
+    <label class="newJobLabel">Job Name </label><br>
     {% render_field submission.slug class+="newJobTextIn" %}
     <br>
-    <label>Language: </label><br>
+    <label class="newJobLabel">Language </label><br>
     {% render_field submission.language class+="newJobDropDown" %}
     <br>
-    <label>Upload File Archive/Individual Jobs: </label><br>
+    <label class="newJobLabel">Upload File Archive/Individual Jobs </label><br>
     {% render_field singles.files class+="newJobFileIn" %}
     <br>
-    <label>Upload Basefile(s):</label><br>
+    <label class="newJobLabel">Upload Basefile(s)</label><br>
     {% render_field singles.baseFile class+="newJobFileIn" %}
     <br>
-    <label>Send Email: </label><br>
+    <label class="newJobLabel">Send Email </label><br>
     {% render_field submission.emailNow class+="newJobDropDown" %}
   
     <br>
