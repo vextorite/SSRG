@@ -9,7 +9,10 @@ class MainConfig(AppConfig):
 
     Attributes
     ----------
-    none
+    default_auto_field : str
+        a string indicating which auto field to be used
+    name: str
+        the name of the Django app
     """
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'Jobs'

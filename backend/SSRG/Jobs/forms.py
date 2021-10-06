@@ -13,6 +13,10 @@ class NewUser(UserCreationForm):
 
     Attributes
     ----------
+    none
+
+    Methods
+    ----------
     save: User
         new user creation
     """
@@ -30,6 +34,21 @@ class NewUser(UserCreationForm):
         return user
 
 class EditProfile(UserChangeForm):
+    """
+    A class used to create an edit form for a user utilizing the the UserCreationForm module
+    from django.contrib.auth.forms
+
+    ...
+
+    Attributes
+    ----------
+    none
+
+    Methods
+    ----------
+    save: User
+        new user creation
+    """
     class Meta:
         model = User
         fields = ('email', 'username')
