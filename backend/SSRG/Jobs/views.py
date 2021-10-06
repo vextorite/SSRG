@@ -30,7 +30,7 @@ def registerRequest(request):
         form = NewUser(request.POST)
         if form.is_valid():
             form.save()
-            #login(request, user)
+            login(request, user)
             #messages.success(request, "Success")
             return redirect("menu")
         #messages.error(request, "Error! Invalid information")
