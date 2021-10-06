@@ -98,6 +98,7 @@ def saveLinks(url, fRoot, bounds):
 
     file2 = codecs.open(exportPath1, "r", "utf-8")
     htmlString2 = file2.read()
+    print("STring len: "+len(htmlString2))
     file2.close()
 
     comparissonFrameConstructor(htmlString1, htmlString2, i, fRoot)

@@ -1,9 +1,11 @@
 from django.test import TestCase
 from Jobs.models import Jobs, SingleFiles
 
-# Create your tests here.
 
 class URLTests(TestCase):
+    """
+    
+    """
     def testHomePage(self):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
