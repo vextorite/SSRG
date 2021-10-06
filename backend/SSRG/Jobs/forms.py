@@ -35,7 +35,7 @@ class NewUser(UserCreationForm):
 
 class EditProfile(UserChangeForm):
     """
-    A class used to create an edit form for a user utilizing the the UserCreationForm module
+    A class used to create a user details edit form utilizing the the UserCreationForm module
     from django.contrib.auth.forms
 
     ...
@@ -46,20 +46,47 @@ class EditProfile(UserChangeForm):
 
     Methods
     ----------
-    save: User
-        new user creation
+    none
     """
     class Meta:
         model = User
         fields = ('email', 'username')
 
 class SubmitJob(forms.ModelForm):
+    """
+    A class used to create a new job form utilizing the the UserCreationForm module
+    from django.contrib.auth.forms
+
+    ...
+
+    Attributes
+    ----------
+    none
+
+    Methods
+    ----------
+    none
+    """
     class Meta:
         model = Jobs
         fields = ['slug', 'language','emailNow']
         labels = {'slug':'Job Name'}
 
 class Files(forms.ModelForm):
+    """
+    A class used to create add new files to a job utilizing the the UserCreationForm module
+    from django.contrib.auth.forms
+
+    ...
+
+    Attributes
+    ----------
+    none
+
+    Methods
+    ----------
+    none
+    """
     class Meta:
         model = SingleFiles
         fields = ['files', 'baseFile']
