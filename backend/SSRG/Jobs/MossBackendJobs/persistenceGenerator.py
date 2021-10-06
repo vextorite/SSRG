@@ -55,9 +55,9 @@ def create_page(individualPath, bound, savePath):
                             # td(a(f'Comparison {i}'.title(), href=f'{individualPath}/Comaprison_Record_{i}.html', target='blank_', style='color: aliceblue' ))
                             newresourcepath = individualPath.replace('/','~')
                             # individualPath = f'../viewReport/{individualPath}'
-                            td(a(f'Code file {i}-0'.title(), href=f'../viewReport/{newresourcepath}/record{i}-0.html', target='blank_', style='color: aliceblue'))
-                            td(a(f'Code file {i}-1'.title(), href=f'../viewReport/{newresourcepath}/record{i}-1.html', target='blank_', style='color: aliceblue' ))
-                            td(a(f'Comparison {i}'.title(), href=f'../viewReport/{newresourcepath}/Comaprison_Record_{i}.html', target='blank_', style='color: aliceblue' ))
+                            td(a(f'Code file {i}-0'.title(), href=f'../viewReport/{newresourcepath}~record{i}-0.html', target='blank_', style='color: aliceblue'))
+                            td(a(f'Code file {i}-1'.title(), href=f'../viewReport/{newresourcepath}~record{i}-1.html', target='blank_', style='color: aliceblue' ))
+                            td(a(f'Comparison {i}'.title(), href=f'../viewReport/{newresourcepath}~Comaprison_Record_{i}.html', target='blank_', style='color: aliceblue' ))
     # print(doc)
     f = open(savePath, 'w')
     f.write(str(doc))
