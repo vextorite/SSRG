@@ -824,3 +824,8 @@ button{
   
 
 }
+
+.notifDivRegister{
+max-height: 80px;
+overflow:hidden;
+}
