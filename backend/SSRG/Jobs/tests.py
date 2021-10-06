@@ -4,6 +4,8 @@ from Jobs.models import Jobs, SingleFiles
 
 class URLTests(TestCase):
     """
+    A class containing unit tests for url routing, used by Django tests
+
     
     """
     def testHomePage(self):
