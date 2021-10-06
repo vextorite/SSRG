@@ -4,7 +4,9 @@ Capstone project 2021
 
 Install RabbitMQ Server using your distro's package manager.
 Initialize the RabbitMQ Server using the command: `sudo systemctl enable rabbitmq-server`
+
 Start the RabbitMQ Server using the command: `sudo systemctl start rabbitmq-server`
+
 start a Celery worker using the command: `celery -A SSRG.celery worker --loglevel=info`
 
 Admin Credentials:
